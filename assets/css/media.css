@@ -77,7 +77,8 @@
     }
 
     .banner-pic img{
-        height: calc(50vh);
+        /* height: calc(50vh);
+         */
     }
 
     .big-image-block,
