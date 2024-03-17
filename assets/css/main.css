@@ -49,37 +49,46 @@ body{
 
 .input{
     height: 64px;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 100%;
     background-color: transparent;
+    font-size: 20px;
+    padding: 0 25px;
 }
 
 .textarea{
     height: 230px;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 100%;
     background-color: transparent;
+    font-size: 20px;
     resize: vertical;
+    padding: 0 25px;
 }
 
 .textarea_color_white{
-    border: 1px solid var(--white)
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
 }
 
 .textarea_color_black{
-    border: 1px solid var(--black)
+    border: 1px solid var(--black);
+    color: #000;
 }
 
 .input_color_white{
-    border: 1px solid var(--white)
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
 }
 
 .input_color_black{
-    border: 1px solid var(--black)
+    border: 1px solid var(--black);
+    color: #000;
 }
 
 .text{
     font-weight: 400;
+    line-height: 1.2;
     color: var(--main-text);
 }
 
@@ -92,15 +101,15 @@ body{
 }
 
 .text_size_xl{
-    font-size: 40px;
+    font-size: 28px;
 }
 
 .text_size_big{
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .text_size_normal{
-    font-size: 24px;
+    font-size: 16px;
 }
 
 /* .text_size_small{
@@ -133,15 +142,19 @@ body{
 }
 
 .caption_size_h2{
-    font-size: 74px;
+    font-size: 60px;
 }
 
 .caption_size_h1{
-    font-size: 90px;
+    font-size: 70px;
 }
 
 .caption_size_h3{
-    font-size: 50px;
+    font-size: 42px;
+}
+
+.caption_size_h4{
+    font-size: 32px;
 }
 
 .caption_color_white{
@@ -164,25 +177,25 @@ body{
 }
 
 .button_size_small{
-    height: 53px;
-    padding: 0 25px;
+    height: 42px;
+    padding: 0 22px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .button_size_normal{
-    height: 84px;
-    padding: 0 50px;
+    height: 60px;
+    padding: 0 35px;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 400;
 }
 
 .button_size_big{
-    height: 100px;
-    padding: 0 50px;
+    height: 86px;
+    padding: 0 65px;
     border-radius: 10px;
-    font-size: 40px;
+    font-size: 28px;
     font-weight: 400;
 }
 
@@ -197,7 +210,7 @@ body{
 }
 
 .container{
-    max-width: 1630px;
+    max-width: 1310px;
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
@@ -214,8 +227,8 @@ body{
 .header{
     height: 110px;
     background-color: var(--purple);
-    width: 1630px;
-    padding: 0 36px;
+    width: 1280px;
+    padding: 0 25px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -231,7 +244,7 @@ body{
 .header-links{
     display: flex;
     align-items: center;
-    grid-gap: 20px;
+    grid-gap: 40px;
 }
 
 .main-slider-section{
@@ -276,8 +289,8 @@ body{
 .info-section{
     position: relative;
     background-color: var(--white);
-    padding-bottom: 150px;
-    padding-top: 100px;
+    padding-bottom: 0;
+    padding-top: 50px;
 }
 
 .info-section:before{
@@ -303,11 +316,11 @@ body{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .info-section__subcaption{
-    max-width: 830px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -317,17 +330,19 @@ body{
 .info-section__button{
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 140px;
+    margin-bottom: 120px;
 }
 
 .info-steps{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 200px;
+    grid-template-columns: 330px auto 330px;
+    grid-gap: 100px;
+    padding: 0 100px;
 }
 
 .info-step__caption{
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    color: var(--purple);
 }
 
 .info-step:not(:last-child){
@@ -337,14 +352,15 @@ body{
 .info-step:not(:last-child):after{
     content: '';
     position: absolute;
-    left: calc(100% + 50px);
-    top: 50px;
-    width: 50px;
-    height: 70px;
+    left: 100%;
+    top: 5px;
+    width: 30px;
+    height: 40px;
     background-image: url(../img/arrow-black-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    filter: invert(0.8);
 }
 
 .info-section__info-steps{
@@ -352,54 +368,56 @@ body{
 }
 
 .info-section__prize-caption{
-    margin-bottom: 90px;
+    margin-bottom: 35px;
 }
 
 .prizes-columns{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 150px;
+    grid-gap: 30px;
 }
 
 .prize-column{
     background-color: var(--purple);
-    padding: 40px 50px 170px;
+    padding: 40px 50px 50px;
     border-radius: 10px;
     position: relative;
 }
 
 .prize-column__text span{
-    font-size: 40px;
+    /* font-size: 40px; */
 }
 
 .prize-column__caption{
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 }
 
 .prize-column__promo{
-    font-size: 70px;
+    font-size: 40px;
     font-weight: 700;
 }
 
 .prize-column__ps5{
     position: absolute;
     bottom: -40px;
-    right: 0;
+    right: -10px;
+    z-index: 3;
 }
 
 .prize-column__oculus{
     position: absolute;
     bottom: -40px;
-    left: 130px;
+    right:  170px;
+    z-index: 2;
 }
 
 .cosmo-section{
     background-image: url(../img/main-content-bottom.png), url(../img/space-pic.jpg);
     background-repeat: no-repeat;
     background-position: center 0, center;
-    background-size: contain, cover;
+    background-size: 100% auto, cover;
     padding-top: 600px;
-    padding-bottom: 500px;
+    padding-bottom: 400px;
 }
 
 .cosmo-info__caption span{
@@ -423,22 +441,22 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 60px;
+    padding-bottom: 120px;
 }
 
 .games-section__header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 .games-section__info{
-    padding: 40px 50px;
+    padding: 30px;
     border: 1px solid var(--yellow);
     border-radius: 30px;
-    max-width: 550px;
+    max-width: 400px;
 }
 
 .games-slide{
@@ -457,7 +475,7 @@ body{
 }
 
 .games-section__games-slider-wrapper{
-    margin-bottom: 140px;
+    margin-bottom: 100px;
 }
 
 .games-section__subcaption{
@@ -471,40 +489,43 @@ body{
 }
 
 .prizes-section__top{
-    padding-top: 200px;
+    padding-top: 120px;
 }
 
 .prizes-section__top .container{
     display: grid;
-    grid-template-columns: 850px 400px;
+    grid-template-columns: 600px 300px;
     justify-content: space-between;
 }
 
 .prizes-section__top .caption{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .prize-section__content{
     background-image: url(../img/game-section-bg.png);
     background-size: 100% 100%;
     background-position: center 0;
-    padding-top: 650px;
-    padding-bottom: 650px;
+    padding-top: 450px;
+    padding-bottom: 100px;
 }
 
 .prize-section__prize-items{
-    margin-bottom: 140px;
+    margin-bottom: 120px;
 }
 
 .prize-section__caption{
-    max-width: 730px;
-    margin-bottom: 120px;
+    max-width: 750px;
+    text-align: center;
+    margin-bottom: 160px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .prizes-items{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0 110px;
+    grid-gap: 0 100px;
 }
 
 .prizes-item{
@@ -513,18 +534,18 @@ body{
 
 .prizes-item_order_1 .text{
     position: absolute;
-    left: 0;
+    left: -10px;
     top: 0;
 }
 
 .prizes-item_order_2 .text{
     position: absolute;
-    left: 220px;
+    left: 190px;
     top: 20px;
 }
 
 .prizes-item_order_3 .text{
-    margin-left: 60px;
+    margin-left: 40px;
     margin-bottom: -60px;
 }
 
@@ -538,8 +559,8 @@ body{
 
 .prizes-item_order_4 .text{
     position: absolute;
-    left: 280px;
-    top: 20px;
+    left: 220px;
+    top: 0px;
     width: max-content;
 }
 
@@ -547,13 +568,13 @@ body{
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    grid-gap: 50px;
+    grid-gap: 30px;
 }
 
 .prizes-item_order_6 .text{
     position: absolute;
-    left: -40px;
-    top: -40px;
+    left: 0;
+    top: -10px;
 }
 
 .prizes-item_order_6{
@@ -567,22 +588,22 @@ body{
 }
 
 .game-field-wrapper{
-    width: 860px;
-    height: 920px;
+    width: 600px;
+    height: 640px;
 }
 
 .prize-field__caption{
-    margin-bottom: 120px;
+    margin-bottom: 40px;
 }
 
 .prize-field__info{
     border: 3px solid var(--yellow);
     background-color: var(--white);
-    padding: 55px 45px;
+    padding: 40px 50px;
     display: flex;
     flex-direction: column;
-    grid-gap: 30px;
-    border-radius: 10px;
+    grid-gap: 20px;
+    border-radius: 25px;
 }
 
 .prize-field__info:not(:last-child){
@@ -603,7 +624,7 @@ body{
 }
 
 .winners-section__caption{
-    margin-bottom: 80px;
+    margin-bottom: 70px;
 }
 
 .winners-table{
@@ -612,12 +633,12 @@ body{
 }
 
 .winners-table th{
-    font-size: 30px;
+    font-size: 18px;
     line-height: 1.2;
     font-weight: 700;
     color: var(--white);
     text-align: left;
-    padding: 25px;
+    padding: 12px;
 }
 
 .winners-table th:first-child,
@@ -631,11 +652,11 @@ body{
 }
 
 .winners-table td{
-    font-size: 30px;
+    font-size: 18px;
     line-height: 1.2;
     font-weight: 400;
     color: var(--white);
-    padding: 25px;
+    padding: 12px;
 }
 
 .winners-section__winners-table{
@@ -645,7 +666,7 @@ body{
 .faq-section{
     background-color: var(--blue);
     padding-top: 100px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     background-image: url(../img/questions-bg.png);
     background-repeat: no-repeat;
     background-position: 100% 0;
@@ -657,12 +678,12 @@ body{
 }
 
 .questions-list__answer{
-    padding: 50px;
+    padding: 30px;
     border: 3px solid var(--yellow);
     max-width: 1180px;
-    border-radius: 10px;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    border-radius: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     display: none;
 }
 
@@ -672,7 +693,7 @@ body{
 
 .questions-list__answer b{
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     display: block;
 }
 
@@ -686,11 +707,11 @@ body{
 }
 
 .faq-section__questions-list{
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .question-form{
-    max-width: 850px;
+    max-width: 700px;
     width: 100%;
 }
 
@@ -700,23 +721,31 @@ body{
 }
 
 .question-form__item:not(:last-child){
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .question-form__label{
-    width: 140px;
+    width: 150px;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 22px;
+    flex-shrink: 0;
 }
 
 .question-form__button{
-    margin-top: 70px;
-    margin-left: 120px;
-    margin-bottom: 170px;
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-bottom: 120px;
+}
+
+.faq-section__date{
+    text-align: center;
 }
 
 .footer{
     background-color: var(--purple);
-    padding-top: 90px;
-    padding-bottom: 180px;
+    padding-top: 70px;
+    padding-bottom: 120px;
 }
 
 .footer-columns{
@@ -725,7 +754,7 @@ body{
 }
 
 .footer-links li:not(:last-child){
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .soc-links{
