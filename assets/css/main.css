@@ -1,3 +1,5 @@
+@import url(./game.css);
+
 :root{
     --main-text: #101820;
     --blue: #0069BA;
@@ -291,6 +293,7 @@ body{
     background-color: var(--white);
     padding-bottom: 0;
     padding-top: 50px;
+    padding-bottom: 80px;
 }
 
 .info-section:before{
@@ -307,8 +310,33 @@ body{
     background-repeat: no-repeat;
 }
 
+.info-section:after{
+    content: '';
+    position: absolute;
+    right: calc((100vw - 1300px)/2);
+    top: -100px;
+    height: 203px;
+    width: 243px;
+    background-image: url(../img/elephant-pic.png);
+    z-index: 2;
+    background-size: 100% 100%;
+    background-position: center 100%;
+    background-repeat: no-repeat;
+}
+
 .main__main-slider-section{
     margin-bottom: 100px;
+}
+
+.info-section__dots-pattern{
+    position: absolute;
+    background-size: contain;
+}
+
+.info-section__dots-pattern_order_1{
+    width: 300px;
+    height: 400px;
+    background-image: url(../img/dots-pattern.png);
 }
 
 .info-section__caption{
@@ -316,7 +344,31 @@ body{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    position: relative;
     margin-bottom: 30px;
+}
+
+.info-section__caption:before{
+    content: '';
+    width: 400px;
+    height: 300px;
+    background-image: url(../img/dots-pattern.png);
+    background-size: 100px;
+    position: absolute;
+    right: calc(100% + 80px);
+    top: -150px;
+    z-index: 2;
+}
+
+.info-section__caption:after{
+    content: '';
+    width: 400px;
+    height: 390px;
+    background-image: url(../img/dots-pattern.png);
+    background-size: 100px;
+    position: absolute;
+    left: calc(100% + 80px);
+    bottom: -350px;
 }
 
 .info-section__subcaption{
@@ -442,7 +494,7 @@ body{
     background-size: cover;
     background-position: center;
     padding-top: 60px;
-    padding-bottom: 120px;
+    padding-bottom: 200px;
 }
 
 .games-section__header{
@@ -485,11 +537,38 @@ body{
 .places{
     display: flex;
     align-items: center;
-    grid-gap: 50px;
+    grid-gap: 100px;
 }
 
 .prizes-section__top{
     padding-top: 120px;
+    position: relative;
+}
+
+.prizes-section__top:after{
+    content: '';
+    width: 500px;
+    height: 390px;
+    background-image: url(../img/dots-pattern.png);
+    background-size: 100px;
+    position: absolute;
+    right: calc((100vw - 1400px)/2);
+    top: 100%;
+}
+
+.prizes-section__top:before{
+    content: '';
+    width: 280px;
+    height: 240px;
+    background-image: url(../img/elephant-pic.png);
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: -100px;
+    background-repeat: no-repeat;
+    transform: scale(-1, 1) translateX(-200px) rotate(45deg);
 }
 
 .prizes-section__top .container{
@@ -503,11 +582,26 @@ body{
 }
 
 .prize-section__content{
-    background-image: url(../img/game-section-bg.png);
-    background-size: 100% 100%;
+    background-image: url(../img/game-section-bg.jpg);
+    background-size: cover;
     background-position: center 0;
     padding-top: 450px;
     padding-bottom: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.prize-section__content:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    background-image: url(../img/game-section-bg-top.png);
+    background-size: 100% 100%;
+    background-position: center 0;
+    background-repeat: no-repeat;
 }
 
 .prize-section__prize-items{

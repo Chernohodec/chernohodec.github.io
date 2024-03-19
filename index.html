@@ -92,6 +92,7 @@
                 </div>
             </section>
             <section class="info-section">
+                <div class="info-section__dots-pattern info-section__dots-pattern_order_2"></div>
                 <div class="container">
                     <h1 class="info-section__caption caption_size_h1 caption_color_black">Воображение награждается <i>призами</i></h1>
                     <p class="text text_color_black text_size_xl info-section__subcaption">Купите «Имаджинариум» и выиграйте поездку на космодром Байконур</p>
@@ -180,19 +181,19 @@
                     <h2 class="caption caption_size_h2 caption_color_white games-section__subcaption">Где их купить</h2>
                     <div class="places">
                         <a href="#" class="places__link">
-                            <img src="assets/img/cosmo-logo.png" width="236" alt="">
+                            <img src="assets/img/cosmo-logo.png" width="170" alt="">
                         </a>
                         <a href="#" class="places__link">
-                            <img src="assets/img/ozon-logo.png" width="200" alt="">
+                            <img src="assets/img/ozon-logo.png" width="140" alt="">
                         </a>
                         <a href="#" class="places__link">
-                            <img src="assets/img/mosigra-logo.png" width="169" alt="">
+                            <img src="assets/img/mosigra-logo.png" width="120" alt="">
                         </a>
                         <a href="#" class="places__link">
-                            <img src="assets/img/megamarket-logo.png" width="193" alt="">
+                            <img src="assets/img/megamarket-logo.png" width="135" alt="">
                         </a>
                         <a href="#" class="places__link">
-                            <img src="assets/img/yandexmarket-logo.png" width="193" alt="">
+                            <img src="assets/img/yandexmarket-logo.png" width="135" alt="">
                         </a>
                     </div>
                 </div>
@@ -265,7 +266,13 @@
                                 <a href="#" class="button button_size_big button_color_yellow prize-field__button">Найти промокод и баллы в ЛК</a>
                             </div>
                             <div class="prize-field__right">
-                                <div class="game-field-wrapper"></div>
+                                <div class="game-field-wrapper">
+                                    <button id="generateField">Новая игра</button>
+                                    <table id="myTable">
+                                        <!--content to be here-->
+                                    </table>
+                                    <canvas id="myCanvas" width="600" height="640"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -447,5 +454,6 @@
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/game.js"></script>
     </body>
 </html>
