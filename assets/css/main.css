@@ -64,7 +64,7 @@ body{
 }
 
 .input{
-    height: 64px;
+    height: 60px;
     border-radius: 15px;
     width: 100%;
     background-color: transparent;
@@ -223,6 +223,11 @@ body{
 .button_color_white{
     background-color: var(--white);
     color: var(--main-text);
+}
+
+.button_color_purple{
+    background-color: var(--purple);
+    color: var(--white);
 }
 
 .container{
@@ -860,7 +865,18 @@ body{
     padding: 12px;
 }
 
+.winners-table_color_black th,
+.winners-table_color_black td{
+    color: var(--main-text);
+}
 
+.winners-table_color_purple th{
+    color: var(--main-text);
+}
+
+.winners-table_color_purple td{
+    color: var(--purple);
+}
 
 .winners-section__winners-table-wrapper{
     margin-bottom: 80px;

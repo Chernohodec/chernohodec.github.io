@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="/assets/css/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <nav class="header-menu">
+                    <a href="/" class="logo header-menu__logo">
+                        <img src="/assets/img/logo.png" width="180" alt="" />
+                    </a>
+                    <div class="header-menu__navigation">
+                        <ul class="header-links">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Правила участия</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Призы</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Пятнашки</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Победители</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Вопросы</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Требования к чеку</a
+                                >
+                            </li>
+                        </ul>
+                        <a
+                            href="#"
+                            class="button button_size_small button_color_white header-menu__button"
+                        >
+                            Личный кабинет
+                        </a>
+                    </div>
+                    <button
+                        class="header-menu__hamburger hamburger hamburger--collapse"
+                        type="button"
+                    >
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+        <main class="user">
+            <header class="user-header">
+                <div class="container">
+                    <div class="user-header__top">
+                        <h3 class="caption caption_size_h3 caption_color_black">
+                            Личный кабинет
+                        </h3>
+                        <input
+                            type="text"
+                            class="input input_color_black user-header__input"
+                            placeholder="Введите номер чека"
+                        />
+                        <a
+                            href="#"
+                            class="button button_color_yellow button_size_normal"
+                            >Отправить</a
+                        >
+                        <a
+                            href="#"
+                            class="button button_color_yellow button_size_normal"
+                            >Загрузить чек</a
+                        >
+                    </div>
+                    <h2 class="caption caption_size_h2 user-header__caption">
+                        Вася
+                    </h2>
+                    <div class="user-header__stats">
+                        <div>
+                            <span
+                                class="caption caption_size_h1 caption_color_black"
+                                >5</span
+                            >
+                            <span class="text text_color_black text_size_big"
+                                >чеков<br />отправлено</span
+                            >
+                        </div>
+                        <div>
+                            <span
+                                class="caption caption_size_h1 caption_color_black"
+                                >1</span
+                            >
+                            <span class="text text_color_black text_size_big"
+                                >приз<br />выигран</span
+                            >
+                        </div>
+                        <div>
+                            <span
+                                class="caption caption_size_h1 caption_color_black"
+                                >10</span
+                            >
+                            <span class="text text_color_black text_size_big"
+                                >баллов<br />в пятнашках</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="user-tabs">
+                <div class="container">
+                    <div class="user-tabs-header">
+                        <a
+                            class="user-tabs-header__link text text_size_big user-tabs-header__link_active"
+                            href="#"
+                            data-target="tab-prizes"
+                            >Призы</a
+                        >
+                        <a class="user-tabs-header__link text text_size_big" href="#"
+                        data-target="tab-checks">Чеки</a>
+                        <a class="user-tabs-header__link text text_size_big" href="#"
+                        data-target="tab-game">Пятнашки</a>
+                    </div>
+                    <div class="user-tabs-panels">
+                        <div class="user-tabs-panels__panel user-tabs-panels__panel_active" id="tab-prizes">
+                            <div class="winners-table-wrapper">
+                                <table class="winners-table winners-table_color_purple">
+                                    <thead>
+                                        <tr>
+                                            <th>Дата</th>
+                                            <th>Номер чека</th>
+                                            <th>Статус модерации</th>
+                                            <th>Приз</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>15.04.2024</td>
+                                            <td>64748408</td>
+                                            <td>Принят</td>
+                                            <td>VR-очки</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15.04.2024</td>
+                                            <td>64748408</td>
+                                            <td>Принят</td>
+                                            <td>VR-очки</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15.04.2024</td>
+                                            <td>64748408</td>
+                                            <td>Принят</td>
+                                            <td>VR-очки</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15.04.2024</td>
+                                            <td>64748408</td>
+                                            <td>Принят</td>
+                                            <td>VR-очки</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="user-tabs-panels__panel" id="tab-checks">
+                        </div>
+                        <div class="user-tabs-panels__panel" id="tab-game">
+                            <div class="winners-table-wrapper">
+                                <table class="winners-table winners-table_color_purple">
+                                    <thead>
+                                        <tr>
+                                            <th>Дата</th>
+                                            <th>Номер чека</th>
+                                            <th>Статус модерации</th>
+                                            <th>Приз</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>15.04.2024</td>
+                                            <td>64748408</td>
+                                            <td>Принят</td>
+                                            <td>VR-очки</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15.04.2024</td>
+                                            <td>64748408</td>
+                                            <td>Принят</td>
+                                            <td>VR-очки</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15.04.2024</td>
+                                            <td>64748408</td>
+                                            <td>Принят</td>
+                                            <td>VR-очки</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15.04.2024</td>
+                                            <td>64748408</td>
+                                            <td>Принят</td>
+                                            <td>VR-очки</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text text_size_big text_color_black user__sub-info">Конкурс проходит с 1 по 30 апреля 2024 года.<a href="#">Подробные правила участия</a>.</p>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-columns__column">
+                        <a href="/">
+                            <img src="assets/img/logo.png" width="156" alt="" />
+                        </a>
+                    </div>
+                    <div class="footer-columns__column">
+                        <ul class="footer-links">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >Правила участия</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >Призы</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >Пятнашки</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >О компании</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-columns__column">
+                        <ul class="footer-links">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >Победители</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >Вопросы</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >Требования к чеку</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-columns__column">
+                        <ul class="footer-links">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    ><b>Тел.: +7 495 255 0076</b></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >hello@cosmodrome-games.com</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text text_size_big text_color_white"
+                                    >Пользовательское соглашение</a
+                                >
+                            </li>
+                            <li>
+                                <div class="soc-links">
+                                    <a href="#" class="soc-links__link">
+                                        <img
+                                            src="assets/img/tg-link.png"
+                                            width="40"
+                                            alt=""
+                                        />
+                                    </a>
+                                    <a href="#" class="soc-links__link">
+                                        <img
+                                            src="assets/img/vk-link.png"
+                                            width="40"
+                                            alt=""
+                                        />
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="modal modal_type_sign-up">
+            <h3
+                class="caption caption_size_h3 caption_color_black modal__caption"
+            >
+                Регистрация в розыгрыше
+            </h3>
+            <p class="text text_color_black text_size_big modal__description">
+                Ваше имя появится в таблице с победителями. Email будет
+                отображаться в зашифрованном виде. Он нужен, чтобы вы могли
+                найти себя среди победителей
+            </p>
+            <form action="" class="modal-form sign-up-form">
+                <div class="modal-input-block modal-form__modal-input-block">
+                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Имя</label>
+                    <input type="text" class="input input_color_black" />
+                </div>
+                <div class="modal-input-block modal-form__modal-input-block">
+                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Email</label>
+                    <input type="text" class="input input_color_black" />
+                </div>
+                <div class="modal-input-block modal-form__modal-input-block">
+                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Пароль</label>
+                    <input type="text" class="input input_color_black" />
+                </div>
+                <div class="modal-input-block modal-form__modal-input-block">
+                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Повторите<br />пароль</label>
+                    <input type="text" class="input input_color_black" />
+                </div>
+                <div class="checkbox-input-block modal-form__checkbox-input-block">
+                    <input type="checkbox" id="accept1" />
+                    <label
+                        for="accept1"
+                        class="text text_size_big text_color_black"
+                        >Я согласен(а) с
+                        <a href="#" target="_blank"
+                            >правилами розыгрыша</a
+                        ></label
+                    >
+                </div>
+                <div class="checkbox-input-block modal-form__checkbox-input-block">
+                    <input type="checkbox" id="accept2" />
+                    <label
+                        for="accept2"
+                        class="text text_size_big text_color_black"
+                        >Я согласен(а) на обработку персональных данных.
+                        <a href="#">Политика конфиденциальности</a>
+                    </label>
+                </div>
+                <div class="modal-form__buttons">
+                    <button
+                        class="button button_color_yellow button_size_normal"
+                    >
+                        Зарегистрироваться
+                    </button>
+                    <button
+                        class="button button_color_purple button_size_normal"
+                    >
+                        Войти
+                    </button>
+                </div>
+            </form>
+        
+        </div>
+        <div class="modal modal_type_sign-in">
+            <h3
+                class="caption caption_size_h3 caption_color_black modal__caption"
+            >Войти в личный кабинет</h3>
+            <form action="" class="modal-form sign-up-form">
+                <div class="modal-input-block modal-form__modal-input-block">
+                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Email</label>
+                    <input type="text" class="input input_color_black" />
+                </div>
+                <div class="modal-input-block modal-form__modal-input-block">
+                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Пароль</label>
+                    <input type="text" class="input input_color_black" />
+                </div>
+                <a href="#" class="modal-input-block__forget-link text text_color_black text_size_normal">
+                    Забыли пароль?
+                </a>
+                <div class="modal-form__buttons">
+                    <button
+                        class="button button_color_yellow button_size_normal"
+                    >
+                        Зарегистрироваться
+                    </button>
+                    <button
+                        class="button button_color_purple button_size_normal"
+                    >
+                        Войти
+                    </button>
+                </div>
+            </form>
+        
+        
+        </div>
+        <script src="/assets/js/swiper.min.js"></script>
+        <script src="/assets/js/simpleParallax.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/game.js"></script>
+        <script src="/assets/js/parallax.js"></script>
+    </body>
+</html>

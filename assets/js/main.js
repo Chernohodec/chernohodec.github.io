@@ -47,4 +47,26 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('body')
     })
 
+    // tabs script
+    const tabsLinks = document.querySelectorAll('.user-tabs-header__link')
+    const tabsItems = document.querySelectorAll('.user-tabs-panels__panel')
+
+    tabsLinks.forEach(link=>{
+        link.addEventListener('click', (e)=>{
+            e.preventDefault()
+            const target = link.getAttribute('data-target')
+            const tabItem = document.querySelector(`#${target}`)
+
+            tabsItems.forEach(item=>{
+                item.classList.remove('user-tabs-panels__panel_active')
+            })
+            tabsLinks.forEach(item=>{
+                item.classList.remove('user-tabs-header__link_active')
+            })
+
+            tabItem.classList.add('user-tabs-panels__panel_active')
+            link.classList.add('user-tabs-header__link_active')
+        })
+    })
+
 });
