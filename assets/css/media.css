@@ -1,0 +1,392 @@
+@media screen and (max-width: 1200px) {
+
+    .caption_size_h1 {
+        font-size: 30px;
+    }
+
+    .caption_size_h2 {
+        font-size: 24px;
+    }
+
+    .caption_size_h3 {
+        font-size: 20px;
+    }
+
+    .caption_size_h4{
+        font-size: 18px;
+    }
+
+    .text_size_xl {
+        font-size: 18px;
+    }
+
+    .text_size_big {
+        font-size: 16px;
+    }
+
+    .text_size_normal {
+        font-size: 14px;
+    }
+
+    .button_size_big {
+        height: 60px;
+        padding: 0 40px;
+        font-size: 20px;
+    }
+
+    .button_size_normal {
+        height: 40px;
+        padding: 0 25px;
+        font-size: 18px;
+    }
+
+    .input{
+        height: 45px;
+    }
+
+    .header {
+        height: 70px;
+        padding: 0;
+        border-radius: 0;
+        position: relative;
+    }
+
+    .header-menu__hamburger {
+        display: flex;
+        padding: 0;
+    }
+
+    .header-menu__navigation {
+        position: absolute;
+        left: 0;
+        top: 70px;
+        width: 100vw;
+        height: calc(100dvh - 70px);
+        background-color: var(--purple);
+        z-index: 2;
+        flex-direction: column;
+        padding: 30px 15px;
+        transform: translateX(-100%);
+    }
+
+    .header-menu__navigation_active {
+        transform: translateX(0);
+    }
+
+    .hamburger-inner,
+    .hamburger-inner:after,
+    .hamburger-inner:before {
+        background-color: var(--white);
+        border-radius: 0;
+    }
+
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner:after,
+    .hamburger.is-active .hamburger-inner:before {
+        background-color: var(--white);
+    }
+
+    .header-links {
+        flex-direction: column;
+    }
+
+    .header-menu__button {
+        width: 100%;
+    }
+
+    .main-slider__pic {
+        height: 50dvh;
+    }
+
+    .info-section:before {
+        height: 120px;
+        background-size: contain;
+    }
+
+    .info-section:after{
+        right: 30px;
+        height: 90px;
+        width: 90px;
+        top: -20px;
+    }
+
+    .main__main-slider-section {
+        margin-bottom: 0;
+    }
+
+    .main-slider__prev {
+        left: 24px;
+        width: 15px;
+        height: 22px;
+    }
+
+    .main-slider__next {
+        right: 24px;
+        width: 15px;
+        height: 22px;
+    }
+
+    .main-slider__next img,
+    .main-slider__prev img {
+        max-width: 100%;
+    }
+
+    .info-steps {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        grid-gap: 60px;
+    }
+
+    .info-step {
+        width: 100%;
+    }
+
+    .info-step:not(:last-child):after {
+        left: 0;
+        top: calc(100% + 15px);
+        transform: rotate(90deg);
+        height: 20px;
+        width: 15px;
+    }
+
+    .info-step br {
+        display: none;
+    }
+
+    .info-step .text a:last-child {
+        display: flex;
+        width: max-content;
+    }
+
+    .info-step__caption {
+        margin-bottom: 20px;
+    }
+
+    .info-section__caption:before,
+    .info-section__caption:after{
+        display: none;
+    }
+
+    .info-section__button{
+        margin-bottom: 60px;
+    }
+
+    .info-section__info-steps {
+        margin-bottom: 60px;
+    }
+
+    .prizes-columns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .prize-column {
+        padding: 20px;
+    }
+
+    .prize-column__oculus {
+        width: 100px;
+        right: 110px;
+    }
+
+    .prize-column__ps5 {
+        width: 150px;
+    }
+
+    .cosmo-info {
+        flex-direction: column;
+        max-width: 70%;
+    }
+
+    .cosmo-section {
+        padding-top: 120px;
+        padding-bottom: 90px;
+    }
+
+    .cosmo-info__caption {
+        margin-bottom: 25px;
+    }
+
+    .rocket-wrapper__rocket {
+        top: -170px;
+        width: 80px;
+        height: auto;
+        right: 15%;
+        left: auto;
+    }
+
+    .games-section{
+        padding-bottom: 120px;
+    }
+
+    .games-section__header {
+        flex-direction: column;
+        grid-gap: 20px;
+    }
+
+    .games-section__info {
+        padding: 20px;
+    }
+
+    .games-slider-wrapper {
+        overflow: hidden;
+        margin-right: -15px;
+    }
+
+    .games-slider {
+        overflow: visible;
+        width: 200px;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .games-slide__image {
+        width: 120px;
+    }
+
+    .games-section__games-slider-wrapper {
+        margin-bottom: 32px;
+    }
+
+    .places {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+
+    .places__link {
+        display: flex
+    }
+
+    .places__link img {
+        max-width: 100%;
+    }
+
+    .prizes-section__top .container{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 40px;
+    }
+
+    .prizes-section__top{
+        padding-top: 60px;
+    }
+
+    .prizes-section__top:before{
+        width: 170px;
+        height: 140px;
+    }
+
+    .prizes-section__top:after{
+        height: 140px;
+    }
+
+    .prize-section__content{
+        padding-top: 160px;
+        padding-bottom: 60px;
+    }
+
+    .prizes-items{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 40px;
+    }
+
+    .prizes-item_order_3,
+    .prizes-item_order_4,
+    .prizes-item_order_6{
+        margin-top: 0;
+    }
+
+    .prizes-item_order_4{
+        margin-right: 80px;
+    }
+
+    .prize-section__caption{
+        margin-bottom: 60px;
+    }
+
+    .prizes-item-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .prize-section__prize-items{
+        margin-bottom: 60px;
+    }
+
+    .prize-field{
+        flex-direction: column-reverse;
+    }
+
+    .prize-field__right{
+        width: 100%;
+    }
+
+    .game-field-wrapper{
+        width: 300px;
+        height: 300px;
+        margin: auto;
+    }
+
+    .prize-field__info{
+        padding: 20px 30px;
+        grid-gap: 15px;
+    }
+
+    .prize-field__info:not(:last-child){
+        margin-bottom: 20px;
+    }
+
+    .prize-field__button{
+        margin-top: 40px;
+    }
+
+    .winners-section{
+        padding: 60px 0;
+    }
+
+    .winners-section__caption{
+        margin-bottom: 40px;
+    }
+
+    .winners-table-wrapper{
+        overflow: auto;
+    }
+
+    .winners-section__winners-table-wrapper{
+        margin-bottom: 40px;
+    }
+
+    .faq-section{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .question-form__label{
+        width: 80px;
+        margin-top: 13px;
+    }
+
+    .question-form__button{
+        margin-left: 80px;
+        margin-bottom: 40px;
+    }
+
+    .footer-columns{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer-columns__column:first-child{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-columns__column:last-child{
+        margin-top: 40px;
+    }
+
+}

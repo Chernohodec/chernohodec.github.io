@@ -44,9 +44,23 @@ a,a:hover{
     text-decoration: none;
 }
 
-
 body{
     font-family: 'Lato';
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+        filter: drop-shadow(0 5px 15px 0px rgba(0,0,0,0.6));
+	}
+	50% {
+		filter: drop-shadow(0 5px 15px 0px rgba(0,0,0,0.6));
+		transform: translatey(-20px);
+	}
+	100% {
+		filter: drop-shadow(0 5px 15px 0px rgba(0,0,0,0.6));
+		transform: translatey(0px);
+	}
 }
 
 .input{
@@ -223,13 +237,24 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
+.header-menu__logo{
+    margin-right: 40px;
+}
+
+.header-menu__navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .header{
     height: 110px;
     background-color: var(--purple);
-    width: 1280px;
+    max-width: 1280px;
+    width: 100%;
     padding: 0 25px;
     margin: 0 auto;
     display: flex;
@@ -240,8 +265,14 @@ body{
     right: 0;
     top: 0;
     margin: auto;
-    z-index: 2;
+    z-index: 3;
 }
+
+.header-menu__hamburger{
+    display: none;
+}
+
+
 
 .header-links{
     display: flex;
@@ -322,6 +353,7 @@ body{
     background-size: 100% 100%;
     background-position: center 100%;
     background-repeat: no-repeat;
+    animation: float 5s ease-in-out infinite;
 }
 
 .main__main-slider-section{
@@ -468,8 +500,14 @@ body{
     background-repeat: no-repeat;
     background-position: center 0, center;
     background-size: 100% auto, cover;
-    padding-top: 600px;
-    padding-bottom: 400px;
+    padding-top: 370px;
+    padding-bottom: 530px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cosmo-section .container{
+    position: relative;
 }
 
 .cosmo-info__caption span{
@@ -484,8 +522,42 @@ body{
 
 .cosmo-info__text{
     max-width: 370px;
-    margin-bottom: 50px;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
+
+.rocket-wrapper{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.rocket-wrapper__rocket{
+    top: -200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}
+
+.rocket-wrapper__rock1{
+    top: 310px;
+    /* top: 200px; */
+    left: 280px;
+    position: absolute;
+    /* animation: float 15s ease-in-out infinite; */
+}
+
+.rocket-wrapper__rock2{
+    /* top: 550px; */
+    top: 400px;
+    left: 400px;
+    position: absolute;
+    /* animation: float 5s ease-in-out infinite; */
+}
+
 
 .games-section{
     background-color: var(--blue);
@@ -547,13 +619,15 @@ body{
 
 .prizes-section__top:after{
     content: '';
-    width: 500px;
-    height: 390px;
-    background-image: url(../img/dots-pattern.png);
-    background-size: 100px;
     position: absolute;
-    right: calc((100vw - 1400px)/2);
+    left: 0;
     top: 100%;
+    width: 100%;
+    height: 400px;
+    background-image: url(../img/game-section-bg-top.png);
+    background-size: 100% 100%;
+    background-position: center 0;
+    background-repeat: no-repeat;
 }
 
 .prizes-section__top:before{
@@ -569,6 +643,7 @@ body{
     top: -100px;
     background-repeat: no-repeat;
     transform: scale(-1, 1) translateX(-200px) rotate(45deg);
+    animation: float 5s ease-in-out infinite;
 }
 
 .prizes-section__top .container{
@@ -587,10 +662,11 @@ body{
     background-position: center 0;
     padding-top: 450px;
     padding-bottom: 100px;
-    position: relative;
+    /* position: relative; */
     z-index: 2;
 }
 
+/*
 .prize-section__content:before{
     content: '';
     position: absolute;
@@ -602,7 +678,7 @@ body{
     background-size: 100% 100%;
     background-position: center 0;
     background-repeat: no-repeat;
-}
+} */
 
 .prize-section__prize-items{
     margin-bottom: 120px;
@@ -624,6 +700,31 @@ body{
 
 .prizes-item{
     position: relative;
+   
+}
+
+.prizes-item_order_1{
+    animation: float 6s ease-in-out infinite;
+}
+
+.prizes-item_order_2{
+    animation: float 10s ease-in-out infinite;
+}
+
+.prizes-item_order_3{
+    animation: float 8s ease-in-out infinite;
+}
+
+.prizes-item_order_4{
+    animation: float 12s ease-in-out infinite;
+}
+
+.prizes-item_order_5{
+    animation: float 4s ease-in-out infinite;
+}
+
+.prizes-item_order_6{
+    animation: float 7s ease-in-out infinite;
 }
 
 .prizes-item_order_1 .text{
@@ -679,6 +780,7 @@ body{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    grid-gap: 50px;
 }
 
 .game-field-wrapper{
@@ -702,6 +804,11 @@ body{
 
 .prize-field__info:not(:last-child){
     margin-bottom: 30px;
+}
+
+.prize-field__right{
+    /* width: 600px; */
+    flex-shrink: 0;
 }
 
 .prize-field__button{
@@ -753,7 +860,9 @@ body{
     padding: 12px;
 }
 
-.winners-section__winners-table{
+
+
+.winners-section__winners-table-wrapper{
     margin-bottom: 80px;
 }
 

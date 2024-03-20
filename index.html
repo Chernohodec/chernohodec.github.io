@@ -5,11 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="/assets/css/style.css">
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-
     </head>
     <body>
         <header class="header">
@@ -18,54 +13,61 @@
                     <a href="/" class="logo header-menu__logo">
                         <img src="/assets/img/logo.png" width="180" alt="" />
                     </a>
-                    <ul class="header-links">
-                        <li>
-                            <a
-                                href="#"
-                                class="header-links__link text_size_normal text text_color_white"
-                                >Правила участия</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="header-links__link text_size_normal text text_color_white"
-                                >Призы</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="header-links__link text_size_normal text text_color_white"
-                                >Пятнашки</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="header-links__link text_size_normal text text_color_white"
-                                >Победители</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="header-links__link text_size_normal text text_color_white"
-                                >Вопросы</a
-                            >
-                        </li>
-                        <li>
-                            <a href="#" class="header-links__link text_size_normal text text_color_white"
-                                >Требования к чеку</a
-                            >
-                        </li>
-                    </ul>
-                    <a
-                        href="#"
-                        class="button button_size_small button_color_white"
-                    >
-                        Личный кабинет
-                    </a>
+                    <div class="header-menu__navigation">
+                        <ul class="header-links">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Правила участия</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Призы</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Пятнашки</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Победители</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="header-links__link text_size_normal text text_color_white"
+                                    >Вопросы</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="header-links__link text_size_normal text text_color_white"
+                                    >Требования к чеку</a
+                                >
+                            </li>
+                        </ul>
+                        <a
+                            href="#"
+                            class="button button_size_small button_color_white header-menu__button"
+                        >
+                            Личный кабинет
+                        </a>
+                    </div>
+                    <button class="header-menu__hamburger hamburger hamburger--collapse" type="button">
+                        <span class="hamburger-box">
+                          <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
                 </nav>
             </div>
         </header>
@@ -140,6 +142,11 @@
                             <a href="#" class="button_size_big button button_color_white">Поехали 🚀</a>
                         </div>
                     </div>
+                    <div class="rocket-wrapper" id="rocket-wrapper">
+                        <img class="rocket-wrapper__item rocket-wrapper__rocket" src="assets/img/rocket-image.png" width="206" alt="">
+                        <img class="rocket-wrapper__item rocket-wrapper__rock1" src="assets/img/rock1-image.png" width="40" alt="">
+                        <img class="rocket-wrapper__item rocket-wrapper__rock2" src="assets/img/rock2-image.png" width="60" alt="">
+                    </div>
                 </div>
             </section>
             <section class="games-section">
@@ -203,7 +210,7 @@
                     <div class="container">
                         <div>
                             <h2 class="caption caption_color_black caption_size_h2">Ещё больше призов</h2>
-                            <p class="text text_color_black text_size_big">Играйте в пятнашки и выиграйте подарки от создателей «Имаджинариума». Если вы загрузили хотя бы один чек, присоединяйтесь к игре.</p>
+                            <p class="text text_color_black text_size_big">Играйте в пятнашки и выиграйтеподарки от создателей «Имаджинариума».Если вы загрузили хотя бы один чек, присоединяйтесь к игре.</p>
                         </div>
                         <div>
                             <h2 class="caption caption_color_black caption_size_h2">ХХ призов</h2>
@@ -267,11 +274,7 @@
                             </div>
                             <div class="prize-field__right">
                                 <div class="game-field-wrapper">
-                                    <button id="generateField">Новая игра</button>
-                                    <table id="myTable">
-                                        <!--content to be here-->
-                                    </table>
-                                    <canvas id="myCanvas" width="600" height="640"></canvas>
+                                    <canvas id="canvas"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -281,58 +284,61 @@
             <section class="winners-section">
                 <div class="container">
                     <h2 class="caption caption_size_h3 caption_color_yellow winners-section__caption">Недавние победители</h2>
-                    <table class="winners-table winners-section__winners-table">
-                        <thead>
-                            <tr>
-                                <th>Имя</th>
-                                <th>E-mail</th>
-                                <th>Приз</th>
-                                <th>Дата</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Вася
-                                </td>
-                                <td>va***@mail.ru</td>
-                                <td>Месяц подписки на Яндекс.Плюс</td>
-                                <td>22.03.2022</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Вася
-                                </td>
-                                <td>va***@mail.ru</td>
-                                <td>Месяц подписки на Яндекс.Плюс</td>
-                                <td>22.03.2022</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Вася
-                                </td>
-                                <td>va***@mail.ru</td>
-                                <td>Месяц подписки на Яндекс.Плюс</td>
-                                <td>22.03.2022</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Вася
-                                </td>
-                                <td>va***@mail.ru</td>
-                                <td>Месяц подписки на Яндекс.Плюс</td>
-                                <td>22.03.2022</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Вася
-                                </td>
-                                <td>va***@mail.ru</td>
-                                <td>Месяц подписки на Яндекс.Плюс</td>
-                                <td>22.03.2022</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="winners-table-wrapper winners-section__winners-table-wrapper">
+                        <table class="winners-table">
+                            <thead>
+                                <tr>
+                                    <th>Имя</th>
+                                    <th>E-mail</th>
+                                    <th>Приз</th>
+                                    <th>Дата</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Вася
+                                    </td>
+                                    <td>va***@mail.ru</td>
+                                    <td>Месяц подписки на Яндекс.Плюс</td>
+                                    <td>22.03.2022</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Вася
+                                    </td>
+                                    <td>va***@mail.ru</td>
+                                    <td>Месяц подписки на Яндекс.Плюс</td>
+                                    <td>22.03.2022</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Вася
+                                    </td>
+                                    <td>va***@mail.ru</td>
+                                    <td>Месяц подписки на Яндекс.Плюс</td>
+                                    <td>22.03.2022</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Вася
+                                    </td>
+                                    <td>va***@mail.ru</td>
+                                    <td>Месяц подписки на Яндекс.Плюс</td>
+                                    <td>22.03.2022</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Вася
+                                    </td>
+                                    <td>va***@mail.ru</td>
+                                    <td>Месяц подписки на Яндекс.Плюс</td>
+                                    <td>22.03.2022</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                   
                     <a href="#" class="button_size_normal button button_color_yellow">Все победители</a>
                 </div>
             </section>
@@ -452,8 +458,10 @@
                 </div>
             </div>
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="/assets/js/swiper.min.js"></script>
+        <script src="/assets/js/simpleParallax.min.js"></script>
         <script src="/assets/js/main.js"></script>
         <script src="/assets/js/game.js"></script>
+        <script src="/assets/js/parallax.js"></script>
     </body>
 </html>

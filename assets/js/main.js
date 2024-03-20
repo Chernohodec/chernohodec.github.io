@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const gamesSlider = new Swiper('.games-slider', {
         // Optional parameters
-        loop: true,
+        loop: false,
         slidesPerView: 4,
         // Navigation arrows
         breakpoints: {
@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault()
             link.nextElementSibling.classList.toggle('questions-list__answer_active')
         })
+    })
+
+    const hamburger = document.querySelector('.hamburger')
+    const xsNavigation = document.querySelector('.header-menu__navigation')
+
+    hamburger.addEventListener('click', ()=>{
+        hamburger.classList.toggle('is-active')
+        xsNavigation.classList.toggle('header-menu__navigation_active')
+        document.querySelector('body')
     })
 
 });
