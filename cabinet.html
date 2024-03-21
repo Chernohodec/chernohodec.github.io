@@ -51,9 +51,7 @@
                                 >
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    class="header-links__link text_size_normal text text_color_white"
+                                <a href="#" class="header-links__link text_size_normal text text_color_white"
                                     >Требования к чеку</a
                                 >
                             </li>
@@ -61,16 +59,14 @@
                         <a
                             href="#"
                             class="button button_size_small button_color_white header-menu__button"
+                            id="user-button"
                         >
                             Личный кабинет
                         </a>
                     </div>
-                    <button
-                        class="header-menu__hamburger hamburger hamburger--collapse"
-                        type="button"
-                    >
+                    <button class="header-menu__hamburger hamburger hamburger--collapse" type="button">
                         <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
+                          <span class="hamburger-inner"></span>
                         </span>
                     </button>
                 </nav>
@@ -80,28 +76,21 @@
             <header class="user-header">
                 <div class="container">
                     <div class="user-header__top">
-                        <h3 class="caption caption_size_h3 caption_color_black">
-                            Личный кабинет
-                        </h3>
-                        <input
-                            type="text"
-                            class="input input_color_black user-header__input"
-                            placeholder="Введите номер чека"
-                        />
+                        <div>
+                            <h3 class="text text_size_bigger text_color_black">
+                                Личный кабинет
+                            </h3>
+                            <h2 class="caption caption_size_h2 user-header__caption">
+                                Василий
+                            </h2>
+                        </div>
                         <a
                             href="#"
-                            class="button button_color_yellow button_size_normal"
-                            >Отправить</a
-                        >
-                        <a
-                            href="#"
-                            class="button button_color_yellow button_size_normal"
+                            id="check-upload"
+                            class="button button_color_yellow button_size_big user-header__button"
                             >Загрузить чек</a
                         >
                     </div>
-                    <h2 class="caption caption_size_h2 user-header__caption">
-                        Вася
-                    </h2>
                     <div class="user-header__stats">
                         <div>
                             <span
@@ -346,105 +335,90 @@
                 </div>
             </div>
         </footer>
-        <div class="modal modal_type_sign-up">
-            <h3
-                class="caption caption_size_h3 caption_color_black modal__caption"
-            >
-                Регистрация в розыгрыше
-            </h3>
-            <p class="text text_color_black text_size_big modal__description">
-                Ваше имя появится в таблице с победителями. Email будет
-                отображаться в зашифрованном виде. Он нужен, чтобы вы могли
-                найти себя среди победителей
-            </p>
-            <form action="" class="modal-form sign-up-form">
-                <div class="modal-input-block modal-form__modal-input-block">
-                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Имя</label>
-                    <input type="text" class="input input_color_black" />
-                </div>
-                <div class="modal-input-block modal-form__modal-input-block">
-                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Email</label>
-                    <input type="text" class="input input_color_black" />
-                </div>
-                <div class="modal-input-block modal-form__modal-input-block">
-                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Пароль</label>
-                    <input type="text" class="input input_color_black" />
-                </div>
-                <div class="modal-input-block modal-form__modal-input-block">
-                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Повторите<br />пароль</label>
-                    <input type="text" class="input input_color_black" />
-                </div>
-                <div class="checkbox-input-block modal-form__checkbox-input-block">
-                    <input type="checkbox" id="accept1" />
-                    <label
-                        for="accept1"
-                        class="text text_size_big text_color_black"
-                        >Я согласен(а) с
-                        <a href="#" target="_blank"
-                            >правилами розыгрыша</a
-                        ></label
-                    >
-                </div>
-                <div class="checkbox-input-block modal-form__checkbox-input-block">
-                    <input type="checkbox" id="accept2" />
-                    <label
-                        for="accept2"
-                        class="text text_size_big text_color_black"
-                        >Я согласен(а) на обработку персональных данных.
-                        <a href="#">Политика конфиденциальности</a>
-                    </label>
-                </div>
-                <div class="modal-form__buttons">
-                    <button
-                        class="button button_color_yellow button_size_normal"
-                    >
-                        Зарегистрироваться
-                    </button>
-                    <button
-                        class="button button_color_purple button_size_normal"
-                    >
-                        Войти
-                    </button>
-                </div>
-            </form>
-        
-        </div>
-        <div class="modal modal_type_sign-in">
-            <h3
-                class="caption caption_size_h3 caption_color_black modal__caption"
-            >Войти в личный кабинет</h3>
-            <form action="" class="modal-form sign-up-form">
-                <div class="modal-input-block modal-form__modal-input-block">
-                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Email</label>
-                    <input type="text" class="input input_color_black" />
-                </div>
-                <div class="modal-input-block modal-form__modal-input-block">
-                    <label for="" class="text text_size_normal text_color_black modal-input-block__label">Пароль</label>
-                    <input type="text" class="input input_color_black" />
-                </div>
-                <a href="#" class="modal-input-block__forget-link text text_color_black text_size_normal">
-                    Забыли пароль?
+        <div class="overlay">
+            <div class="modal modal_type_choose">
+                <a href="#" class="modal__close">
                 </a>
-                <div class="modal-form__buttons">
-                    <button
-                        class="button button_color_yellow button_size_normal"
-                    >
-                        Зарегистрироваться
-                    </button>
-                    <button
-                        class="button button_color_purple button_size_normal"
-                    >
-                        Войти
-                    </button>
+                <h3
+                    class="caption caption_size_h3 caption_color_black modal__caption"
+                >Добавление чека</h3>
+                <div class="modal-choose">
+                    <label for="checkfile" class="modal-choose__button">
+                        <img src="assets/img/upload-icon.svg" height="70" alt="">
+                        <span class="text text_size_big text_color_black">Загрузить <br>с устройства</span>
+                    </label>
+                    <a href="#" class="modal-choose__button" id="choose-type">
+                        <img src="assets/img/type-icon.svg" height="70" alt="">
+                        <span class="text text_size_big text_color_black">Ввести код<br>вручную</span>
+                    </a>
                 </div>
-            </form>
-        
-        
+                <form class="modal-file">
+                    <input class="modal-file__input" type="file" id="checkfile">
+                    <div class="modal-file__field">
+                        <img src="assets/img/file-icon.svg" alt="">
+                        <p class="modal-file__name text text_color_black text_size_normal">
+                        </p>
+                        <a href="#" class="modal-file__delete"></a>
+                    </div>
+                    <div class="modal-file__buttons">
+                        <a href="#" class="button button_color_transparent button_size_normal" id="choose-type">Ввести в ручную</a>
+                        <button href="#" class="button button_color_yellow button_size_normal" id="choose-type">Отправить</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal modal_type_typing">
+                <a href="#" class="modal__close">
+                </a>
+                <h3
+                    class="caption caption_size_h3 caption_color_black modal__caption"
+                >Введите данные с чека</h3>
+                <form class="modal-check-inputs">
+                    <div class="check-input-wrapper">
+                        <label for="" class="check-input-wrapper__label text text_size_normal text_color_black">Дата на чеке</label>
+                        <input class="check-input-wrapper__input input input_color_black" type="date">
+                    </div>
+                    <div class="check-input-wrapper">
+                        <label for="" class="check-input-wrapper__label text text_size_normal text_color_black">Время на чеке</label>
+                        <div class="check-input-wrapper__inputs">
+                            <input class="check-input-wrapper__input input input_color_black" type="text" placeholder="Часов">
+                            <input class="check-input-wrapper__input input input_color_black" type="text" placeholder="Минут">
+                        </div>
+                    </div>
+                    <div class="check-input-wrapper">
+                        <label for="" class="check-input-wrapper__label text text_size_normal text_color_black">Общая сумма чека</label>
+                        <input class="check-input-wrapper__input input input_color_black" placeholder="Рубли и копейки, через запятую" type="text">
+                    </div>
+                    <div class="check-input-wrapper">
+                        <label for="" class="check-input-wrapper__label text text_size_normal text_color_black">ФН</label>
+                        <input class="check-input-wrapper__input input input_color_black" type="text" placeholder="16 цифр, в начале или конце чека">
+                    </div>
+                    <div class="check-input-wrapper">
+                        <label for="" class="check-input-wrapper__label text text_size_normal text_color_black">ФП или ФПД</label>
+                        <input class="check-input-wrapper__input input input_color_black" type="text" placeholder="8-10 цифр в конце чека">
+                    </div>
+                    <div class="check-input-wrapper">
+                        <label for="" class="check-input-wrapper__label text text_size_normal text_color_black">ФД</label>
+                        <input class="check-input-wrapper__input input input_color_black" type="text" placeholder="1-10 цифр в конце чека">
+                    </div>
+                    <a href="#" class="button button_color_transparent button_size_normal" id="choose-upload">Загрузить фото</a>
+                    <button href="#" class="button button_color_yellow button_size_normal">Отправить</button>
+                </form>
+            </div>
+            <div class="modal modal_type_success">
+                <a href="#" class="modal__close">
+                </a>
+                <img class="modal__icon" src="assets/img/success-upload-icon.svg" alt="">
+                <h3
+                    class="caption caption_size_h3 caption_color_black modal__caption"
+                >Чек отправлен на проверку</h3>
+                <p class="text text_color_black text_size_big modal__success-text">Чек загружен, и отправлен на модерацию этой занимает до 75 часов</p>
+                <button href="#" class="button button_color_yellow button_size_normal" id="choose-type">Загрузить еще</button>
+            </div>
         </div>
         <script src="/assets/js/swiper.min.js"></script>
-        <script src="/assets/js/simpleParallax.min.js"></script>
+        <!-- <script src="/assets/js/simpleParallax.min.js"></script> -->
         <script src="/assets/js/main.js"></script>
-        <script src="/assets/js/game.js"></script>
-        <script src="/assets/js/parallax.js"></script>
+        <!-- <script src="/assets/js/game.js"></script> -->
+        <!-- <script src="/assets/js/parallax.js"></script> -->
     </body>
 </html>
