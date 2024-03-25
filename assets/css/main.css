@@ -301,6 +301,12 @@ body {
 
 .header-menu__logo {
     margin-right: 40px;
+    display: flex;
+}
+
+.header-menu__cosmo-logo {
+    margin-right: 20px;
+    display: flex;
 }
 
 .header-menu__navigation {
@@ -311,11 +317,11 @@ body {
 }
 
 .header {
-    height: 110px;
+    height: 95px;
     background-color: var(--purple);
     max-width: 1280px;
     width: 100%;
-    padding: 0 25px;
+    padding: 0 20px 0 5px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -325,14 +331,12 @@ body {
     right: 0;
     top: 0;
     margin: auto;
-    z-index: 3;
+    z-index: 10;
 }
 
 .header-menu__hamburger {
     display: none;
 }
-
-
 
 .header-links {
     display: flex;
@@ -371,6 +375,7 @@ body {
     background-position: center 100%;
     background-repeat: no-repeat;
     animation: float 5s ease-in-out infinite;
+    transform: scale(-1, 1);
     z-index: 3;
 }
 
@@ -1047,4 +1052,15 @@ body {
 .soc-links {
     display: flex;
     grid-gap: 20px;
+}
+
+.footer-columns__logo{
+    display: flex;
+    width: max-content;
+}
+
+.footer-columns__cosmo-logo{
+    display: flex;
+    width: max-content;
+    margin-bottom: 20px;
 }
