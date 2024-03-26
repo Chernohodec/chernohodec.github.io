@@ -295,14 +295,8 @@
         grid-gap: 40px;
     }
 
-    .prizes-item_order_3,
-    .prizes-item_order_4,
-    .prizes-item_order_6 {
-        margin-top: 0;
-    }
-
-    .prizes-item_order_4 {
-        margin-right: 80px;
+    .prizes-item__image{
+        max-width: 320px;
     }
 
     .prize-section__caption {

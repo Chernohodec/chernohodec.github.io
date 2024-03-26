@@ -20,41 +20,41 @@
                         <ul class="header-links">
                             <li>
                                 <a
-                                    href="#"
+                                    href="#info-section"
                                     class="header-links__link text_size_normal text text_color_white"
                                     >Правила участия</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#prizes-section"
                                     class="header-links__link text_size_normal text text_color_white"
                                     >Призы</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#game-block"
                                     class="header-links__link text_size_normal text text_color_white"
                                     >Пятнашки</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#winners-section"
                                     class="header-links__link text_size_normal text text_color_white"
                                     >Победители</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="#faq-section"
                                     class="header-links__link text_size_normal text text_color_white"
                                     >Вопросы</a
                                 >
                             </li>
                             <li>
-                                <a href="#" class="header-links__link text_size_normal text text_color_white"
+                                <a href="/conditions.html" class="header-links__link text_size_normal text text_color_white"
                                     >Требования к чеку</a
                                 >
                             </li>
@@ -80,13 +80,40 @@
                 <div class="swiper main-slider main__main-slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img class="main-slider__pic" src="assets/img/banner-pic1.jpg" alt="">
+                            <picture>
+                                <source class="main-slider__pic" srcset="assets/img/banner-pic1.jpg" media="(min-width: 600px)" />
+                                <img class="main-slider__pic" src="assets/img/banner-pic-mobile1.jpg" alt="">
+                            </picture>
                         </div>
                         <div class="swiper-slide">
-                            <img class="main-slider__pic" src="assets/img/banner-pic1.jpg" alt="">
+                            <picture>
+                                <source class="main-slider__pic" srcset="assets/img/banner-pic2.jpg" media="(min-width: 600px)" />
+                                <img class="main-slider__pic" src="assets/img/banner-pic-mobile2.jpg" alt="">
+                            </picture>
                         </div>
                         <div class="swiper-slide">
-                            <img class="main-slider__pic" src="assets/img/banner-pic1.jpg" alt="">
+                            <picture>
+                                <source class="main-slider__pic" srcset="assets/img/banner-pic3.jpg" media="(min-width: 600px)" />
+                                <img class="main-slider__pic" src="assets/img/banner-pic-mobile3.jpg" alt="">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source class="main-slider__pic" srcset="assets/img/banner-pic4.jpg" media="(min-width: 600px)" />
+                                <img class="main-slider__pic" src="assets/img/banner-pic-mobile4.jpg" alt="">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source class="main-slider__pic" srcset="assets/img/banner-pic5.jpg" media="(min-width: 600px)" />
+                                <img class="main-slider__pic" src="assets/img/banner-pic-mobile5.jpg" alt="">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source class="main-slider__pic" srcset="assets/img/banner-pic6.jpg" media="(min-width: 600px)" />
+                                <img class="main-slider__pic" src="assets/img/banner-pic-mobile6.jpg" alt="">
+                            </picture>
                         </div>
                     </div>
                     <div class="main-slider__prev">
@@ -97,16 +124,18 @@
                     </div>
                 </div>
             </section>
-            <section class="info-section">
+            <section class="info-section" id="info-section">
                 <div class="info-section__dots-pattern info-section__dots-pattern_order_2"></div>
                 <div class="container">
                     <h1 class="info-section__caption caption_size_h1 caption_color_black">Воображение награждается <i>призами</i></h1>
-                    <p class="text text_color_black text_size_xl info-section__subcaption">Купите «Имаджинариум» и выиграйте поездку на космодром Байконур</p>
+                    <p class="text text_color_black text_size_xl info-section__subcaption">Купите «Имаджинариум» и&nbsp;выиграйте 300 000 ₽ на путешествие мечты</p>
                     <a href="#" class="button button_size_big button_color_yellow info-section__button">Участвовать в розыгрыше</a>
                     <div class="info-steps info-section__info-steps">
                         <div class="info-step">
                             <h3 class="info-step__caption caption caption_size_h3 caption_color_black">Шаг 1</h3>
-                            <p class="text text_size_big text_color_black">С 1 по 28 апреля купите любой «Имаджинариум» или дополнения к нему. Бустеры, пазлы и раскраски не участвуют</p>
+                            <p class="text text_size_big text_color_black">С 1 по 29 сентября купите
+                                любой «Имаджинариум»
+                                или дополнения к нему. Бустеры, пазлы и раскраски не участвуют</p>
                         </div>
                         <div class="info-step">
                             <h3 class="info-step__caption caption caption_size_h3 caption_color_black">Шаг 2</h3>
@@ -114,24 +143,33 @@
                         </div>
                         <div class="info-step">
                             <h3 class="info-step__caption caption caption_size_h3 caption_color_black">Шаг 3</h3>
-                            <p class="text text_size_big text_color_black">Следите за результатами в разделе <a href="#" target="_blank">Победители</a>. <br>Главного объявим 30 апреля<br><br>
+                            <p class="text text_size_big text_color_black">Следите за результатами в разделе <a href="#" target="_blank">Победители</a>. <br>Главного объявим 30 сентября<br><br>
                                 <a href="#">Полные правила</a>
                             </p>
                         </div>
                     </div>
-                    <h2 class="info-section__prize-caption caption_size_h2 caption_color_black">Призы</h2>
+                    <h2 class="info-section__prize-caption caption_size_h2 caption_color_black" id="prizes-section">Призы</h2>
                     <div class="prizes-columns">
                         <div class="prize-column">
                             <h3 class="prize-column__caption caption caption_size_h3 caption_color_yellow">Гарантированный</h3>
-                            <p class="text text_color_white text_size_big prize-column__text">За регистрацию первого чека. Приходит в личный кабинет моментально<br><br><br><br><br><span>ХХ% скидки в магазине</span>
-                            </p>
-                            <b class="text text_color_white prize-column__promo">PECPYBLIKA</b>
+                            <p class="text text_color_white text_size_big prize-column__text">За регистрацию первого чека. <br>Приходит в личный кабинет моментально</p>
+                            <p class="text text_color_white text_size_big prize-column__promo">Подписка на месяц<br>
+                                на онлайн-кинотеатр Okko за 1 ₽</p>
+                            <img src="assets/img/okko-logo.svg" width="360" alt="">
                         </div>
                         <div class="prize-column">
                             <h3 class="prize-column__caption caption caption_size_h3 caption_color_yellow">Еженедельный</h3>
-                            <p class="text text_color_white text_size_big prize-column__text">Среди загрузивших чеки с понедельника по субботу текущей недели. Два победителя в неделю. Отправляем после 30 апреля<br><br><br><br><br><span>VR-очки и Sony<br>PlayStation 5</span></p>
-                            <img class="prize-column__ps5" width="240" src="assets/img/ps5-image.png" alt="">
-                            <img class="prize-column__oculus" width="180" src="assets/img/oculus-image.png" alt="">
+                            <p class="text text_color_white text_size_big prize-column__text">Среди загрузивших чеки с понедельника по субботу<br>текущей недели. Два победителя в неделю.<br>Отправляем после 30 cентября</p>
+                            <ul class="text-list text-list_color_white text-list_size_big prize-column__list">
+                                <li>Sony PlayStation 5</li>
+                                <li>Наушники Marshall </li>
+                                <li>Ipad 256 ГБ </li>
+                                <li>Смарт-часы Huawei  Watch GT 4</li>
+                            </ul>
+                            <img class="prize-column__headphones" width="196" src="assets/img/prize-headphones.png" alt="">
+                            <img class="prize-column__watch" width="145" src="assets/img/prize-watch.png" alt="">
+                            <img class="prize-column__ipad" width="228" src="assets/img/prize-ipad.png" alt="">
+                            <img class="prize-column__ps5" width="335" src="assets/img/prize-ps5.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -139,25 +177,31 @@
             <section class="cosmo-section">
                 <div class="container">
                     <div class="cosmo-info">
-                        <h2 class="caption caption_color_white caption_size_h2 cosmo-info__caption"><span>Главный приз</span><br>
-                            поездка<br>на Байконур</h2>
+                        <h2 class="caption caption_color_white caption_size_h2 cosmo-info__caption">
+                            <span>Главный приз</span><br>
+                            <b>300 000 ₽</b><br>
+                            на путешествие<br>мечты
+                        </h2>
                         <div class="cosmo-info__content">
-                            <p class="text text_size_xl text_color_white cosmo-info__text">Разыграем среди всех загруженных чеков 30 апреля </p>
+                            <p class="text text_size_xl text_color_white cosmo-info__text">Вы сами сможете выбрать направление 
+                                и продолжительность приключения
+                                </p>
                             <a href="#" class="button_size_big button button_color_white">Поехали 🚀</a>
                         </div>
                     </div>
-                    <div class="rocket-wrapper" id="rocket-wrapper">
+                    <!-- <div class="rocket-wrapper" id="rocket-wrapper">
                         <img class="rocket-wrapper__item rocket-wrapper__rocket" src="assets/img/rocket-image.png" width="206" alt="">
                         <img class="rocket-wrapper__item rocket-wrapper__rock1" src="assets/img/rock1-image.png" width="40" alt="">
                         <img class="rocket-wrapper__item rocket-wrapper__rock2" src="assets/img/rock2-image.png" width="60" alt="">
-                    </div>
+                    </div> -->
                 </div>
             </section>
             <section class="games-section">
                 <div class="container">
                     <div class="games-section__header">
                         <h2 class="caption caption_size_h2 caption_color_white games-section__caption">«Имаджинариумы», участвующие в акции</h2>
-                        <div class="text text_size_big text_color_white games-section__info">Все базовые «Имаджинариумы» с полем в больших, средних и дорожных форматах, а также все дополнения на 98 карт. Бустеры, пазлы и раскраски не участвуют</div>
+                        <div class="text text_size_big text_color_white games-section__info">Все базовые «Имаджинариумы»
+                            с&nbsp;полем в больших, средних и дорожных форматах, а также все дополнения на 98 карт. Бустеры, пазлы и раскраски не участвуют</div>
                     </div>
                     <div class="games-slider-wrapper games-section__games-slider-wrapper">
                         <div class="swiper games-slider">
@@ -227,67 +271,56 @@
                     <div class="container">
                         <div>
                             <h2 class="caption caption_color_black caption_size_h2">Ещё больше призов</h2>
-                            <p class="text text_color_black text_size_big">Играйте в пятнашки и выиграйтеподарки от создателей «Имаджинариума».Если вы загрузили хотя бы один чек, присоединяйтесь к игре.</p>
+                            <p class="text text_color_black text_size_xl">Играйте в пятнашки и выиграйте<br>подарки от создателей «Имаджинариума».<br>Если вы загрузили хотя бы один чек, присоединяйтесь к игре.</p>
                         </div>
                         <div>
                             <h2 class="caption caption_color_black caption_size_h2">ХХ призов</h2>
-                            <p class="text text_color_black text_size_big">только для участников игры</p>
+                            <p class="text text_color_black text_size_xl">только для участников игры</p>
                         </div>
                     </div>
                 </div>
                 <div class="prize-section__content">
                     <div class="container">
-                        <h2 class="caption caption_color_yellow caption_size_h3 prize-section__caption">29 апреля среди всех участников пятнашек разыграем</h2>
+                        <h2 class="caption caption_color_yellow caption_size_h3 prize-section__caption">29 сентября среди всех участников пятнашек разыграем</h2>
                         <div class="prizes-items prize-section__prize-items">
                             <div class="prizes-item-wrapper">
                                 <div class="prizes-item prizes-item_order_1">
-                                    <h4 class="text text_size_xl text_color_white">Разные<br>«Имаджинариумы»</h4>
-                                    <img class="prizes-item__image" src="assets/img/prize1.png" width="280" alt="">
+                                    <h4 class="text text_size_xl text_color_white">Наушники<br>Marshall</h4>
+                                    <img class="prizes-item__image" src="assets/img/prize1.png" width="440" alt="">
                                 </div>
                             </div>
                             <div class="prizes-item-wrapper">
                                 <div class="prizes-item prizes-item_order_2">
-                                    <h4 class="text text_size_xl text_color_white">Открытки<br>от авторов игры</h4>
-                                    <img class="prizes-item__image" src="assets/img/prize2.png" width="280" alt="">
+                                    <h4 class="text text_size_xl text_color_white">Портативная<br>колонка JBL</h4>
+                                    <img class="prizes-item__image" src="assets/img/prize2.png" width="525" alt="">
                                 </div>
                             </div>
                             <div class="prizes-item-wrapper">
                                 <div class="prizes-item prizes-item_order_3">
-                                    <h4 class="text text_size_xl text_color_white">Кастомные<br>чемоданы</h4>
-                                    <img class="prizes-item__image" src="assets/img/prize3.png" width="270" alt="">
+                                    <h4 class="text text_size_xl text_color_white">Яндекс Станция<br>с Алисой</h4>
+                                    <img class="prizes-item__image" src="assets/img/prize3.png" width="455" alt="">
                                 </div>
                             </div>
                             <div class="prizes-item-wrapper">
                                 <div class="prizes-item prizes-item_order_4">
-                                    <h4 class="text text_size_xl text_color_white">Карту звёздного<br>неба в важный<br>для вас момент</h4>
-                                    <img class="prizes-item__image" src="assets/img/prize4.png" width="290" alt="">
-                                </div>
-                            </div>
-                            <div class="prizes-item-wrapper">
-                                <div class="prizes-item prizes-item_order_5">
-                                    <h4 class="text text_size_xl text_color_white">Сертификаты<br>на VR-игры и квесты</h4>
-                                    <img class="prizes-item__image" src="assets/img/prize5.png" width="290" alt="">
-                                </div>
-                            </div>
-                            <div class="prizes-item-wrapper">
-                                <div class="prizes-item prizes-item_order_6">
-                                    <h4 class="text text_size_xl text_color_white">Тематические<br>наборы сладостей</h4>
-                                    <img class="prizes-item__image" src="assets/img/prize6.png" width="280" alt="">
+                                    <h4 class="text text_size_xl text_color_white">Сертификаты <br>от партнёров</h4>
+                                    <img class="prizes-item__image" src="assets/img/prize4.png" width="545" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="prize-field">
+                        <div class="prize-field" id="game-block">
                             <div class="prize-field__left">
-                                <h2 class="caption caption_color_yellow caption_size_h2 prize-field__caption">Как участвовать</h2>
+                                <h2 class="caption caption_color_yellow caption_size_h3 prize-field__caption">Как участвовать</h2>
                                 <div class="prize-field__info">
                                     <h4 class="caption caption_color_black caption_size_h4">1 игра</h4>
-                                    <p class="text text_color_black text_size_big">Попробуйте свои силы. За собранную картинку мы подарим вам промокод на скидку 15% на покупку «Имаджинариума» у партнёра</p>
+                                    <p class="text text_color_black text_size_big">Попробуйте свои силы. За собранную картинку мы подарим вам промокод на скидку 15% на покупку «Имаджинариума» у&nbsp;партнёра</p>
                                 </div>
                                 <div class="prize-field__info">
-                                    <h4 class="caption caption_color_black caption_size_h4">1 игра</h4>
-                                    <p class="text text_color_black text_size_big">Копите баллы. Каждая собранная картинка - 1 балл. Когда наберете 10 баллов, станете участником ком??? отдельного розыгрыша призов пятнашек</p>
+                                    <h4 class="caption caption_color_black caption_size_h4">Другие игры</h4>
+                                    <p class="text text_color_black text_size_big">Копите баллы. Каждая собранная картинка - 1 балл.
+                                        Когда наберете 10 баллов, станете участником ком??? отдельного розыгрыша призов пятнашек</p>
                                 </div>
-                                <a href="#" class="button button_size_big button_color_yellow prize-field__button">Найти промокод и баллы в ЛК</a>
+                                <a href="#" class="button button_size_big button_color_yellow prize-field__button">Найти промокод и баллы в ЛК</a>
                             </div>
                             <div class="prize-field__right">
                                 <div class="game-field-wrapper">
@@ -298,7 +331,7 @@
                     </div>
                 </div>
             </section>
-            <section class="winners-section">
+            <section class="winners-section" id="winners-section">
                 <div class="container">
                     <h2 class="caption caption_size_h3 caption_color_yellow winners-section__caption">Недавние победители</h2>
                     <div class="winners-table-wrapper winners-section__winners-table-wrapper">
@@ -358,9 +391,9 @@
                     <a href="#" class="button_size_normal button button_color_yellow">Все победители</a>
                 </div>
             </section>
-            <section class="faq-section">
+            <section class="faq-section" id="faq-section">
                 <div class="container">
-                    <h2 class="caption caption_size_h3 caption_color_yellow faq-section__caption">Частые вопросы</h2>
+                    <h2 class="caption caption_size_h3 caption_color_white faq-section__caption">Частые вопросы</h2>
                     <ul class="questions-list faq-section__questions-list">
                         <li>
                             <a href="#" class="questions-list__question text text_color_white text_size_xl">Как мне загрузить чек?</a>
@@ -391,7 +424,7 @@
                             </div>
                         </li>
                     </ul>
-                    <h2 class="caption caption_size_h3 caption_color_yellow faq-section__caption">Если не нашли ответ на вопрос</h2>
+                    <h2 class="caption caption_size_h3 caption_color_white faq-section__caption">Если не нашли ответ на вопрос</h2>
                     <form class="question-form faq-section__question-form" action="">
                         <div class="question-form__item">
                             <label class="question-form__label text text_size_big text_color_white" for="">Имя</label>
@@ -407,7 +440,7 @@
                         </div>
                         <button class="button_size_normal button button_color_yellow question-form__button">Отправить вопрос</button>
                     </form>
-                    <p class="text text_color_white text_size_xl faq-section__date">Конкурс проходит с 1 по 30 апреля 2024 года. <a href="#">Подробные правила участия</a>.</p>
+                    <p class="text text_color_white text_size_xl faq-section__date">Конкурс проходит с 1 по 30 сентября 2024 года. <a href="#">Подробные правила участия</a>.</p>
                 </div>
             </section>
         </main>

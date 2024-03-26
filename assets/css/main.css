@@ -5,9 +5,13 @@
     --blue: #0069BA;
     --purple: #753BBD;
     --yellow: #F3E600;
-    --black: #101820;
+    --black: #000000;
     --red: #C63B37;
     --white: #FFFFFF;
+}
+
+body, html{
+    scroll-behavior: smooth;
 }
 
 * {
@@ -79,8 +83,8 @@ body {
 .text-list li::before{
     content: '';
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     background-color: var(--black);
     border-radius: 50%;
     left: 0;
@@ -89,8 +93,12 @@ body {
     margin: auto;
 }
 
-.text-list li:not(:last-child){
+.text-list_size_bigger li:not(:last-child){
     margin-bottom: 15px;
+}
+
+.text-list_size_big li:not(:last-child){
+    margin-bottom: 10px;
 }
 
 .text-list_size_big li{
@@ -99,6 +107,18 @@ body {
 
 .text-list_size_bigger li{
     font-size: 22px;
+}
+
+.text-list_color_white li{
+    color: var(--white);
+}
+
+.text-list_color_white li::before{
+    background-color: var(--white);
+}
+
+.text-list li:not(:last-child){
+    margin-bottom: 15px;
 }
 
 .input {
@@ -127,7 +147,7 @@ body {
 
 .textarea_color_black {
     border: 1px solid var(--black);
-    color: #000;
+    color: var(--main-text);
 }
 
 .input_color_white {
@@ -420,7 +440,7 @@ body {
     padding-bottom: 0;
     padding-top: 50px;
     padding-bottom: 80px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .main__main-slider-section {
@@ -450,9 +470,9 @@ body {
 .info-section__caption:before {
     content: '';
     width: 400px;
-    height: 300px;
+    height: 330px;
     background-image: url(../img/dots-pattern.png);
-    background-size: 100px;
+    background-size: 130px;
     position: absolute;
     right: calc(100% + 80px);
     top: -150px;
@@ -462,9 +482,9 @@ body {
 .info-section__caption:after {
     content: '';
     width: 400px;
-    height: 390px;
+    height: 330px;
     background-image: url(../img/dots-pattern.png);
-    background-size: 100px;
+    background-size: 130px;
     position: absolute;
     left: calc(100% + 80px);
     bottom: -350px;
@@ -533,10 +553,15 @@ body {
     padding: 40px 50px 50px;
     border-radius: 10px;
     position: relative;
+    overflow: hidden;
 }
 
 .prize-column__text span {
     /* font-size: 40px; */
+}
+
+.prize-column__list{
+    margin-top: 60px;
 }
 
 .prize-column__caption {
@@ -544,31 +569,48 @@ body {
 }
 
 .prize-column__promo {
-    font-size: 40px;
-    font-weight: 700;
+    /* font-size: 40px; */
+    /* font-weight: 700; */
+    margin-top: 100px;
+    margin-bottom: 25px;
 }
 
-.prize-column__ps5 {
+.prize-column__headphones,
+.prize-column__watch,
+.prize-column__ipad,
+.prize-column__ps5{
     position: absolute;
-    bottom: -40px;
-    right: -10px;
+}
+
+.prize-column__headphones{
+    left: 127px;
+    bottom: -35px;
+}
+
+.prize-column__watch{
+    right: 200px;
+    bottom: -35px;
     z-index: 3;
 }
 
-.prize-column__oculus {
-    position: absolute;
-    bottom: -40px;
-    right: 170px;
+.prize-column__ipad{
+    right: 50px;
+    bottom: -110px;
     z-index: 2;
 }
 
+.prize-column__ps5{
+    right: -160px;
+    bottom: -60px;
+}
+
 .cosmo-section {
-    background-image: url(../img/main-content-bottom.png), url(../img/space-pic.jpg);
+    background-image: url(../img/main-content-bottom.png), url(../img/whales-pic.jpg);
     background-repeat: no-repeat;
     background-position: center 0, center;
     background-size: 100% auto, cover;
-    padding-top: 370px;
-    padding-bottom: 530px;
+    padding-top: 500px;
+    padding-bottom: 450px;
     position: relative;
     overflow: hidden;
 }
@@ -577,8 +619,19 @@ body {
     position: relative;
 }
 
+.cosmo-info__caption{
+    line-height: 1;
+}
+
 .cosmo-info__caption span {
     color: var(--yellow);
+}
+
+.cosmo-info__caption b{
+    font-size: 70px;
+    line-height: 1;
+    display: inline-flex;
+    margin-top: 10px;
 }
 
 .cosmo-info {
@@ -588,8 +641,8 @@ body {
 }
 
 .cosmo-info__text {
-    max-width: 370px;
-    font-size: 36px;
+    max-width: 320px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
@@ -648,6 +701,7 @@ body {
     border: 1px solid var(--yellow);
     border-radius: 30px;
     max-width: 400px;
+    font-size: 20px;
 }
 
 .games-slide {
@@ -704,6 +758,7 @@ body {
 
 .prizes-section__top {
     padding-top: 150px;
+    padding-bottom: 100px;
     position: relative;
 }
 
@@ -713,7 +768,7 @@ body {
     left: 0;
     top: calc(100% - 1px);
     width: 100%;
-    height: 400px;
+    height: 26vw;
     background-image: url(../img/game-section-bg-top.png);
     background-size: 100% 100%;
     background-position: center 0;
@@ -738,7 +793,7 @@ body {
     background-image: url(../img/game-section-bg.jpg);
     background-size: cover;
     background-position: center 0;
-    padding-top: 450px;
+    padding-top: 30vw;
     padding-bottom: 100px;
     /* position: relative; */
     z-index: 2;
@@ -772,13 +827,13 @@ body {
 
 .prizes-items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0 100px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 150px 0px;
 }
 
 .prizes-item {
     position: relative;
-
+    width: max-content;
 }
 
 .prizes-item_order_1 {
@@ -797,77 +852,44 @@ body {
     animation: float 12s ease-in-out infinite;
 }
 
-.prizes-item_order_5 {
-    animation: float 4s ease-in-out infinite;
-}
-
-.prizes-item_order_6 {
-    animation: float 7s ease-in-out infinite;
-}
-
 .prizes-item_order_1 .text {
     position: absolute;
-    left: -10px;
     top: 0;
+    right: 15px;
 }
 
 .prizes-item_order_2 .text {
-    position: absolute;
-    left: 190px;
-    top: 20px;
+   position: absolute;
+   right: -10px;
+   top: -10px;
 }
 
 .prizes-item_order_3 .text {
-    margin-left: 40px;
-    margin-bottom: -60px;
-}
-
-.prizes-item_order_3 {
-    margin-top: -150px;
-}
-
-.prizes-item_order_4 {
-    margin-top: 100px;
-}
-
-.prizes-item_order_4 .text {
     position: absolute;
-    left: 220px;
-    top: 0px;
-    width: max-content;
+    right: -40px;
+    top: 10px;
 }
 
-.prizes-item_order_5 {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    grid-gap: 30px;
-}
-
-.prizes-item_order_6 .text {
+.prizes-item_order_4 .text{
     position: absolute;
-    left: 0;
-    top: -10px;
-}
-
-.prizes-item_order_6 {
-    margin-top: 80px;
+    right: 0px;
+    top: 10px;
 }
 
 .prize-field {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: space-between;
     grid-gap: 50px;
 }
 
 .game-field-wrapper {
     width: 600px;
-    height: 640px;
+    height: 600px;
 }
 
 .prize-field__caption {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .prize-field__info {
@@ -876,12 +898,12 @@ body {
     padding: 40px 50px;
     display: flex;
     flex-direction: column;
-    grid-gap: 20px;
+    grid-gap: 10px;
     border-radius: 25px;
 }
 
 .prize-field__info:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .prize-field__right {
@@ -890,7 +912,8 @@ body {
 }
 
 .prize-field__button {
-    margin-top: 65px;
+    margin-top: 30px;
+    width: 100%;
 }
 
 .winners-section {
