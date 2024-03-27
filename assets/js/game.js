@@ -5,18 +5,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function Game(context, cellSize) {
-        this.state = [
-            [1, 2, 3],
-            [4, 5, 6],
-            [7, 8, 0],
-        ];
+    const imagesArray = new Array(9);
 
-        this.color = "#FFB93B";
+    for (let i = 0; i < 9; i++) {
+        // const img = new Image();
+        // img.onload = function () {
+        //     imagesArray.push(img)
+        // };
+        if (i === 0) {
+            const img = new Image();
+            img.onload = function () {
+                imagesArray[0] = img;
+            };
+            img.src = `../../assets/img/games/game1/0.jpg`;
+        }
+        else {
+            const img = new Image();
+            img.onload = function () {
+                imagesArray[i] = img;
+            };
+            img.src = `../../assets/img/games/game1/${i}.jpg`;
+        }
+    }
+
+    function fillState(imgArray) {
+        return [
+            [{ number: 1, image: imgArray[1] }, { number: 2, image: imgArray[2] }, { number: 3, image: imgArray[3] }],
+            [{ number: 4, image: imgArray[4] }, { number: 5, image: imgArray[5] }, { number: 6, image: imgArray[6] }],
+            [{ number: 7, image: imgArray[7] }, { number: 8, image: imgArray[8] }, { number: 0, image: imgArray[0] }],
+        ]
+    }
+
+
+    function Game(context, cellSize) {
+        this.state = fillState(imagesArray);
+
+        
 
         this.context = context;
         this.cellSize = cellSize;
-
+        this.color = "#FFB93B";
         this.clicks = 0;
     }
 
@@ -44,16 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
     Game.prototype.draw = function () {
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
-                if (this.state[i][j] > 0) {
+                if (this.state[i][j]["number"] > 0) {
                     this.cellView(
                         j * this.cellSize,
                         i * this.cellSize
                     );
-                    this.numView();
-                    this.context.fillText(
-                        this.state[i][j],
-                        j * this.cellSize + this.cellSize / 2,
-                        i * this.cellSize + this.cellSize / 2
+                    this.context.drawImage(
+                        this.state[i][j]['image'],
+                        j * this.cellSize,
+                        i * this.cellSize,
+                        this.cellSize - 2,
+                        this.cellSize - 2
                     );
                 }
             }
@@ -63,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Game.prototype.getNullCell = function () {
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
-                if (this.state[j][i] === 0) {
+                if (this.state[j][i]["number"] === 0) {
                     return { x: i, y: j };
                 }
             }
@@ -76,8 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let canMoveHorizontal = (y - 1 == nullCell.y || y + 1 == nullCell.y) && x == nullCell.x;
 
         if (canMoveVertical || canMoveHorizontal) {
-            this.state[nullCell.y][nullCell.x] = this.state[y][x];
-            this.state[y][x] = 0;
+            this.state[nullCell.y][nullCell.x]["number"] = this.state[y][x]["number"];
+            this.state[nullCell.y][nullCell.x]["image"] = this.state[y][x]["image"];
+            this.state[y][x]["number"] = 0;
+            // this.state[y][x]["image"] = this.state[3][3]["image"];
+            this.state[y][x]["image"] = document.querySelector('.number-0');
             this.clicks++;
         }
     };
@@ -87,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let res = true;
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
-                if (combination[i][j] != this.state[i][j]) {
+                if (combination[i][j] != this.state[i][j]["number"]) {
                     res = false;
                     break;
                 }
@@ -130,17 +162,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.onload = function () {
         let canvas = document.querySelector("canvas");
-        if(window.innerWidth > 1200){
+        if (window.innerWidth > 1200) {
             canvas.width = 600;
             canvas.height = 600;
         } else {
             canvas.width = 300;
             canvas.height = 300;
         }
-        
-        
 
         let context = canvas.getContext("2d");
+        context.fillStyle = '#FFB93B'
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         let cellSize = canvas.width / 3;
@@ -150,10 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
         game.draw();
 
         canvas.onclick = function (e) {
-            console.log(canvas.offsetTop)
             let x = (e.pageX - canvas.offsetLeft) / cellSize | 0;
             let y = (e.pageY - canvas.offsetTop) / cellSize | 0;
-            console.log(x, y)
             onEvent(x, y);
         };
 
@@ -177,4 +206,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 })
-
