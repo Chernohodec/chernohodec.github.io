@@ -5,28 +5,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const imagesArray = new Array(9);
+    let gameCounter = 0
 
-    for (let i = 0; i < 9; i++) {
-        // const img = new Image();
-        // img.onload = function () {
-        //     imagesArray.push(img)
-        // };
-        if (i === 0) {
-            const img = new Image();
-            img.onload = function () {
-                imagesArray[0] = img;
-            };
-            img.src = `../../assets/img/games/game1/0.jpg`;
+    const imagesArrays = new Array(10);
+
+    for (let i = 0; i !== imagesArrays.length; i++) {
+        const imagesArray = new Array(9);
+        for (let j = 0; j < 9; j++) {
+            if (j === 0) {
+                const img = new Image();
+                img.onload = function () {
+                    imagesArray[0] = img;
+                };
+                img.src = `../../assets/img/games/game${i + 1}/0.jpg`;
+            }
+            else {
+                const img = new Image();
+                img.onload = function () {
+                    imagesArray[j] = img;
+                };
+                img.src = `../../assets/img/games/game${i + 1}/${j}.jpg`;
+            }
         }
-        else {
-            const img = new Image();
-            img.onload = function () {
-                imagesArray[i] = img;
-            };
-            img.src = `../../assets/img/games/game1/${i}.jpg`;
-        }
+        imagesArrays[i] = imagesArray
     }
+
 
     function fillState(imgArray) {
         return [
@@ -38,10 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function Game(context, cellSize) {
-        this.state = fillState(imagesArray);
-
-        
-
+        this.state = fillState(imagesArrays[gameCounter]);
         this.context = context;
         this.cellSize = cellSize;
         this.color = "#FFB93B";
@@ -70,6 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     Game.prototype.draw = function () {
+        let cellSizeEqualizer = 2
+        if (window.innerWidth > 1200) {
+            cellSizeEqualizer = 5
+        }
+
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
                 if (this.state[i][j]["number"] > 0) {
@@ -79,10 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     );
                     this.context.drawImage(
                         this.state[i][j]['image'],
-                        j * this.cellSize,
-                        i * this.cellSize,
-                        this.cellSize - 2,
-                        this.cellSize - 2
+                        j * this.cellSize + cellSizeEqualizer,
+                        i * this.cellSize + cellSizeEqualizer,
+                        this.cellSize - cellSizeEqualizer*2,
+                        this.cellSize - cellSizeEqualizer*2
                     );
                 }
             }
@@ -130,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Game.prototype.mix = function (count) {
         let x, y;
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 5; i++) {
             let nullCell = this.getNullCell();
 
             let verticalMove = getRandomBool();
@@ -160,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.clicks = 0;
     };
 
-    window.onload = function () {
+    const startGame = (gameID) => {
         let canvas = document.querySelector("canvas");
         if (window.innerWidth > 1200) {
             canvas.width = 600;
@@ -198,11 +203,32 @@ document.addEventListener('DOMContentLoaded', () => {
             context.fillRect(0, 0, canvas.width, canvas.height);
             game.draw();
             if (game.victory()) {
-                alert("Собрано за " + game.getClicks() + " касание!");
-                game.mix(300);
-                context.fillRect(0, 0, canvas.width, canvas.height);
-                game.draw(context, cellSize);
+                // alert("Собрано за " + game.getClicks() + " касание!");
+                gameCounter++
+                reloadButtonWrapper.classList.remove('prize-field__game-info-field_hidden')
+                const fullImage = reloadButtonWrapper.querySelector('.prize-field__full-image')
+                fullImage.src = `assets/img/games/game${gameCounter}/full.jpg`
+                // game.mix(300);
+                // context.fillRect(0, 0, canvas.width, canvas.height);
+                // game.draw(context, cellSize);
             }
         }
     }
+
+    const playButton = document.querySelector('.prize-field__game-button')
+    const reloadButton = document.querySelector('.prize-field__reload-button')
+    const reloadButtonWrapper = document.querySelector('.prize-field__game-info-field_type_victory')
+    const playButtonWrapper = document.querySelector('.prize-field__game-info-field_type_start')
+
+    playButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        playButtonWrapper.classList.add('prize-field__game-info-field_hidden')
+        startGame(gameCounter)
+    })
+
+    reloadButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        reloadButtonWrapper.classList.add('prize-field__game-info-field_hidden')
+        startGame(gameCounter)
+    })
 })

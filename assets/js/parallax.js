@@ -1,11 +1,20 @@
-const rocket = document.getElementsByClassName('rocket-wrapper__rocket');
-const rock1 = document.getElementsByClassName('rocket-wrapper__rock1');
-const rock2 = document.getElementsByClassName('rocket-wrapper__rock2');
+const whale1 = document.getElementsByClassName('whales-wrapper__whale1');
+const whale2 = document.getElementsByClassName('whales-wrapper__whale2');
+const rock1 = document.getElementsByClassName('whales-wrapper__rock1');
+const rock2 = document.getElementsByClassName('whales-wrapper__rock2');
 
-new simpleParallax(rocket, {
+new simpleParallax(whale1, {
     delay: 0,
     orientation: 'up',
-    scale: 1.6,
+    scale: 1.5,
+    overflow: true,
+    transition: 'cubic-bezier(0,0,0,1)'
+});
+
+new simpleParallax(whale2, {
+    delay: 0,
+    orientation: 'up',
+    scale: 2,
     overflow: true,
     transition: 'cubic-bezier(0,0,0,1)'
 });
@@ -21,7 +30,7 @@ new simpleParallax(rock1, {
 new simpleParallax(rock2, {
     delay: 0,
     orientation: 'up',
-    scale: 15,
+    scale: 10,
     overflow: true,
     // transition: 'cubic-bezier(0,0,0,1)'
 });

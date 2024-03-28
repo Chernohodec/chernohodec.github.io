@@ -1,5 +1,9 @@
 @media screen and (max-width: 1200px) {
 
+    .text-list_size_big li{
+        font-size: 16px;
+    }
+
     .caption_size_h1 {
         font-size: 30px;
     }
@@ -17,6 +21,10 @@
     }
 
     .text_size_xl {
+        font-size: 18px;
+    }
+
+    .text_size_bigger{
         font-size: 18px;
     }
 
@@ -100,7 +108,7 @@
     }
 
     .main-slider-section:after {
-        height: 15dvh;
+        height: 20vw;
         background-size: contain;
     }
 
@@ -186,6 +194,46 @@
         padding: 20px;
     }
 
+    .prize-column__promo{
+        margin-top: 20px;
+    }
+
+    .prize-column__list{
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+
+    .prize-column__okko{
+        width: 95px;
+        display: flex;
+        margin-left: auto;
+    }
+
+    .prize-column__headphones{
+        left: auto;
+        right: 190px;
+        bottom: -5px;
+        width: 90px;
+    }
+
+    .prize-column__watch{
+        width: 65px;
+        bottom: -10px;
+        right: 155px;
+    }
+
+    .prize-column__ipad{
+        width: 100px;
+        right: 90px;
+        bottom: -40px;
+    }
+
+    .prize-column__ps5{
+        width: 150px;
+        right: -10px;
+        bottom: -20px;
+    }
+
     .prize-column__oculus {
         width: 100px;
         right: 110px;
@@ -203,18 +251,49 @@
     .cosmo-section {
         padding-top: 120px;
         padding-bottom: 90px;
+        background-position: 0 0, left center;
     }
 
     .cosmo-info__caption {
         margin-bottom: 25px;
     }
 
-    .rocket-wrapper__rocket {
-        top: -170px;
-        width: 80px;
+    .cosmo-info__caption b{
+        font-size: 30px;
+        /* grid-gap: 5spx; */
+    }
+
+    .cosmo-info__caption b:after{
+        height: 23px;
+        width: 18px;
+        background-size: 100%;
+    }
+
+    .whales-wrapper__whale1 {
+        top: 0;
+        width: 160px;
         height: auto;
-        right: 15%;
+        right: 0;
         left: auto;
+    }
+
+    .whales-wrapper__whale2 {
+        /* top: 170px; */
+        bottom: 30px;
+        margin: 0;
+        width: 130px;
+        height: auto;
+        right: 5%;
+        /* left: auto; */
+    }
+
+    .cosmo-info__text{
+        font-size: 16px;
+    }
+
+    .cosmo-info__content .button{
+        /* width: auto; */
+        width: max-content;
     }
 
     .games-section {
@@ -319,6 +398,26 @@
 
     .prize-field__right {
         width: 100%;
+    }
+
+    .prize-field__game-info{
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .prize-field__game-info-field{
+        height: 300px;
+    }
+
+    .prize-field__full-image{
+        width: 140px;
+        height: 140px;
+        margin-bottom: 15px;
+    }
+
+    .prize-field__game-info-field_type_victory > div{
+        margin-bottom: 20px;
     }
 
     .game-field-wrapper {

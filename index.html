@@ -155,7 +155,7 @@
                             <p class="text text_color_white text_size_big prize-column__text">За регистрацию первого чека. <br>Приходит в личный кабинет моментально</p>
                             <p class="text text_color_white text_size_big prize-column__promo">Подписка на месяц<br>
                                 на онлайн-кинотеатр Okko за 1 ₽</p>
-                            <img src="assets/img/okko-logo.svg" width="360" alt="">
+                            <img class="prize-column__okko" src="assets/img/okko-logo.svg" width="360" alt="">
                         </div>
                         <div class="prize-column">
                             <h3 class="prize-column__caption caption caption_size_h3 caption_color_yellow">Еженедельный</h3>
@@ -177,23 +177,24 @@
             <section class="cosmo-section">
                 <div class="container">
                     <div class="cosmo-info">
-                        <h2 class="caption caption_color_white caption_size_h2 cosmo-info__caption">
+                        <h2 class="caption caption_color_white caption_size_h4 cosmo-info__caption">
                             <span>Главный приз</span><br>
-                            <b>300 000 ₽</b><br>
-                            на путешествие<br>мечты
+                            <b>300 000</b><br>
+                            на путешествие мечты
                         </h2>
                         <div class="cosmo-info__content">
                             <p class="text text_size_xl text_color_white cosmo-info__text">Вы сами сможете выбрать направление 
                                 и продолжительность приключения
                                 </p>
-                            <a href="#" class="button_size_big button button_color_white">Поехали 🚀</a>
+                            <a href="#" class="button_size_normal button button_color_white">Поехали 🚀</a>
                         </div>
                     </div>
-                    <!-- <div class="rocket-wrapper" id="rocket-wrapper">
-                        <img class="rocket-wrapper__item rocket-wrapper__rocket" src="assets/img/rocket-image.png" width="206" alt="">
-                        <img class="rocket-wrapper__item rocket-wrapper__rock1" src="assets/img/rock1-image.png" width="40" alt="">
-                        <img class="rocket-wrapper__item rocket-wrapper__rock2" src="assets/img/rock2-image.png" width="60" alt="">
-                    </div> -->
+                    <div class="whales-wrapper" id="whales-wrapper">
+                        <img class="whales-wrapper__item whales-wrapper__whale1" src="assets/img/whale-image1.png" width="315" alt="">
+                        <img class="whales-wrapper__item whales-wrapper__whale2" src="assets/img/whale-image2.png" width="294" alt="">
+                        <img class="whales-wrapper__item whales-wrapper__rock1" src="assets/img/rock1-image.png" width="62" alt="">
+                        <img class="whales-wrapper__item whales-wrapper__rock2" src="assets/img/rock2-image.png" width="112" alt="">
+                    </div>
                 </div>
             </section>
             <section class="games-section">
@@ -323,6 +324,19 @@
                                 <a href="#" class="button button_size_big button_color_yellow prize-field__button">Найти промокод и баллы в ЛК</a>
                             </div>
                             <div class="prize-field__right">
+                                <div class="prize-field__game-info">
+                                    <div class="prize-field__game-info-field prize-field__game-info-field_type_start">
+                                        <a href="#" class="button button_size_big button_color_yellow prize-field__game-button">Играть</a>
+                                    </div>
+                                    <div class="prize-field__game-info-field prize-field__game-info-field_hidden prize-field__game-info-field_type_victory">
+                                        <img class="prize-field__full-image" src="assets/img/games/game1/full.jpg" width="303" height="303" alt="">
+                                        <div>
+                                            <p class="text text_size_bigger text_color_white">Уровень пройден!</p>
+                                            <span class="text text_size_bigger text_color_white">+1 балл</span>
+                                        </div>
+                                        <a href="#" class="button button_size_big button_color_yellow prize-field__reload-button">Продолжить</a>
+                                    </div>
+                                </div>
                                 <div class="game-field-wrapper">
                                     <canvas id="canvas"></canvas>
                                 </div>
