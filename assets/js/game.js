@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const styles = window.getComputedStyle(canvas);
+
+    const style = {
+        height() {
+          return +styles.height.slice(0, -2);
+        },
+        width() {
+          return +styles.width.slice(0, -2);
+        }
+    };
+
     function getRandomBool() {
         if (Math.floor(Math.random() * 2) === 0) {
             return true;
@@ -46,6 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
         this.cellSize = cellSize;
         this.color = "#FFB93B";
         this.clicks = 0;
+
+        const originalWidth = canvas.width;
+        const originalHeight = canvas.height;
+        const scaleFactor = 3;
+        canvas.width = originalWidth * scaleFactor;
+        canvas.height = originalHeight * scaleFactor;
+        canvas.style.width = originalWidth;
+        canvas.style.height = originalHeight;
+        context.scale(scaleFactor, scaleFactor);
+        context.fillStyle = "#FFB93B";
+        context.fillRect(0,0, originalWidth, originalHeight);
     }
 
     Game.prototype.getClicks = function () {
@@ -176,7 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let context = canvas.getContext("2d");
-        context.fillStyle = '#FFB93B'
+        context.fillStyle = '#FFB93B';
+        // context.imageSmoothingEnabled = false;
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         let cellSize = canvas.width / 3;

@@ -1,7 +1,15 @@
 @media screen and (max-width: 1200px) {
 
+    .main{
+        padding-top: 70px;
+    }
+
     .text-list_size_big li{
         font-size: 16px;
+    }
+
+    .text-list_size_bigger li{
+        font-size: 18px;
     }
 
     .caption_size_h1 {
@@ -49,14 +57,19 @@
     }
 
     .input {
-        height: 45px;
+        height: 40px;
+        font-size: 16px;
     }
 
     .header {
         height: 70px;
         padding: 0;
         border-radius: 0;
-        position: relative;
+        /* position: relative; */
+    }
+
+    .header-menu__logo{
+        margin-right: 20px;
     }
 
     .header-menu__hamburger {
@@ -375,7 +388,7 @@
     }
 
     .prizes-item__image{
-        max-width: 320px;
+        max-width: 280px;
     }
 
     .prize-section__caption {
@@ -449,6 +462,10 @@
 
     .winners-table-wrapper {
         overflow: auto;
+        backdrop-filter: blur(10px);
+        background-color: rgba(256,256,256, .1);
+        padding: 10px;
+        border-radius: 10px;
     }
 
     .winners-section__winners-table-wrapper {

@@ -71,7 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // modals
 
-    const userButton = document.querySelector('#user-button')
+    // const userButton = document.querySelector('#user-button')
+    const userButtons = document.querySelectorAll('.user-button')
     const signUpModal = document.querySelector('.modal_type_sign-up')
     const signInModal = document.querySelector('.modal_type_sign-in')
     const closeButtons = document.querySelectorAll('.modal__close')
@@ -81,13 +82,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const signInModalLink = document.querySelector('#to-sign-in-modal')
     const signUpModalLink = document.querySelector('#to-sign-up-modal')
 
-    if (userButton) {
-        userButton.addEventListener('click', (e) => {
-            e.preventDefault()
-            overlay.classList.add('overlay_active')
-            signInModal.classList.add('modal_active')
-        })
-    }
+    userButtons.forEach(userButton=>{
+        if (userButton) {
+            userButton.addEventListener('click', (e) => {
+                e.preventDefault()
+                overlay.classList.add('overlay_active')
+                signInModal.classList.add('modal_active')
+            })
+        }
+    })
 
     if (overlay) {
         overlay.addEventListener('click', (e) => {

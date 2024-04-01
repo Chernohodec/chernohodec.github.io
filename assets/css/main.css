@@ -346,12 +346,13 @@ body {
     display: flex;
     align-items: center;
     border-radius: 0 0 10px 10px;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
     margin: auto;
     z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .header-menu__hamburger {
@@ -440,7 +441,7 @@ body {
     padding-bottom: 0;
     padding-top: 50px;
     padding-bottom: 80px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .main__main-slider-section {
@@ -475,7 +476,7 @@ body {
     background-size: 130px;
     position: absolute;
     right: calc(100% + 80px);
-    top: -150px;
+    top: -70px;
     z-index: 2;
 }
 
@@ -915,12 +916,19 @@ body {
 .game-field-wrapper {
     width: 600px;
     height: 600px;
-    background-color: #635787;
+    /* background-color: #FFB93B; */
     background-image: url(../img/games/game1/full.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    display: flex;
     /* position: relative; */
+}
+
+.game-field-wrapper canvas{
+    width: 100%;
+    height: 100%;
+    /* background-color: #FFB93B; */
 }
 
 .game-field-wrapper__button_hidden{

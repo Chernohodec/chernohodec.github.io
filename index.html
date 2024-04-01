@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="/assets/css/style.css">
+        <!-- <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        /> -->
     </head>
     <body>
         <header class="header">
@@ -61,7 +65,7 @@
                         </ul>
                         <a
                             href="#"
-                            class="button button_size_small button_color_white header-menu__button"
+                            class="button button_size_small button_color_white header-menu__button user-button"
                             id="user-button"
                         >
                             Личный кабинет
@@ -129,7 +133,7 @@
                 <div class="container">
                     <h1 class="info-section__caption caption_size_h1 caption_color_black">Воображение награждается <i>призами</i></h1>
                     <p class="text text_color_black text_size_xl info-section__subcaption">Купите «Имаджинариум» и&nbsp;выиграйте 300 000 ₽ на путешествие мечты</p>
-                    <a href="#" class="button button_size_big button_color_yellow info-section__button">Участвовать в розыгрыше</a>
+                    <a href="#" class="button button_size_big button_color_yellow info-section__button user-button">Участвовать в розыгрыше</a>
                     <div class="info-steps info-section__info-steps">
                         <div class="info-step">
                             <h3 class="info-step__caption caption caption_size_h3 caption_color_black">Шаг 1</h3>
@@ -186,7 +190,7 @@
                             <p class="text text_size_xl text_color_white cosmo-info__text">Вы сами сможете выбрать направление 
                                 и продолжительность приключения
                                 </p>
-                            <a href="#" class="button_size_normal button button_color_white">Поехали 🚀</a>
+                            <a href="#" class="button_size_normal button button_color_white">Поехали</a>
                         </div>
                     </div>
                     <div class="whales-wrapper" id="whales-wrapper">
@@ -338,7 +342,7 @@
                                     </div>
                                 </div>
                                 <div class="game-field-wrapper">
-                                    <canvas id="canvas"></canvas>
+                                    <canvas id="canvas" width="300" height="300"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -621,7 +625,8 @@
                 </form>
             </div>
         </div>
-        <script src="/assets/js/swiper.min.js"></script>
+        <script src="/assets/js/swiper-bundle.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
         <script src="/assets/js/simpleParallax.min.js"></script>
         <script src="/assets/js/main.js"></script>
         <script src="/assets/js/parallax.js"></script>
