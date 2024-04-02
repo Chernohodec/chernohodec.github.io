@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Game.prototype.mix = function (count) {
         let x, y;
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < count; i++) {
             let nullCell = this.getNullCell();
 
             let verticalMove = getRandomBool();

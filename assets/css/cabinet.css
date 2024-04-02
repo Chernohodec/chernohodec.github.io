@@ -8,7 +8,7 @@
 }
 
 .user-header{
-    padding-bottom: 400px;
+    padding-bottom: 21vw;
     position: relative;
 }
 
@@ -17,7 +17,7 @@
     content: '';
     left: 0;
     bottom: 0;
-    height: 400px;
+    height: 21vw;
     width: 100%;
     background-color: #fff;
     background-image: url(../img/user-header-clouds.png);
