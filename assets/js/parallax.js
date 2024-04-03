@@ -30,7 +30,7 @@ new simpleParallax(rock1, {
 new simpleParallax(rock2, {
     delay: 0,
     orientation: 'up',
-    scale: 10,
+    scale: 8,
     overflow: true,
     // transition: 'cubic-bezier(0,0,0,1)'
 });

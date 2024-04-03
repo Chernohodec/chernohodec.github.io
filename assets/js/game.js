@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.state = fillState(imagesArrays[gameCounter]);
         this.context = context;
         this.cellSize = cellSize;
-        this.color = "#FFB93B";
+        this.color = "#F3E600";
         this.clicks = 0;
 
         const originalWidth = canvas.width;
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.style.width = originalWidth;
         canvas.style.height = originalHeight;
         context.scale(scaleFactor, scaleFactor);
-        context.fillStyle = "#FFB93B";
+        context.fillStyle = "#F3E600";
         context.fillRect(0,0, originalWidth, originalHeight);
     }
 
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let context = canvas.getContext("2d");
-        context.fillStyle = '#FFB93B';
+        context.fillStyle = '#F3E600';
         // context.imageSmoothingEnabled = false;
         context.fillRect(0, 0, canvas.width, canvas.height);
 
