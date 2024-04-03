@@ -40,12 +40,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const hamburger = document.querySelector('.hamburger')
     const xsNavigation = document.querySelector('.header-menu__navigation')
-
-    hamburger.addEventListener('click', () => {
+    const navLinks = document.querySelectorAll('.header-links__link')
+    const toggleNavigation = () => {
         hamburger.classList.toggle('is-active')
         xsNavigation.classList.toggle('header-menu__navigation_active')
-        document.querySelector('body')
+    }
+
+    navLinks.forEach(navLink => {
+        navLink.addEventListener('click', toggleNavigation)
     })
+
+    hamburger.addEventListener('click', toggleNavigation)
 
     // tabs script
     const tabsLinks = document.querySelectorAll('.user-tabs-header__link')
@@ -82,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const signInModalLink = document.querySelector('#to-sign-in-modal')
     const signUpModalLink = document.querySelector('#to-sign-up-modal')
 
-    userButtons.forEach(userButton=>{
+    userButtons.forEach(userButton => {
         if (userButton) {
             userButton.addEventListener('click', (e) => {
                 e.preventDefault()
@@ -111,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeButtons.forEach(button => {
         button.addEventListener('click', (e) => {
+            e.preventDefault()
             e.target.closest('.modal').classList.remove('modal_active')
             overlay.classList.remove('overlay_active')
         })
@@ -152,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    if(chooseUploadButton){
+    if (chooseUploadButton) {
         chooseUploadButton.addEventListener('click', (e) => {
             e.preventDefault()
             modals.forEach(modal => {
