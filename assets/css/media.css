@@ -227,22 +227,26 @@
         right: 190px;
         bottom: -5px;
         width: 90px;
+        height: auto;
     }
 
     .prize-column__watch{
         width: 65px;
         bottom: -10px;
         right: 155px;
+        height: auto;
     }
 
     .prize-column__ipad{
         width: 100px;
         right: 90px;
+        height: auto;
         bottom: -40px;
     }
 
     .prize-column__ps5{
         width: 150px;
+        height: auto;
         right: -10px;
         bottom: -20px;
     }
@@ -250,10 +254,12 @@
     .prize-column__oculus {
         width: 100px;
         right: 110px;
+        height: auto;
     }
 
     .prize-column__ps5 {
         width: 150px;
+        height: auto;
     }
 
     .cosmo-info {
@@ -365,6 +371,7 @@
 
     .prizes-section__top {
         padding-top: 60px;
+        padding-bottom: 40px;
     }
 
     .places-wrapper:before {
@@ -373,11 +380,11 @@
     }
 
     .prizes-section__top:after {
-        height: 140px;
+        /* height: 140px; */
     }
 
     .prize-section__content {
-        padding-top: 160px;
+        padding-top: 30vw;
         padding-bottom: 60px;
     }
 
@@ -463,7 +470,8 @@
     .winners-table-wrapper {
         overflow: auto;
         backdrop-filter: blur(10px);
-        background-color: rgba(256,256,256, .1);
+        background-color: rgba(117, 59, 189, .7);
+        /* border: 1px solid var(--white); */
         padding: 10px;
         border-radius: 10px;
     }
@@ -475,6 +483,15 @@
     .faq-section {
         padding-top: 60px;
         padding-bottom: 60px;
+    }
+
+    .questions-list{
+        background-color: rgba(0, 105, 186, .7);
+        backdrop-filter: blur(10px);
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .question-form__label {
@@ -499,6 +516,11 @@
 
     .footer-columns__column:last-child {
         margin-top: 40px;
+    }
+
+    .footer{
+        padding-bottom: 40px;
+        padding-top: 40px;
     }
 }
 
