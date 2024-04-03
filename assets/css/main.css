@@ -454,7 +454,7 @@ body {
 }
 
 .main-slider__pic {
-    width: 100%;
+    width: 100vw;
     /* height: 100dvh; */
     object-fit: cover;
     aspect-ratio: 16/9;
