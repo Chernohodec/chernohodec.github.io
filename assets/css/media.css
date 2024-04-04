@@ -61,6 +61,12 @@
         font-size: 16px;
     }
 
+    .textarea{
+        font-size: 16px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
     .header {
         height: 70px;
         padding: 0;
@@ -339,6 +345,10 @@
         width: 200px;
         margin-left: 0;
         margin-right: auto;
+    }
+
+    .games-slide__image-wrapper{
+        height: 180px;
     }
 
     .games-slide__image {

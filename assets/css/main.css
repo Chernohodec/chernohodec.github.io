@@ -5,9 +5,11 @@
     --blue: #0069BA;
     --purple: #753BBD;
     --yellow: #F3E600;
+    --yellow_hovered: rgba(243, 230, 0, .75);
     --black: #000000;
     --red: #C63B37;
     --white: #FFFFFF;
+    --white_hovered:rgba(255, 255, 255, .75);
 }
 
 body, html{
@@ -154,7 +156,7 @@ body {
     background-color: transparent;
     font-size: 20px;
     resize: vertical;
-    padding: 0 25px;
+    padding: 20px 25px;
 }
 
 .textarea_color_white {
@@ -196,6 +198,10 @@ body {
 
 .text a {
     text-decoration: underline;
+}
+
+.text a:hover{
+    text-decoration: none;
 }
 
 .text_size_xl {
@@ -276,6 +282,7 @@ body {
     align-items: center;
     justify-content: center;
     width: max-content;
+    transition: .3s;
 }
 
 .button_size_small {
@@ -312,9 +319,17 @@ body {
     color: var(--main-text);
 }
 
+.button_color_yellow:hover{
+    background-color: var(--yellow_hovered);
+}
+
 .button_color_white {
     background-color: var(--white);
     color: var(--main-text);
+}
+
+.button_color_white:hover{
+    background-color: var(--white_hovered);
 }
 
 .button_color_purple {
@@ -637,7 +652,7 @@ body {
     background-repeat: no-repeat;
     background-position: center 0px, center 5vh;
     background-size: 100% auto, cover;
-    padding-top: 500px;
+    padding-top: 30vw;
     padding-bottom: 450px;
     position: relative;
     overflow: hidden;
@@ -680,7 +695,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
-    /* z-index: 2; */
+    z-index: 2;
 }
 
 .cosmo-info__content .button{
@@ -703,36 +718,90 @@ body {
     height: 100%;
 }
 
+.whales-wrapper__item{
+    position: absolute;
+}
+
 .whales-wrapper__whale1 {
     top: -200px;
-    /* left: 0; */
     right: 200px;
-    margin: auto;
-    position: absolute;
 }
 
 .whales-wrapper__whale2 {
     bottom: -140px;
-    /* left: 0; */
     right: 380px;
-    margin: auto;
-    position: absolute;
+    z-index: 3;
+}
+
+.whales-wrapper__whale3{
+    bottom: 70px;
+    right: 440px;
+}
+
+.whales-wrapper__whale4{
+    top: -120px;
+    right: 560px;
+}
+
+.whales-wrapper__whale5{
+    bottom: -40px;
+    left: 270px;
+}
+
+.whales-wrapper__whale6{
+    top: -40px;
+    left: 380px;
+}
+
+.whales-wrapper__cloud1{
+    left: 0;
+    top: -40px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.whales-wrapper__cloud2{
+    top: -40px;
+    right: 0;
+    animation: float 8s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.whales-wrapper__cloud3{
+    left: 0;
+    bottom: -210px;
+    animation: float 9s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+.whales-wrapper__cloud4{
+    right: -10px;
+    bottom: -210px;
+    animation: float 7s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.whales-wrapper__cloud5{
+    bottom: -530px;
+    left: 0;
+    animation: float 10s ease-in-out infinite;
+}
+
+.whales-wrapper__cloud6{
+    bottom: -530px;
+    right: 0;
+    animation: float 7.5s ease-in-out infinite;
+    animation-delay: 1s;
 }
 
 .whales-wrapper__rock1 {
     bottom: -310px;
-    /* top: 200px; */
     right: 200px;
-    position: absolute;
-    /* animation: float 15s ease-in-out infinite; */
 }
 
 .whales-wrapper__rock2 {
-    /* top: 550px; */
     top: 100px;
     left: 250px;
-    position: absolute;
-    /* animation: float 5s ease-in-out infinite; */
+    z-index: 3;
 }
 
 
@@ -768,12 +837,21 @@ body {
     flex-direction: column;
     align-items: center;
     grid-gap: 20px;
-    padding: 40px;
+    padding: 20px 25px;
+}
+
+.games-slide__image-wrapper{
+    height: 240px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .games-slide__text {
     text-align: center;
     min-height: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .games-section__games-slider-wrapper {
@@ -911,7 +989,7 @@ body {
 
 .prizes-item_order_1 .text {
     position: absolute;
-    top: 0;
+    top: -30px;
     right: 15px;
 }
 
