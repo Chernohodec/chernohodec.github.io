@@ -5,11 +5,11 @@
     --blue: #0069BA;
     --purple: #753BBD;
     --yellow: #F3E600;
-    --yellow_hovered: rgba(243, 230, 0, .75);
+    --yellow_hovered: #F3E600B2;
     --black: #000000;
     --red: #C63B37;
     --white: #FFFFFF;
-    --white_hovered:rgba(255, 255, 255, .75);
+    --white_hovered:#FFFFFFD4;
 }
 
 body, html{
@@ -754,14 +754,14 @@ body {
 }
 
 .whales-wrapper__cloud1{
-    left: 0;
-    top: -40px;
+    left: -150px;
+    top: -100px;
     animation: float 6s ease-in-out infinite;
 }
 
 .whales-wrapper__cloud2{
-    top: -40px;
-    right: 0;
+    top: -100px;
+    right: -100px;
     animation: float 8s ease-in-out infinite;
     animation-delay: 1s;
 }
@@ -781,13 +781,13 @@ body {
 }
 
 .whales-wrapper__cloud5{
-    bottom: -530px;
+    bottom: -600px;
     left: 0;
     animation: float 10s ease-in-out infinite;
 }
 
 .whales-wrapper__cloud6{
-    bottom: -530px;
+    bottom: -600px;
     right: 0;
     animation: float 7.5s ease-in-out infinite;
     animation-delay: 1s;

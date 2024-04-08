@@ -424,10 +424,12 @@
 
     .prize-field {
         flex-direction: column-reverse;
+        grid-gap: 0;
     }
 
     .prize-field__right {
         width: 100%;
+        margin-bottom: 40px;
     }
 
     .prize-field__game-info{
@@ -471,6 +473,9 @@
 
     .winners-section {
         padding: 60px 0;
+        background-image: url(../img/table-bg-mobile.png);
+        background-size: 100px;
+        background-position: 100% 30px;
     }
 
     .winners-section__caption {
@@ -486,6 +491,10 @@
         border-radius: 10px;
     }
 
+    .winners-table th:first-child, .winners-table td:first-child{
+        display: none;
+    }
+
     .winners-section__winners-table-wrapper {
         margin-bottom: 40px;
     }
@@ -493,20 +502,34 @@
     .faq-section {
         padding-top: 60px;
         padding-bottom: 60px;
+        background-image: url(../img/questions-bg-mobile.png);
+        background-size: 80px;
     }
 
     .questions-list{
-        background-color: rgba(0, 105, 186, .7);
+        /* background-color: rgba(0, 105, 186, .7);
         backdrop-filter: blur(10px);
         width: calc(100% + 30px);
         margin-left: -15px;
         padding-left: 15px;
-        padding-right: 15px;
+        padding-right: 15px; */
+    }
+
+    .questions-list__answer{
+        backdrop-filter: blur(10px);
     }
 
     .question-form__label {
         width: 80px;
         margin-top: 13px;
+    }
+
+    .question-form__item .input{
+        backdrop-filter: blur(10px);
+    }
+
+    .question-form__item .textarea{
+        backdrop-filter: blur(10px);
     }
 
     .question-form__button {
