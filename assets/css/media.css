@@ -224,6 +224,7 @@
 
     .prize-column__okko{
         width: 95px;
+        height: 34px;
         display: flex;
         margin-left: auto;
     }
