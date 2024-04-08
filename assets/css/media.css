@@ -276,7 +276,7 @@
     .cosmo-section {
         padding-top: 120px;
         padding-bottom: 90px;
-        background-position: 0 0, left center;
+        background-position: 0 -2px, left center;
     }
 
     .cosmo-info__caption {
@@ -300,6 +300,7 @@
         height: auto;
         right: 0;
         left: auto;
+        z-index: 2;
     }
 
     .whales-wrapper__whale2 {
@@ -310,6 +311,107 @@
         height: auto;
         right: 5%;
         /* left: auto; */
+    }
+
+    .whales-wrapper__whale3 {
+        /* top: 170px; */
+        bottom: 30px;
+        margin: 0;
+        width: 100px;
+        height: auto;
+        right: 40%;
+        z-index: 2;
+        /* left: auto; */
+    }
+
+    .whales-wrapper__whale4 {
+        /* top: 170px; */
+        bottom: 170px;
+        top: auto;
+        margin: 0;
+        width: 100px;
+        height: auto;
+        right: 40%;
+        /* left: auto; */
+    }
+
+    .whales-wrapper__whale5 {
+        /* top: 170px; */
+        bottom: 100px;
+        top: auto;
+        margin: 0;
+        width: 100px;
+        height: auto;
+        right: 30%;
+        left: auto;
+        /* left: auto; */
+    }
+
+    .whales-wrapper__whale6 {
+        /* top: 170px; */
+        bottom: 200px;
+        top: auto;
+        margin: 0;
+        width: 100px;
+        height: auto;
+        right: 10%;
+        left: auto;
+        /* left: auto; */
+    }
+
+
+    .whales-wrapper__cloud1{
+        /* display: none; */
+        max-width: 100px;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        top: auto;
+    }
+
+    .whales-wrapper__cloud2{
+        /* display: none; */
+        max-width: 100px;
+        right: 40%;
+        bottom: 0;
+        left: auto;
+        top: auto;
+    }
+
+    .whales-wrapper__cloud3{
+        /* display: none; */
+        max-width: 100px;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        top: auto;
+    }
+
+    .whales-wrapper__cloud4{
+        /* display: none; */
+        max-width: 100px;
+        right: 40%;
+        bottom: 0;
+        left: auto;
+        top: auto;
+    }
+
+    .whales-wrapper__cloud5{
+        /* display: none; */
+        max-width: 100px;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        top: auto;
+    }
+
+    .whales-wrapper__cloud6{
+        /* display: none; */
+        max-width: 100px;
+        right: 40%;
+        bottom: 0;
+        left: auto;
+        top: auto;
     }
 
     .cosmo-info__text{
