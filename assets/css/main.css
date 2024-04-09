@@ -783,15 +783,19 @@ body {
 
 .whales-wrapper__cloud5{
     bottom: -600px;
+    top: auto;
     left: -250px;
     animation: float 10s ease-in-out infinite;
+    height: auto;
 }
 
 .whales-wrapper__cloud6{
     bottom: -600px;
+    top: auto;
     right: -250px;
     animation: float 7.5s ease-in-out infinite;
     animation-delay: 1s;
+    height: auto;
 }
 
 .whales-wrapper__rock1 {

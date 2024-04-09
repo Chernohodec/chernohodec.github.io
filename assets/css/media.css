@@ -296,6 +296,14 @@
         background-size: 100%;
     }
 
+    .whales-wrapper{
+        /* width: 100%; */
+        max-width: 400px;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
     .whales-wrapper__whale1 {
         top: 0;
         width: 160px;
@@ -414,6 +422,16 @@
         bottom: 0;
         left: auto;
         top: auto;
+    }
+
+    .whales-wrapper__rock1{
+        bottom: -50px;
+        width: 32px;
+    }
+
+    .whales-wrapper__rock2{
+        /* bottom: -50px; */
+        width: 50px;
     }
 
     .cosmo-info__text{
@@ -671,6 +689,15 @@
 
     .cosmo-section{
         padding-top: 210px;
+    }
+
+    .whales-wrapper{
+        max-width: 70vw;
+        margin-left: 0;
+        margin-right: auto;
+        margin: 0;
+        top: -10vw;
+        height: calc(100% + 10vw);
     }
 
     .prizes-columns{

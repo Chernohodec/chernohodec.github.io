@@ -4,12 +4,6 @@ const whale3 = document.getElementsByClassName('whales-wrapper__whale3');
 const whale4 = document.getElementsByClassName('whales-wrapper__whale4');
 const whale5 = document.getElementsByClassName('whales-wrapper__whale5');
 const whale6 = document.getElementsByClassName('whales-wrapper__whale6');
-const cloud1 = document.getElementsByClassName('whales-wrapper__cloud1');
-const cloud2 = document.getElementsByClassName('whales-wrapper__cloud2');
-const cloud3 = document.getElementsByClassName('whales-wrapper__cloud3');
-const cloud4 = document.getElementsByClassName('whales-wrapper__cloud4');
-const cloud5 = document.getElementsByClassName('whales-wrapper__cloud5');
-const cloud6 = document.getElementsByClassName('whales-wrapper__cloud6');
 const rock1 = document.getElementsByClassName('whales-wrapper__rock1');
 const rock2 = document.getElementsByClassName('whales-wrapper__rock2');
 
