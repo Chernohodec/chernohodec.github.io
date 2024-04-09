@@ -46,13 +46,13 @@
 
     .button_size_big {
         height: 60px;
-        padding: 0 40px;
-        font-size: 20px;
+        padding: 0 35px;
+        font-size: 18px;
     }
 
     .button_size_normal {
         height: 40px;
-        padding: 0 25px;
+        padding: 0 20px;
         font-size: 18px;
     }
 
@@ -95,6 +95,7 @@
         flex-direction: column;
         padding: 30px 15px;
         transform: translateX(-100%);
+        transition: .3s;
     }
 
     .header-menu__navigation_active {

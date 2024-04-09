@@ -3,4 +3,8 @@
         width: 100px;
         font-size: 16px;
     }
+
+    .modal_type_sign-up{
+        background-image: none;
+    }
 }

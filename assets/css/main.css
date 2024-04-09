@@ -283,6 +283,7 @@ body {
     justify-content: center;
     width: max-content;
     transition: .3s;
+    white-space: nowrap;
 }
 
 .button_size_small {

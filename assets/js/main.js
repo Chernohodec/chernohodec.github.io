@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (userButton) {
             userButton.addEventListener('click', (e) => {
                 e.preventDefault()
+                xsNavigation.classList.remove('header-menu__navigation_active')
+                hamburger.classList.remove('is-active')
                 overlay.classList.add('overlay_active')
                 signInModal.classList.add('modal_active')
             })
