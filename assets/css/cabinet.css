@@ -123,6 +123,8 @@
 .user-conditions__image-wrapper{
     position: relative;
     max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .user-conditions__image-wrapper-text{

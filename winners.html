@@ -207,10 +207,106 @@
                 </div>
             </div>
         </footer>
-        <script src="/assets/js/swiper.min.js"></script>
-        <script src="/assets/js/simpleParallax.min.js"></script>
+        <div class="overlay">
+            <div class="modal modal_type_sign-up">
+                <a href="#" class="modal__close">
+                </a>
+                <h3
+                    class="caption caption_size_h3 caption_color_black modal__caption"
+                >
+                    Регистрация в розыгрыше
+                </h3>
+                <p class="text text_color_black text_size_big modal__description">
+                    Ваше имя появится в таблице с победителями. <br>Email будет
+                    отображаться в зашифрованном виде. Он нужен, чтобы вы могли
+                    найти себя среди победителей
+                </p>
+                <form action="" class="modal-form sign-up-form modal__modal-form">
+                    <div class="modal-input-block modal-form__modal-input-block">
+                        <label for="" class="text text_size_normal text_color_black modal-input-block__label">Имя</label>
+                        <input type="text" class="input input_color_black" />
+                    </div>
+                    <div class="modal-input-block modal-form__modal-input-block">
+                        <label for="" class="text text_size_normal text_color_black modal-input-block__label">Email</label>
+                        <input type="text" class="input input_color_black" />
+                    </div>
+                    <div class="modal-input-block modal-form__modal-input-block">
+                        <label for="" class="text text_size_normal text_color_black modal-input-block__label">Пароль</label>
+                        <input type="text" class="input input_color_black" />
+                    </div>
+                    <div class="modal-input-block modal-form__modal-input-block">
+                        <label for="" class="text text_size_normal text_color_black modal-input-block__label">Повторите<br />пароль</label>
+                        <input type="text" class="input input_color_black" />
+                    </div>
+                    <div class="checkbox-input-block modal-form__checkbox-input-block">
+                        <input type="checkbox" id="accept1" />
+                        <label
+                            for="accept1"
+                            class="text text_size_big text_color_black"
+                            >Я согласен(а) с
+                            <a href="#" target="_blank"
+                                >правилами розыгрыша</a
+                            ></label
+                        >
+                    </div>
+                    <div class="checkbox-input-block modal-form__checkbox-input-block">
+                        <input type="checkbox" id="accept2" />
+                        <label
+                            for="accept2"
+                            class="text text_size_big text_color_black"
+                            >Я согласен(а) на обработку персональных данных.
+                            <a href="#">Политика конфиденциальности</a>
+                        </label>
+                    </div>
+                    <div class="modal-form__buttons">
+                        <button
+                            class="button button_color_yellow button_size_normal"
+                            id="to-sign-in-modal"
+                        >Уже есть аккаунт</button>
+                        <button
+                            class="button button_color_purple button_size_normal"
+                        >
+                            Создать
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal modal_type_sign-in">
+                <a href="#" class="modal__close">
+                </a>
+                <h3
+                    class="caption caption_size_h3 caption_color_black modal__caption"
+                >Войти в личный кабинет</h3>
+                <form action="" class="modal-form sign-up-form modal__modal-form">
+                    <div class="modal-input-block modal-form__modal-input-block">
+                        <label for="" class="text text_size_normal text_color_black modal-input-block__label">Email</label>
+                        <input type="text" class="input input_color_black" />
+                    </div>
+                    <div class="modal-input-block modal-form__modal-input-block">
+                        <label for="" class="text text_size_normal text_color_black modal-input-block__label">Пароль</label>
+                        <input type="text" class="input input_color_black" />
+                    </div>
+                    <a href="#" class="modal-input-block__forget-link text text_color_black text_size_normal">
+                        Забыли пароль?
+                    </a>
+                    <div class="modal-form__buttons">
+                        <a
+                            href="#"
+                            class="button button_color_yellow button_size_normal"
+                            id="to-sign-up-modal"
+                        >Зарегистрироваться</a>
+                        <button
+                            class="button button_color_purple button_size_normal"
+                        >
+                            Войти
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="/assets/js/swiper.min.js"></script> 
         <script src="/assets/js/main.js"></script>
-        <script src="/assets/js/game.js"></script>
-        <script src="/assets/js/parallax.js"></script>
+        <!-- <script src="/assets/js/game.js"></script>
+        <script src="/assets/js/parallax.js"></script> -->
     </body>
 </html>

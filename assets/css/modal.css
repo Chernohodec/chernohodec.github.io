@@ -131,6 +131,10 @@
     grid-gap: 20px;
 }
 
+.modal-choose_hidden{
+    display: none;
+}
+
 .modal_type_choose{
     max-width: 600px;
 }
@@ -145,6 +149,7 @@
     justify-content: center;
     align-items: center;
     grid-gap: 25px;
+    cursor: pointer;
 }
 
 .modal-choose__button .text{
@@ -153,6 +158,10 @@
 
 .modal-file{
     display: none;
+}
+
+.modal-file_active{
+    display: block;
 }
 
 .modal-file__input{
@@ -168,6 +177,7 @@
     align-items: center;
     grid-gap: 10px;
     padding: 0 15px;
+    margin-bottom: 20px;
 }
 
 .modal-file__delete{

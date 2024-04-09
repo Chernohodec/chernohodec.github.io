@@ -146,7 +146,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const checkUploadButton = document.querySelector('#check-upload')
     const chooseUploadButton = document.querySelector('#choose-upload')
-    const checkTypingButton = document.querySelector('#choose-type')
+    const checkTypingButtons = document.querySelectorAll('.choose-type')
+    const checkFile = document.querySelector('#checkfile')
+    const checkFileWrapper = document.querySelector('.modal-file')
+    const chooseModalWrapper = document.querySelector('.modal-choose')
     const modalChoose = document.querySelector('.modal_type_choose')
     const modalTyping = document.querySelector('.modal_type_typing')
 
@@ -168,14 +171,35 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    if (checkTypingButton) {
-        checkTypingButton.addEventListener('click', (e) => {
-            e.preventDefault()
-            overlay.classList.add('overlay_active')
-            modals.forEach(modal => {
-                modal.classList.remove('modal_active')
+    if (checkTypingButtons) {
+        checkTypingButtons.forEach(checkTypingButton=>{
+            checkTypingButton.addEventListener('click', (e) => {
+                e.preventDefault()
+                overlay.classList.add('overlay_active')
+                modals.forEach(modal => {
+                    modal.classList.remove('modal_active')
+                })
+                modalTyping.classList.add('modal_active')
             })
-            modalTyping.classList.add('modal_active')
+        })
+    }
+
+    if(checkFile){
+        checkFile.addEventListener('change', (e)=>{
+            const file = e.target.files[0];
+            if(file){
+                checkFileWrapper.classList.add('modal-file_active')
+                chooseModalWrapper.classList.add('modal-choose_hidden')
+                checkFileWrapper.querySelector('.modal-file__name').textContent = file.name
+            }
+        })
+
+        checkFileWrapper.querySelector('.modal-file__delete').addEventListener('click', (e)=>{
+            e.preventDefault()
+            checkFile.value = ''
+            checkFileWrapper.querySelector('.modal-file__name').textContent = ''
+            checkFileWrapper.classList.remove('modal-file_active')
+            chooseModalWrapper.classList.remove('modal-choose_hidden')
         })
     }
 
