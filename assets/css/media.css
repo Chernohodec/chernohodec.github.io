@@ -393,7 +393,7 @@
         /* display: none; */
         max-width: 100px;
         right: 0;
-        bottom: 0;
+        bottom: -70px;
         left: auto;
         top: auto;
     }
@@ -402,25 +402,25 @@
         /* display: none; */
         max-width: 100px;
         right: 40%;
-        bottom: 0;
+        bottom: -70px;
         left: auto;
         top: auto;
     }
 
     .whales-wrapper__cloud5{
         /* display: none; */
-        max-width: 100px;
+        max-width: 150px;
         right: 0;
-        bottom: 0;
+        bottom: -100px;
         left: auto;
         top: auto;
     }
 
     .whales-wrapper__cloud6{
         /* display: none; */
-        max-width: 100px;
+        max-width: 150px;
         right: 40%;
-        bottom: 0;
+        bottom: -100px;
         left: auto;
         top: auto;
     }
