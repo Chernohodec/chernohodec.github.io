@@ -302,11 +302,12 @@
         right: 0;
         left: 0;
         margin: auto;
+        transform: translateX(20px);
     }
 
     .whales-wrapper__whale1 {
         top: 0;
-        width: 160px;
+        width: 140px;
         height: auto;
         right: 0;
         left: auto;
@@ -317,7 +318,7 @@
         /* top: 170px; */
         bottom: 30px;
         margin: 0;
-        width: 130px;
+        width: 110px;
         height: auto;
         right: 5%;
         /* left: auto; */
@@ -327,7 +328,7 @@
         /* top: 170px; */
         bottom: 30px;
         margin: 0;
-        width: 100px;
+        width: 80px;
         height: auto;
         right: 40%;
         z-index: 2;
@@ -339,7 +340,7 @@
         bottom: 170px;
         top: auto;
         margin: 0;
-        width: 100px;
+        width: 80px;
         height: auto;
         right: 40%;
         /* left: auto; */
@@ -350,7 +351,7 @@
         bottom: 100px;
         top: auto;
         margin: 0;
-        width: 100px;
+        width: 80px;
         height: auto;
         right: 30%;
         left: auto;
@@ -362,7 +363,7 @@
         bottom: 200px;
         top: auto;
         margin: 0;
-        width: 100px;
+        width: 80px;
         height: auto;
         right: 10%;
         left: auto;
@@ -431,11 +432,13 @@
 
     .whales-wrapper__rock2{
         /* bottom: -50px; */
-        width: 50px;
+        width: 40px;
+        left: 140px;
     }
 
     .cosmo-info__text{
         font-size: 16px;
+        max-width: 180px;
     }
 
     .cosmo-info__content .button{
@@ -691,13 +694,55 @@
         padding-top: 210px;
     }
 
+    .cosmo-info__text{
+        max-width: 270px;
+    }
+
     .whales-wrapper{
-        max-width: 70vw;
+        max-width: 73vw;
         margin-left: 0;
         margin-right: auto;
         margin: 0;
         top: -10vw;
         height: calc(100% + 10vw);
+        transform: none;
+    }
+
+    .whales-wrapper__whale1 {
+        width: 180px;
+    }
+
+    .whales-wrapper__whale2 {
+        width: 150px;
+    }
+
+    .whales-wrapper__whale3 {
+        width: 110px;
+    }
+
+    .whales-wrapper__whale4 {
+        width: 110px;
+        right: 50%;
+    }
+
+    .whales-wrapper__whale5 {
+        width: 120px;
+    }
+
+    .whales-wrapper__whale6 {
+        right: 35%;
+        bottom: 230px;
+        width: 100px;
+    }
+
+    .whales-wrapper__cloud6{
+        max-width: 200px;
+        bottom: -100px;
+    }
+
+    .whales-wrapper__cloud5{
+        max-width: 200px;
+        bottom: -100px;
     }
 
     .prizes-columns{
