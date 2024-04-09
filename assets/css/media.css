@@ -451,11 +451,13 @@
     }
 
     .games-slide__image-wrapper{
-        height: 180px;
+        height: 160px;
     }
 
     .games-slide__image {
-        width: 120px;
+        max-height: 160px;
+        width: auto;
+
     }
 
     .games-section__games-slider-wrapper {

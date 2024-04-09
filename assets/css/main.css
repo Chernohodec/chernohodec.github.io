@@ -648,7 +648,7 @@ body {
 }
 
 .cosmo-section {
-    background-image: url(../img/main-content-bottom.png), url(../img/whales-pic.jpg);
+    background-image: url(../img/main-content-bottom.png), url(../img/whales-pic.webp);
     background-repeat: no-repeat;
     background-position: center -5px, center 5vh;
     background-size: 100% auto, cover;
