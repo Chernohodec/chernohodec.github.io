@@ -783,13 +783,13 @@ body {
 
 .whales-wrapper__cloud5{
     bottom: -600px;
-    left: 0;
+    left: -250px;
     animation: float 10s ease-in-out infinite;
 }
 
 .whales-wrapper__cloud6{
     bottom: -600px;
-    right: 0;
+    right: -250px;
     animation: float 7.5s ease-in-out infinite;
     animation-delay: 1s;
 }
