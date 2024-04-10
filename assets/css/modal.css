@@ -39,6 +39,7 @@
     background-image: url(../img/sign-up-modal-bg.png);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: calc(100% - 15px) calc(100% - 15px);
 }
 
 .modal__modal-form{
