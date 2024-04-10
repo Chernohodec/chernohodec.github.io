@@ -124,7 +124,9 @@
     }
 
     .main-slider__pic {
-        height: 50dvh;
+        /* height: 60dvh; */
+        height: auto;
+        aspect-ratio: 10 / 14;
     }
 
     .main-slider-section:after {
@@ -612,7 +614,6 @@
     .winners-table-wrapper {
         overflow: auto;
         backdrop-filter: blur(10px);
-        background-color: rgba(117, 59, 189, .7);
         /* border: 1px solid var(--white); */
         padding: 10px;
         border-radius: 10px;

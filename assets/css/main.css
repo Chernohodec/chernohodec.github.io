@@ -615,7 +615,7 @@ body {
 .prize-column__promo {
     /* font-size: 40px; */
     /* font-weight: 700; */
-    margin-top: 100px;
+    margin-top: 80px;
     margin-bottom: 25px;
 }
 
@@ -804,8 +804,8 @@ body {
 }
 
 .whales-wrapper__rock2 {
-    top: 100px;
-    left: 250px;
+    top: 200px;
+    left: 200px;
     z-index: 3;
 }
 
@@ -908,7 +908,7 @@ body {
     left: 0;
     top: calc(100% - 1px);
     width: 100%;
-    height: 26vw;
+    height: 29vw;
     background-image: url(../img/game-section-bg-top.png);
     background-size: contain;
     background-position: center 0;
