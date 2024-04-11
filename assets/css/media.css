@@ -602,9 +602,10 @@
 
     .winners-section {
         padding: 60px 0;
-        background-image: url(../img/table-bg-mobile.png);
+        /* background-image: url(../img/table-bg-mobile.png);
         background-size: 100px;
-        background-position: 100% 30px;
+        background-position: 100% 30px; */
+        background-image: none;
     }
 
     .winners-section__caption {
@@ -612,11 +613,11 @@
     }
 
     .winners-table-wrapper {
-        overflow: auto;
-        backdrop-filter: blur(10px);
+        /* overflow: auto; */
+        /* backdrop-filter: blur(10px); */
         /* border: 1px solid var(--white); */
-        padding: 10px;
-        border-radius: 10px;
+        /* padding: 10px;
+        border-radius: 10px; */
     }
 
     .winners-table th:first-child, .winners-table td:first-child{
@@ -627,11 +628,16 @@
         margin-bottom: 40px;
     }
 
+    .winners-section__button{
+        width: 100%;
+    }
+
     .faq-section {
         padding-top: 60px;
         padding-bottom: 60px;
-        background-image: url(../img/questions-bg-mobile.png);
-        background-size: 80px;
+        /* background-image: url(../img/questions-bg-mobile.png);
+        background-size: 80px; */
+        background-image: none;
     }
 
     .questions-list{

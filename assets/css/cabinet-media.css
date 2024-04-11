@@ -70,6 +70,11 @@
         grid-gap: 40px;
     }
 
+    .user-action__info{
+        font-size: 16px;
+        padding: 15px 25px;
+    }
+
     .user {
         padding-top: 100px;
     }
@@ -112,13 +117,17 @@
     }
 
     .winners-table th {
-        font-size: 16px;
+        font-size: 14px;
         padding: 5px;
     }
 
     .winners-table td {
-        font-size: 16px;
+        font-size: 14px;
         padding: 5px;
+    }
+
+    .winners-table td:nth-child(2){
+        word-break: break-word;
     }
 
     .modal {
@@ -146,5 +155,12 @@
 
     .user__table-header {
         margin-bottom: 40px;
+    }
+
+    .user__sub-info{
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
     }
 }

@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.main-slider', {
         // Optional parameters
         loop: true,
+        speed: 500,
+        autoplay: {
+            delay: 4000,
+        },
 
         // Navigation arrows
         navigation: {
