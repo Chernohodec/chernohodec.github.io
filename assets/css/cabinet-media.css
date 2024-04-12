@@ -1,6 +1,6 @@
 @media screen and (max-width: 1200px) {
 
-    .user-conditions{
+    .user-conditions {
         padding-top: 60px;
     }
 
@@ -13,7 +13,7 @@
         grid-gap: 40px;
     }
 
-    .user-conditions__image-wrapper{
+    .user-conditions__image-wrapper {
         max-width: 360px;
         margin-left: auto;
         margin-right: auto;
@@ -54,7 +54,7 @@
         bottom: auto;
     }
 
-    .user-conditions__image-wrapper-text_order_6{
+    .user-conditions__image-wrapper-text_order_6 {
         left: -17px;
         top: 199px;
         bottom: auto;
@@ -70,9 +70,17 @@
         grid-gap: 40px;
     }
 
-    .user-action__info{
+    .user-action__info {
         font-size: 16px;
         padding: 15px 25px;
+    }
+
+    .user-action>div {
+        align-items: center;
+    }
+
+    .user-action>div .text {
+        text-align: center;
     }
 
     .user {
@@ -126,7 +134,7 @@
         padding: 5px;
     }
 
-    .winners-table td:nth-child(2){
+    .winners-table td:nth-child(2) {
         word-break: break-word;
     }
 
@@ -157,7 +165,7 @@
         margin-bottom: 40px;
     }
 
-    .user__sub-info{
+    .user__sub-info {
         max-width: 320px;
         margin-left: auto;
         margin-right: auto;

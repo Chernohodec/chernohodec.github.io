@@ -21,11 +21,11 @@
     }
 
     .caption_size_h3 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .caption_size_h4 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .text_size_xl {
@@ -495,7 +495,8 @@
     }
 
     .places__link {
-        display: flex
+        display: flex;
+        margin: auto;
     }
 
     .places__link img {
