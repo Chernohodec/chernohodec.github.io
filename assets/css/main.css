@@ -12,8 +12,12 @@
     --white_hovered:#FFFFFFD4;
 }
 
-body, html{
+html{
     scroll-behavior: smooth;
+}
+
+main{
+    /* scroll-behavior: smooth; */
 }
 
 * {
@@ -482,13 +486,13 @@ body {
     position: relative;
     background-color: var(--white);
     padding-bottom: 0;
-    padding-top: 50px;
+    padding-top: 150px;
     padding-bottom: 80px;
     overflow: hidden;
 }
 
 .main__main-slider-section {
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
 
 .info-section__dots-pattern {
@@ -584,6 +588,7 @@ body {
 
 .info-section__prize-caption {
     margin-bottom: 35px;
+    scroll-margin-top: 100px;
 }
 
 .prizes-columns {
@@ -1035,6 +1040,7 @@ body {
     align-items: flex-end;
     justify-content: space-between;
     grid-gap: 50px;
+    scroll-margin-top: 100px;
 }
 
 .game-field-wrapper {
@@ -1150,6 +1156,7 @@ body {
     background-repeat: no-repeat;
     background-position: 100% 0;
     background-size: contain;
+    scroll-margin-top: 100px;
 }
 
 .winners-section__caption {
@@ -1212,7 +1219,8 @@ body {
     background-image: url(../img/questions-bg.png);
     background-repeat: no-repeat;
     background-position: 100% 0;
-    background-size: contain;
+    background-size: 500px;
+    scroll-margin-top: 100px;
 }
 
 .faq-section__caption {

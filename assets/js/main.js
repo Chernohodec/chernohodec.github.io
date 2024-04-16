@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
         loop: false,
         slidesPerView: 4,
         // Navigation arrows
+        speed: 500,
+        autoplay: {
+            delay: 3000,
+        },
         breakpoints: {
             // when window width is >= 320px
             320: {
