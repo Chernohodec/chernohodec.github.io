@@ -757,10 +757,15 @@ html {
     margin-bottom: 40px;
 }
 
+.shops__content{
+    width: 100%;
+}
+
 .shops-items {
     display: grid;
     grid-gap: 25px;
-    grid-template-columns: repeat(2, 340px);
+    /* grid-template-columns: repeat(2, 340px); */
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .shop-item {
@@ -835,6 +840,7 @@ html {
 
 .faq-item__top {
     position: relative;
+    cursor: pointer;
 }
 
 .faq-item__top:after {
