@@ -911,6 +911,7 @@ html {
 .faq-item__top {
     position: relative;
     cursor: pointer;
+    padding-right: 40px;
 }
 
 .faq-item__top:after {
