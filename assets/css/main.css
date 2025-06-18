@@ -476,6 +476,10 @@ html {
     justify-content: center;
 }
 
+.type-item__content{
+    width: 100%;
+}
+
 .type-item__caption {
     margin-bottom: 15px;
 }
@@ -720,6 +724,7 @@ html {
     padding-bottom: 140px;
     border-radius: 0 0 75px 75px;
     position: relative;
+    z-index: 1;
 }
 
 .instructions__caption {
