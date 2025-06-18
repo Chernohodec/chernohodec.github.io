@@ -919,7 +919,7 @@ html {
     position: absolute;
     right: 0;
     top: 0;
-    bottom: 0;
+    /* bottom: 0; */
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -933,7 +933,7 @@ html {
     position: absolute;
     right: 0;
     top: 0;
-    bottom: 0;
+    /* bottom: 0; */
     width: 30px;
     height: 30px;
     background-image: url(../img/slider-arrow.svg);
