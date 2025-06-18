@@ -976,6 +976,14 @@ html {
     margin-left: auto;
 }
 
+.form-section__content.send .form-section__form-wrapper{
+    display: none;
+}
+
+.form-section__content.send .form-section__send{
+    display: block;
+}
+
 .form-section__caption {
     /* margin-bottom: 20px; */
     text-transform: uppercase;

@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
     const hamburger = document.querySelector('.hamburger')
     const xsNavigation = document.querySelector('.menu-wrapper')
     const anchors = document.querySelectorAll('.main-menu__link')
@@ -162,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault()
+        // e.preventDefault()
     })
 
     nameInput.addEventListener('change', checkFormValid)
@@ -198,4 +203,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Начальный запуск
     animatePaths();
+
+    const formStatus = getQueryParam('form');
+    if(formStatus === 'sent'){
+        const formBlock = document.querySelector('.form-section__content')
+        console.log(formBlock)
+        formBlock.classList.add('send')
+    }
 });

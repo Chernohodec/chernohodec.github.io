@@ -2057,7 +2057,7 @@
                     </div>
                 </div>
             </section>
-            <section class="form-section">
+            <section class="form-section" id="form-section">
                 <div class="container">
                     <div class="form-section__content">
                         <div class="form-section__form-wrapper">
@@ -2095,18 +2095,20 @@
                             >
                                 3. Закажите звонок, заполнив форму ниже
                             </p>
-                            <form action="" class="form" id="mainForm">
+                            <form method="post" action="send_form.php" class="form" id="mainForm">
                                 <input
                                     type="text"
                                     class="input input_type_text"
                                     placeholder="Как вас зовут?"
                                     maxlength="60"
                                     id="name"
+                                    name="name"
                                 />
                                 <input
                                     type="tel"
                                     class="input input_type_phone"
                                     id="phone"
+                                    name="phone"
                                     placeholder="+7(900)000-00-00"
                                 />
                                 <div class="form-acceptance">
@@ -2116,7 +2118,7 @@
                                         конфиденциальности</label
                                     >
                                 </div>
-                                <button class="form-button" disabled>
+                                <button type="submit" class="form-button" disabled>
                                     Отправить
                                 </button>
                             </form>
