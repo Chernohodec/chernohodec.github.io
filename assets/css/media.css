@@ -230,6 +230,17 @@
         border-radius: 0 0 25px 25px;
     }
 
+    .types-section__top{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .types-section__arrows{
+        display: flex;
+    }
+
     .types-section .swiper-wrapper {
         display: flex;
         grid-gap: 0;

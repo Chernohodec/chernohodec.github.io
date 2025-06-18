@@ -320,10 +320,13 @@ html {
 .benefits-section {
     padding-top: 100px;
     padding-bottom: 120px;
-    background-image: url(../img/benefit-pic.png), url(../img/paw-pic.svg), url(../img/paw-pic.svg), url(../img/benefits-steps.svg);
+    /* background-image: url(../img/benefit-pic.png), url(../img/paw-pic.svg), url(../img/paw-pic.svg), url(../img/benefits-steps.svg);
     background-repeat: no-repeat;
-    background-position: calc(100% - ((100vw - 1200px)/2) + 100px) 0, calc(100% - 100px) 60px, calc(100% - ((100vw - 1200px)/2) - 510px) 270px, calc(((100vw - 1200px)/2)) 100%;
-    background-size: auto 100%, 200px, 100px, 800px;
+    background-position: calc(100% - ((100vw - 1200px)/2) + 100px) 0, calc(100% - 100px) 60px, calc(100% - ((100vw - 1200px)/2) - 510px) 270px, calc(((100vw - 1200px)/2)) 100%; */
+    background-image: url(../img/benefit-pic.png), url(../img/benefits-steps.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - ((100vw - 1200px)/2) + 250px) 0, calc(((100vw - 1200px)/2)) 100%;
+    background-size: auto 100%,  800px;
     background-color: var(--white);
     border-radius: 0 0 75px 75px;
     position: relative;
@@ -403,6 +406,46 @@ html {
     padding-bottom: 75px;
     border-radius: 0 0 75px 75px;
     scroll-margin-top: -90px;
+}
+
+.types-section__arrows {
+    /* display: flex; */
+    align-items: center;
+    grid-gap: 10px;
+    display: none;
+}
+
+.types-section__arrow {
+    display: flex;
+    position: relative;
+}
+
+.types-section__arrow img:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    transition: .3s;
+}
+
+
+.types-section__arrow img:last-child {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    transition: .3s;
+    filter: brightness(20);
+}
+
+.types-section__arrow-next img:first-child {
+    transform: rotate(180deg);
+}
+
+.types-section__arrow.swiper-button-disabled {
+    opacity: .6;
 }
 
 .types-section .swiper-wrapper {
@@ -514,7 +557,7 @@ html {
     bottom: 0;
     right: 0;
     margin: auto;
-    filter: brightness(10);
+    filter: brightness(30);
     z-index: 2;
     transition: .3s;
 }
@@ -734,13 +777,20 @@ html {
 
 .shops {
     margin-top: -75px;
-    background-image: url(../img/shops-steps.svg), linear-gradient(0deg, #005357 0%, #007F85 100%);
+    background-image: linear-gradient(0deg, #005357 0%, #007F85 100%);
     background-repeat: no-repeat;
-    background-position: 100% 100%, center;
+    background-position: center;
     padding-top: 120px;
     padding-bottom: 70px;
     border-radius: 0 0 75px 75px;
     scroll-margin-top: -90px;
+    position: relative;
+}
+
+.shops__paws{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .shops .container {
@@ -797,6 +847,17 @@ html {
 
 .faq__content {
     margin-bottom: auto;
+    position: relative;
+}
+
+.faq__content:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(0deg, #ffffff, transparent)
 }
 
 .faq .container {
@@ -838,6 +899,10 @@ html {
     margin-bottom: 15px;
 }
 
+.faq-item:last-child{
+    margin-bottom: 90px;
+}
+
 .faq-item__top {
     position: relative;
     cursor: pointer;
@@ -866,7 +931,7 @@ html {
     width: 30px;
     height: 30px;
     background-image: url(../img/slider-arrow.svg);
-    filter: brightness(10);
+    filter: brightness(30);
     background-position: center;
     background-size: 15px;
     z-index: 2;

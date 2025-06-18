@@ -46,7 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // when window width is >= 320px
                 320: {
                     slidesPerView: 1,
-                    spaceBetween: 20
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: '.types-section__arrow-next',
+                        prevEl: '.types-section__arrow-prev',
+                    },
                 },
                 1200: {
                     slidesPerView: 2,
@@ -165,4 +169,33 @@ document.addEventListener('DOMContentLoaded', function () {
     phoneInput.addEventListener('change', checkFormValid)
     acceptance.addEventListener('change', checkFormValid)
 
+
+    // svg animation
+    const paths = document.querySelectorAll('#shops-steps g g');
+    const totalPaths = paths.length;
+    const duration = 0.5; // Длительность анимации одного элемента (сек)
+    const delayBetween = 0.5; // Задержка между элементами (сек)
+    const totalCycleTime = (duration + delayBetween) * totalPaths;
+
+    function animatePaths() {
+        // Сначала сбрасываем все элементы в начальное состояние
+        paths.forEach(path => {
+            path.style.opacity = '0';
+            path.style.animation = 'none';
+        });
+
+        // Затем запускаем анимацию снова
+        setTimeout(() => {
+            paths.forEach((path, index) => {
+                const reverseIndex = totalPaths - 1 - index;
+                path.style.animation = `fadeIn ${duration}s ${reverseIndex * delayBetween}s forwards`;
+            });
+
+            // Запланировать следующий цикл
+            setTimeout(animatePaths, totalCycleTime * 1000 - 10000);
+        }, 10); // Небольшая задержка для сброса
+    }
+
+    // Начальный запуск
+    animatePaths();
 });
