@@ -341,6 +341,10 @@
         height: auto;
     }
 
+    .products-slider__image{
+        justify-content: center;
+    }
+
     .products-slider__image img{
         max-width: 100%;
         /* max-height: 100%; */
