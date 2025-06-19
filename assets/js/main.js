@@ -42,6 +42,24 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    const productsTabs = document.querySelectorAll('.products-section__tabs .tabs__tab')
+    if (productsTabs) {
+        productsTabs.forEach(instructionsTab => {
+            instructionsTab.addEventListener('click', (e) => {
+                e.preventDefault()
+                productsTabs.forEach(instructionsTab => instructionsTab.classList.remove('tabs__tab-active'))
+                instructionsTab.classList.add('tabs__tab-active')
+                const target = instructionsTab.getAttribute('data-target')
+                const panels = document.querySelectorAll('.products-panels__panel')
+                const targetPanel = document.getElementById(target)
+                panels.forEach(panel => {
+                    panel.classList.remove('products-panels__panel_active')
+                })
+                targetPanel.classList.add('products-panels__panel_active')
+            })
+        })
+    }
+
     if (document.querySelector('.types-items-swiper') && window.innerWidth < 1200) {
         const prizesSwiper = new Swiper('.types-items-swiper', {
             // Optional parameters
@@ -67,40 +85,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const productTubsButtons = ['Капли', 'Ошейник', 'Спрей', 'Шампунь']
+    // const productTubsButtons = ['Капли', 'Ошейник', 'Спрей', 'Шампунь']
 
-    if (document.querySelector('.products-swiper')) {
-        const prizesSwiper = new Swiper('.products-swiper', {
-            // Optional parameters
-            spaceBetween: 20,
-            slidesPerView: 1,
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    autoHeight: true,
+    const productsSliders = document.querySelectorAll('.products-swiper')
+
+    if (productsSliders) {
+
+        productsSliders.forEach(productsSlider => {
+
+            const nextArrow = productsSlider.closest('.products-slide__main-pic-wrapper').querySelector('.products-slide__arrow-next')
+            const prevArrow = productsSlider.closest('.products-slide__main-pic-wrapper').querySelector('.products-slide__arrow-prev')
+
+            const prizesSwiper = new Swiper(productsSlider, {
+                // Optional parameters
+                spaceBetween: 20,
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: nextArrow,
+                    prevEl: prevArrow
                 },
-                1200: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    // settings: "unslick"
-                }
-            },
-            navigation: {
-                nextEl: '.products-section__arrow-next',
-                prevEl: '.products-section__arrow-prev',
-            },
-            pagination: {
-                el: '.products-section__tabs',
-                clickable: true,
-                renderBullet: function (index, className) {
-                    return `<span class="tabs__tab swiper-pagination-bullet">${productTubsButtons[index]}</span>`;
-                },
-            },
-
-
-        });
+            });
+        })
     }
 
     const instructionsSwipers = document.querySelectorAll('.instructions-swiper')
@@ -201,13 +206,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 10); // Небольшая задержка для сброса
     }
 
-    // Начальный запуск
-    animatePaths();
-
     const formStatus = getQueryParam('form');
-    if(formStatus === 'sent'){
+    if (formStatus === 'sent') {
         const formBlock = document.querySelector('.form-section__content')
         console.log(formBlock)
         formBlock.classList.add('send')
     }
+
+    window.addEventListener('scroll', function () {
+        const targetBlock = document.querySelector('#shops');
+        const blockPosition = targetBlock.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3; // Настройка: когда блок на 2/3 экрана
+
+        if (blockPosition < screenPosition) {
+            // Код, который нужно выполнить
+            // console.log('Блок достигнут!');
+            animatePaths();
+
+            // Опционально: удаляем обработчик после срабатывания
+            window.removeEventListener('scroll', arguments.callee);
+        }
+    });
+
 });

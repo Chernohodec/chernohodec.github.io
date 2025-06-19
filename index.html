@@ -376,456 +376,730 @@
                                 питомца
                             </h2>
                             <div class="products-section__tabs tabs">
-                                <a href="#" class="tabs__tab tabs__tab-active"
+                                <a
+                                    href="#"
+                                    data-target="drops"
+                                    class="tabs__tab tabs__tab-active"
                                     >Капли</a
                                 >
-                                <a href="#" class="tabs__tab">ошейник</a>
-                                <a href="#" class="tabs__tab">СПРЕЙ</a>
-                                <a href="#" class="tabs__tab">ШАМПУНЬ</a>
+                                <a
+                                    href="#"
+                                    data-target="chocker"
+                                    class="tabs__tab"
+                                    >ошейник</a
+                                >
+                                <a
+                                    href="#"
+                                    data-target="spray"
+                                    class="tabs__tab"
+                                    >СПРЕЙ</a
+                                >
+                                <a
+                                    href="#"
+                                    data-target="shampoo"
+                                    class="tabs__tab"
+                                    >ШАМПУНЬ</a
+                                >
                             </div>
-                        </div>
-                        <div class="products-section__arrows">
-                            <a
-                                href="#"
-                                class="products-section__arrow products-section__arrow-prev"
-                            >
-                                <img src="assets/img/slider-arrow.svg" alt="" />
-                                <img src="assets/img/hexagon.svg" alt="" />
-                            </a>
-                            <a
-                                href="#"
-                                class="products-section__arrow products-section__arrow-next"
-                            >
-                                <img src="assets/img/slider-arrow.svg" alt="" />
-                                <img src="assets/img/hexagon.svg" alt="" />
-                            </a>
                         </div>
                     </div>
-                    <div class="products-swiper swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="products-slide">
-                                    <div class="products-slide__content">
-                                        <h4
-                                            class="caption caption_color_black caption_size_h4 products-slide__caption"
-                                        >
-                                            БАРС<span>®</span> капли
-                                            инсектоакарицидные
-                                        </h4>
-                                        <ul class="products-slide__tags">
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Пиперонилбутоксид
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Цифлутрин
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Фипронил
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <p
-                                            class="text text_color_black text_size_normal"
-                                        >
-                                            <b>Защищает от:</b><br />
-                                            блох, вшей, иксодовых клещей,
-                                            тромбидиформных клещей, чесоточных
-                                            клещей, мух, комаров, мошек,
-                                            москитов
-                                        </p>
-                                        <ul class="products-slide__benefits">
-                                            <li>
-                                                Усиленная формула для
-                                                максимальной защиты от паразитов
-                                            </li>
-                                            <li>
-                                                Защита от блох и вшей до 8
-                                                недель, от клещей — не менее 4
-                                                недель
-                                            </li>
-                                            <li>
-                                                Эффективен против всех фаз
-                                                развития 13 видов эктопаразитов
-                                            </li>
-                                            <li>
-                                                Мощное контактное и репеллентное
-                                                действие — паразит погибает при
-                                                контакте с обработанной шерстью
-                                            </li>
-                                            <li>
-                                                Препарат работает в подкожном
-                                                слое и не всасывается в
-                                                системный кровоток, поэтому
-                                                подходит для защиты самых
-                                                маленьких - щенков и котят с
-                                                8-недельного возраста
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="products-slide__pics">
-                                        <div
-                                            class="products-slide__main-pic-wrapper"
-                                        >
-                                            <img
-                                                class="products-slide__main-pic"
-                                                width="684"
-                                                height="290"
-                                                src="assets/img/slider-products1.png"
-                                                alt=""
-                                            />
+                    <div class="products-panels">
+                        <div
+                            class="products-panels__panel products-panels__panel_active"
+                            id="drops"
+                        >
+                            <div class="products-slide">
+                                <div class="products-slide__content">
+                                    <h4
+                                        class="caption caption_color_black caption_size_h4 products-slide__caption"
+                                    >
+                                        БАРС<span>®</span> капли
+                                        инсектоакарицидные
+                                    </h4>
+                                    <ul class="products-slide__tags">
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Пиперонилбутоксид
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Цифлутрин
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Фипронил
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <p
+                                        class="text text_color_black text_size_normal"
+                                    >
+                                        <b>Защищает от:</b><br />
+                                        блох, вшей, иксодовых клещей,
+                                        тромбидиформных клещей, чесоточных
+                                        клещей, мух, комаров, мошек, москитов
+                                    </p>
+                                    <ul class="products-slide__benefits">
+                                        <li>
+                                            Усиленная формула для максимальной
+                                            защиты от паразитов
+                                        </li>
+                                        <li>
+                                            Защита от блох и вшей до 8 недель,
+                                            от клещей — не менее 4 недель
+                                        </li>
+                                        <li>
+                                            Эффективен против всех фаз развития
+                                            13 видов эктопаразитов
+                                        </li>
+                                        <li>
+                                            Мощное контактное и репеллентное
+                                            действие — паразит погибает при
+                                            контакте с обработанной шерстью
+                                        </li>
+                                        <li>
+                                            Препарат работает в подкожном слое и
+                                            не всасывается в системный кровоток,
+                                            поэтому подходит для защиты самых
+                                            маленьких - щенков и котят с
+                                            8-недельного возраста
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="products-slide__pics">
+                                    <div
+                                        class="products-slide__main-pic-wrapper"
+                                    >
+                                        <div class="products-slide__arrows">
+                                            <a
+                                                href="#"
+                                                class="products-slide__arrow products-slide__arrow-prev"
+                                            >
+                                                <img
+                                                    src="assets/img/slider-arrow.svg"
+                                                    alt=""
+                                                />
+                                                <img
+                                                    src="assets/img/hexagon.svg"
+                                                    alt=""
+                                                />
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="products-slide__arrow products-slide__arrow-next"
+                                            >
+                                                <img
+                                                    src="assets/img/slider-arrow.svg"
+                                                    alt=""
+                                                />
+                                                <img
+                                                    src="assets/img/hexagon.svg"
+                                                    alt=""
+                                                />
+                                            </a>
                                         </div>
-                                        <ul class="products-slide__shops">
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                        </ul>
+                                        <div class="products-slider">
+                                            <div class="products-swiper swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product11.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product12.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product13.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product14.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product15.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product16.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product17.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <ul class="products-slide__shops">
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                >
+                                                <img src="assets/img/products-shops/avz.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/wb.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/ozon.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/market.svg" alt=""></a
+                                            >
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="products-slide">
-                                    <div class="products-slide__content">
-                                        <h4
-                                            class="caption caption_color_black caption_size_h4 products-slide__caption"
-                                        >
-                                            БАРС<span>®</span> ошейник
-                                            инсектоакарицидный
-                                        </h4>
-                                        <ul class="products-slide__tags">
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Фипронил
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Дифлубензурон
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <p class="text text_color_black">
-                                            <b>Защищает от:</b><br />
-                                            блох, иксодовых клещей, вшей,
-                                            власоедов
-                                        </p>
-                                        <ul class="products-slide__benefits">
-                                            <li>
-                                                Обеспечивает непрерывную защиту
-                                                от клещей и блох до 4-х месяцев
-                                            </li>
-                                            <li>
-                                                Предотвращает опасные
-                                                заболевания, передаваемые
-                                                клещами и блохами
-                                            </li>
-                                            <li>
-                                                Влагостойкий: не боится дождя и
-                                                купания животного
-                                            </li>
-                                            <li>
-                                                Действует снаружи, не оказывая
-                                                воздействия на организм внутри
-                                            </li>
-                                            <li>
-                                                Разрешён щенкам и котятам с
-                                                2-месячного возраста
-                                            </li>
-                                            <li>
-                                                Имеет приятный аромат эвкалипта
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="products-slide__pics">
-                                        <div
-                                            class="products-slide__main-pic-wrapper"
-                                        >
-                                            <img
-                                                class="products-slide__main-pic"
-                                                width="700"
-                                                height="374"
-                                                src="assets/img/slider-products2.png"
-                                                alt=""
-                                            />
+                        </div>
+                        <div class="products-panels__panel" id="chocker">
+                            <div class="products-slide">
+                                <div class="products-slide__content">
+                                    <h4
+                                        class="caption caption_color_black caption_size_h4 products-slide__caption"
+                                    >
+                                        БАРС<span>®</span> ошейник
+                                        инсектоакарицидный
+                                    </h4>
+                                    <ul class="products-slide__tags">
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Фипронил
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Дифлубензурон
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <p class="text text_color_black">
+                                        <b>Защищает от:</b><br />
+                                        блох, иксодовых клещей, вшей, власоедов
+                                    </p>
+                                    <ul class="products-slide__benefits">
+                                        <li>
+                                            Обеспечивает непрерывную защиту от
+                                            клещей и блох до 4-х месяцев
+                                        </li>
+                                        <li>
+                                            Предотвращает опасные заболевания,
+                                            передаваемые клещами и блохами
+                                        </li>
+                                        <li>
+                                            Влагостойкий: не боится дождя и
+                                            купания животного
+                                        </li>
+                                        <li>
+                                            Действует снаружи, не оказывая
+                                            воздействия на организм внутри
+                                        </li>
+                                        <li>
+                                            Разрешён щенкам и котятам с
+                                            2-месячного возраста
+                                        </li>
+                                        <li>Имеет приятный аромат эвкалипта</li>
+                                    </ul>
+                                </div>
+                                <div class="products-slide__pics">
+                                    <div
+                                        class="products-slide__main-pic-wrapper"
+                                    >
+                                        <div class="products-slide__arrows">
+                                            <a
+                                                href="#"
+                                                class="products-slide__arrow products-slide__arrow-prev"
+                                            >
+                                                <img
+                                                    src="assets/img/slider-arrow.svg"
+                                                    alt=""
+                                                />
+                                                <img
+                                                    src="assets/img/hexagon.svg"
+                                                    alt=""
+                                                />
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="products-slide__arrow products-slide__arrow-next"
+                                            >
+                                                <img
+                                                    src="assets/img/slider-arrow.svg"
+                                                    alt=""
+                                                />
+                                                <img
+                                                    src="assets/img/hexagon.svg"
+                                                    alt=""
+                                                />
+                                            </a>
                                         </div>
-                                        <ul class="products-slide__shops">
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                        </ul>
+                                        <div class="products-slider">
+                                            <div class="products-swiper swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product21.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product22.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product23.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product24.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <ul class="products-slide__shops">
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                >
+                                                <img src="assets/img/products-shops/avz.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/wb.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/ozon.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/market.svg" alt=""></a
+                                            >
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="products-slide">
-                                    <div class="products-slide__content">
-                                        <h4
-                                            class="caption caption_color_black caption_size_h4 products-slide__caption"
-                                        >
-                                            БАРС<span>®</span> спрей
-                                            инсектоакарицидный
-                                        </h4>
-                                        <ul class="products-slide__tags">
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Фипронил
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Эфирное масло лаванды
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <p
-                                            class="text text_color_black text_size_normal"
-                                        >
-                                            <b>Защищает от:</b><br />
-                                            блох, вшей, иксодовых клещей,
-                                            тромбидиформных клещей, чесоточных
-                                            клещей, мух, комаров, мошек,
-                                            москитов
-                                        </p>
-                                        <ul class="products-slide__benefits">
-                                            <li>
-                                                Защита от блох и вшей до 12
-                                                недель, от клещей — до 5 недель,
-                                                от комаров, мух и мошек — до 14
-                                                дней
-                                            </li>
-                                            <li>
-                                                В составе эфирное масло лаванды,
-                                                обладающее репеллентным эффектом
-                                            </li>
-                                            <li>
-                                                Действует сразу после применения
-                                            </li>
-                                            <li>
-                                                Подходит для обработки подстилок
-                                                и домиков питомцев
-                                            </li>
-                                            <li>
-                                                Разрешён щенкам, котятам с
-                                                10-недельного и грызунам с
-                                                2-недельного возраста
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="products-slide__pics">
-                                        <div
-                                            class="products-slide__main-pic-wrapper"
-                                        >
-                                            <img
-                                                class="products-slide__main-pic"
-                                                width="477"
-                                                height="412"
-                                                src="assets/img/slider-products3.png"
-                                                alt=""
-                                            />
+                        </div>
+                        <div class="products-panels__panel" id="spray">
+                            <div class="products-slide">
+                                <div class="products-slide__content">
+                                    <h4
+                                        class="caption caption_color_black caption_size_h4 products-slide__caption"
+                                    >
+                                        БАРС<span>®</span> спрей
+                                        инсектоакарицидный
+                                    </h4>
+                                    <ul class="products-slide__tags">
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Фипронил
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Эфирное масло лаванды
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <p
+                                        class="text text_color_black text_size_normal"
+                                    >
+                                        <b>Защищает от:</b><br />
+                                        блох, вшей, иксодовых клещей,
+                                        тромбидиформных клещей, чесоточных
+                                        клещей, мух, комаров, мошек, москитов
+                                    </p>
+                                    <ul class="products-slide__benefits">
+                                        <li>
+                                            Защита от блох и вшей до 12 недель,
+                                            от клещей — до 5 недель, от комаров,
+                                            мух и мошек — до 14 дней
+                                        </li>
+                                        <li>
+                                            В составе эфирное масло лаванды,
+                                            обладающее репеллентным эффектом
+                                        </li>
+                                        <li>
+                                            Действует сразу после применения
+                                        </li>
+                                        <li>
+                                            Подходит для обработки подстилок и
+                                            домиков питомцев
+                                        </li>
+                                        <li>
+                                            Разрешён щенкам, котятам с
+                                            10-недельного и грызунам с
+                                            2-недельного возраста
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="products-slide__pics">
+                                    <div
+                                        class="products-slide__main-pic-wrapper"
+                                    >
+                                        <div class="products-slide__arrows">
+                                            <a
+                                                href="#"
+                                                class="products-slide__arrow products-slide__arrow-prev"
+                                            >
+                                                <img
+                                                    src="assets/img/slider-arrow.svg"
+                                                    alt=""
+                                                />
+                                                <img
+                                                    src="assets/img/hexagon.svg"
+                                                    alt=""
+                                                />
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="products-slide__arrow products-slide__arrow-next"
+                                            >
+                                                <img
+                                                    src="assets/img/slider-arrow.svg"
+                                                    alt=""
+                                                />
+                                                <img
+                                                    src="assets/img/hexagon.svg"
+                                                    alt=""
+                                                />
+                                            </a>
                                         </div>
-                                        <ul class="products-slide__shops">
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                        </ul>
+                                        <div class="products-slider">
+                                            <div class="products-swiper swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product31.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product32.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product33.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product34.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <ul class="products-slide__shops">
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                >
+                                                <img src="assets/img/products-shops/avz.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/wb.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/ozon.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/market.svg" alt=""></a
+                                            >
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="products-slide">
-                                    <div class="products-slide__content">
-                                        <h4
-                                            class="caption caption_color_black caption_size_h4 products-slide__caption"
-                                        >
-                                            БАРС<span>®</span> спрей
-                                            инсектоакарицидный
-                                        </h4>
-                                        <ul class="products-slide__tags">
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Экстракт гвоздики
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p
-                                                    class="text text_color_black text_size_small"
-                                                >
-                                                    Эфирное масло лаванды
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <p
-                                            class="text text_color_black text_size_normal"
-                                        >
-                                            <b>Защищает от:</b><br />
-                                            блох, вшей, власоедов, иксодовых
-                                            клещей, чесоточных клещей, комаров
-                                        </p>
-                                        <ul class="products-slide__benefits">
-                                            <li>
-                                                Защищает от нападения блох и
-                                                клещей до 7 дней, отпугивает
-                                                комаров
-                                            </li>
-                                            <li>
-                                                Однократное применение избавляет
-                                                животных от вшей, власоедов и
-                                                блох
-                                            </li>
-                                            <li>
-                                                Увлажняет и смягчает кожу,
-                                                снимает зуд и раздражение
-                                            </li>
-                                            <li>
-                                                Придаёт шерсти естественный
-                                                блеск, предотвращает её
-                                                выпадение и ломкость
-                                            </li>
-                                            <li>
-                                                Разрешён самым маленьким щенкам
-                                                и котятам, беременным, кормящим
-                                                и ослабленным животным
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="products-slide__pics">
-                                        <div
-                                            class="products-slide__main-pic-wrapper"
-                                        >
-                                            <img
-                                                class="products-slide__main-pic"
-                                                width="317"
-                                                height="412"
-                                                src="assets/img/slider-products4.png"
-                                                alt=""
-                                            />
+                        </div>
+                        <div class="products-panels__panel" id="shampoo">
+                            <div class="products-slide">
+                                <div class="products-slide__content">
+                                    <h4
+                                        class="caption caption_color_black caption_size_h4 products-slide__caption"
+                                    >
+                                        БАРС<span>®</span> спрей
+                                        инсектоакарицидный
+                                    </h4>
+                                    <ul class="products-slide__tags">
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Экстракт гвоздики
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p
+                                                class="text text_color_black text_size_small"
+                                            >
+                                                Эфирное масло лаванды
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <p
+                                        class="text text_color_black text_size_normal"
+                                    >
+                                        <b>Защищает от:</b><br />
+                                        блох, вшей, власоедов, иксодовых клещей,
+                                        чесоточных клещей, комаров
+                                    </p>
+                                    <ul class="products-slide__benefits">
+                                        <li>
+                                            Защищает от нападения блох и клещей
+                                            до 7 дней, отпугивает комаров
+                                        </li>
+                                        <li>
+                                            Однократное применение избавляет
+                                            животных от вшей, власоедов и блох
+                                        </li>
+                                        <li>
+                                            Увлажняет и смягчает кожу, снимает
+                                            зуд и раздражение
+                                        </li>
+                                        <li>
+                                            Придаёт шерсти естественный блеск,
+                                            предотвращает её выпадение и
+                                            ломкость
+                                        </li>
+                                        <li>
+                                            Разрешён самым маленьким щенкам и
+                                            котятам, беременным, кормящим и
+                                            ослабленным животным
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="products-slide__pics">
+                                    <div
+                                        class="products-slide__main-pic-wrapper"
+                                    >
+                                        <div class="products-slide__arrows">
+                                            <a
+                                                href="#"
+                                                class="products-slide__arrow products-slide__arrow-prev"
+                                            >
+                                                <img
+                                                    src="assets/img/slider-arrow.svg"
+                                                    alt=""
+                                                />
+                                                <img
+                                                    src="assets/img/hexagon.svg"
+                                                    alt=""
+                                                />
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="products-slide__arrow products-slide__arrow-next"
+                                            >
+                                                <img
+                                                    src="assets/img/slider-arrow.svg"
+                                                    alt=""
+                                                />
+                                                <img
+                                                    src="assets/img/hexagon.svg"
+                                                    alt=""
+                                                />
+                                            </a>
                                         </div>
-                                        <ul class="products-slide__shops">
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="#"
-                                                    class="products-slide__shop"
-                                                    >shop 1</a
-                                                >
-                                            </li>
-                                        </ul>
+                                        <div class="products-slider">
+                                            <div class="products-swiper swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product41.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="products-slider__image"
+                                                        >
+                                                            <img
+                                                                src="assets/img/products/product42.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <ul class="products-slide__shops">
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                >
+                                                <img src="assets/img/products-shops/avz.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/wb.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/ozon.svg" alt=""></a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="products-slide__shop"
+                                                ><img src="assets/img/products-shops/market.svg" alt=""></a
+                                            >
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -1778,13 +2052,19 @@
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
                                     >
-                                        3. Можно ли сочетать обработку средствами Барс с другими препаратами от блох и клещей?
+                                        3. Можно ли сочетать обработку
+                                        средствами Барс с другими препаратами
+                                        от блох и клещей?
                                     </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Можно сочетать капли Барс со спреем Барс, а также с репеллентными ошейниками на основе растительных компонентов.</p>
+                                    >
+                                        Можно сочетать капли Барс со спреем
+                                        Барс, а также с репеллентными ошейниками
+                                        на основе растительных компонентов.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -1792,13 +2072,27 @@
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
                                     >
-                                        4. На какой участок тела лучше наносить капли Барс? Можно на лапы, так как они чаще имеют контакт с травой, где сидят клещи?
+                                        4. На какой участок тела лучше наносить
+                                        капли Барс? Можно на лапы, так как они
+                                        чаще имеют контакт с травой, где сидят
+                                        клещи?
                                     </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Капли наносятся на сухую неповрежденную кожу (не на шерсть!) в несколько точек в области спины, между лопатками, или шеи, у основания черепа (в места, недоступные для слизывания животными). При обработке крупных собак можно нанести часть содержимого пипетки в область крестца (на часть спины у основания хвоста). Если хотите дополнительно обработать лапы, воспользуйтесь спреем Барс.</p>
+                                    >
+                                        Капли наносятся на сухую неповрежденную
+                                        кожу (не на шерсть!) в несколько точек в
+                                        области спины, между лопатками, или шеи,
+                                        у основания черепа (в места, недоступные
+                                        для слизывания животными). При обработке
+                                        крупных собак можно нанести часть
+                                        содержимого пипетки в область крестца
+                                        (на часть спины у основания хвоста).
+                                        Если хотите дополнительно обработать
+                                        лапы, воспользуйтесь спреем Барс.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -1806,157 +2100,280 @@
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
                                     >
-                                        5. Можно ли делить содержимое пипетки на нескольких животных?
+                                        5. Можно ли делить содержимое пипетки на
+                                        нескольких животных?
                                     </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Нет, нельзя. Растворитель и действующее вещество имеют разную плотность. Есть риск, что для обработки второго и последующих животных в пипетке останется меньше действующего вещества.</p>
+                                    >
+                                        Нет, нельзя. Растворитель и действующее
+                                        вещество имеют разную плотность. Есть
+                                        риск, что для обработки второго и
+                                        последующих животных в пипетке останется
+                                        меньше действующего вещества.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >6. Летом моя собака часто плавает в водоемах. Влияет ли это на действие капель Барс?</p>
+                                    >
+                                        6. Летом моя собака часто плавает
+                                        в водоемах. Влияет ли это на действие
+                                        капель Барс?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Поскольку водоемы не всегда чистые, в воде могут содержаться разнообразные детергенты. Рекомендуем поддерживать защитное действие капель с помощью спрея Барс.</p>
+                                    >
+                                        Поскольку водоемы не всегда чистые, в
+                                        воде могут содержаться разнообразные
+                                        детергенты. Рекомендуем поддерживать
+                                        защитное действие капель с помощью спрея
+                                        Барс.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >7. Можно ли обработать кошку каплями для собак?</p>
+                                    >
+                                        7. Можно ли обработать кошку каплями для
+                                        собак?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Нет, нельзя. В каплях для кошек и собак разное содержание действующих веществ.</p>
+                                    >
+                                        Нет, нельзя. В каплях для кошек и собак
+                                        разное содержание действующих веществ.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >8. Я нашел клеща на собаке после обработки. Это значит, что средство не подействовало?</p>
+                                    >
+                                        8. Я нашел клеща на собаке после
+                                        обработки. Это значит, что средство не
+                                        подействовало?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Действующее вещество капель Барс не убивает клеща сразу - нужно время, чтобы оно проявило свою активность. Большая часть клещей гибнет в период поиска подходящего места для укуса, а другие паразиты получают летальную дозу, погрузив хоботок в кожу. Но, поскольку возбудителям таких опасных болезней, как бабезиоз, нужно значительное время, чтобы проникнуть в слюнные железы клеща, клещ умирает и засыхает, не успев заразить питомца.</p>
+                                    >
+                                        Действующее вещество капель Барс
+                                        не убивает клеща сразу - нужно время,
+                                        чтобы оно проявило свою активность.
+                                        Большая часть клещей гибнет в период
+                                        поиска подходящего места для укуса,
+                                        а другие паразиты получают летальную
+                                        дозу, погрузив хоботок в кожу. Но,
+                                        поскольку возбудителям таких опасных
+                                        болезней, как бабезиоз, нужно
+                                        значительное время, чтобы проникнуть в
+                                        слюнные железы клеща, клещ умирает
+                                        и засыхает, не успев заразить питомца.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >9. Я обработал животное каплями, но через пару дней все равно нашел на нем блох. Почему они не подействовали?</p>
+                                    >
+                                        9. Я обработал животное каплями, но
+                                        через пару дней все равно нашел на нем
+                                        блох. Почему они не подействовали?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Если не обработать помещение, возможно появление нового поколения блох. Насекомые после контакта с фипронилом гибнут относительно быстро, но новые блохи, вышедшие из куколок и личинок, могли еще не получить летальную дозу. Чтобы быстро избавиться от блох, необходимо обработать не только животное, но и помещение (например, спреем Барс).</p>
+                                    >
+                                        Если не обработать помещение, возможно
+                                        появление нового поколения блох.
+                                        Насекомые после контакта с фипронилом
+                                        гибнут относительно быстро, но новые
+                                        блохи, вышедшие из куколок и личинок,
+                                        могли еще не получить летальную дозу.
+                                        Чтобы быстро избавиться от блох,
+                                        необходимо обработать не только
+                                        животное, но и помещение (например,
+                                        спреем Барс).
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >10. Можно сделать прививку против клещей</p>
+                                    >
+                                        10. Можно сделать прививку против клещей
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Таких прививок не существует. Можно вакцинировать животное от бабезиоза – болезни, которую передают клещи. Но, поскольку иммунитет при бабезиозе сохраняется недолго, такая прививка не дает длительной защиты.</p>
+                                    >
+                                        Таких прививок не существует. Можно
+                                        вакцинировать животное от бабезиоза –
+                                        болезни, которую передают клещи. Но,
+                                        поскольку иммунитет при бабезиозе
+                                        сохраняется недолго, такая прививка не
+                                        дает длительной защиты.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >11. Зимой опасности подцепить клеща нет?</p>
+                                    >
+                                        11. Зимой опасности подцепить клеща нет?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >В местах, где температура поднимается выше нуля, опасность существует. Например, в районе теплотрасс или во время длительной оттепели. Можно даже принести клеща домой с новогодней елкой.</p>
+                                    >
+                                        В местах, где температура поднимается
+                                        выше нуля, опасность существует.
+                                        Например, в районе теплотрасс или во
+                                        время длительной оттепели. Можно даже
+                                        принести клеща домой с новогодней елкой.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >12. Клещи живут только в лесах и лесопарковых зонах?</p>
+                                    >
+                                        12. Клещи живут только в лесах и
+                                        лесопарковых зонах?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >К сожалению, клещи давно стали городскими жителями, они населяют городские скверы, бульвары, палисадники, детские площадки и парки.</p>
+                                    >
+                                        К сожалению, клещи давно стали
+                                        городскими жителями, они населяют
+                                        городские скверы, бульвары, палисадники,
+                                        детские площадки и парки.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >13. Клещи не опасны для кошек?</p>
+                                    >
+                                        13. Клещи не опасны для кошек?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Клещи переносят заболевания, которые опасны не только для собак и людей, но и для кошек. Гемобартоннелез (инфекционная анемия) переносится клещами. Болезнью Лайма могут заразиться все животные, а кровососущий паразит является ее основным переносчиком.</p>
+                                    >
+                                        Клещи переносят заболевания, которые
+                                        опасны не только для собак и людей, но и
+                                        для кошек. Гемобартоннелез (инфекционная
+                                        анемия) переносится клещами. Болезнью
+                                        Лайма могут заразиться все животные, а
+                                        кровососущий паразит является ее
+                                        основным переносчиком.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >14. Заразиться блохами можно только на улице?</p>
+                                    >
+                                        14. Заразиться блохами можно только на
+                                        улице?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Даже у домашних питомцев, которые вообще никогда не выходят из дома, могут появиться блохи. Эти мелкие паразиты могут попасть в дом на одежде людей или на шерсти других животных.</p>
+                                    >
+                                        Даже у домашних питомцев, которые вообще
+                                        никогда не выходят из дома, могут
+                                        появиться блохи. Эти мелкие паразиты
+                                        могут попасть в дом на одежде людей или
+                                        на шерсти других животных.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >15. Зимой блохи неактивны?</p>
+                                    >
+                                        15. Зимой блохи неактивны?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Зимой блохи замерзают только на улице. В отапливаемых помещениях они питаются и размножаются в течение всего года.</p>
+                                    >
+                                        Зимой блохи замерзают только на улице. В
+                                        отапливаемых помещениях они питаются и
+                                        размножаются в течение всего года.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >16. Блохи живут на животных?</p>
+                                    >
+                                        16. Блохи живут на животных?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Большую часть жизни блохи проводят в окружающей нас среде: в коврах, подстилках, мягкой мебели, подвалах, на чердаках, но не на животных. Животные являются лишь источником питания.</p>
+                                    >
+                                        Большую часть жизни блохи проводят в
+                                        окружающей нас среде: в коврах,
+                                        подстилках, мягкой мебели, подвалах, на
+                                        чердаках, но не на животных. Животные
+                                        являются лишь источником питания.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <div class="faq-item__top">
                                     <p
                                         class="text text_size_big text_color_black faq-item__caption"
-                                    >17. Блохи не опасны для людей?</p>
+                                    >
+                                        17. Блохи не опасны для людей?
+                                    </p>
                                 </div>
                                 <div class="faq-item__content">
                                     <p
                                         class="text text_size_small text_color_black"
-                                    >Блохи очень опасны для людей, они являются переносчиками множества заболеваний, вызывают сильнейшие дерматиты и аллергии. Они не видоспецифичны, поэтому способны нападать как на людей, так и на животных.</p>
+                                    >
+                                        Блохи очень опасны для людей, они
+                                        являются переносчиками множества
+                                        заболеваний, вызывают сильнейшие
+                                        дерматиты и аллергии. Они не
+                                        видоспецифичны, поэтому способны
+                                        нападать как на людей, так и на
+                                        животных.
+                                    </p>
                                 </div>
                             </div>
                         </div>
