@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // Запланировать следующий цикл
-            setTimeout(animatePaths, totalCycleTime * 1000 - 10000);
+            // setTimeout(animatePaths, totalCycleTime * 1000 - 10000);
         }, 10); // Небольшая задержка для сброса
     }
 
