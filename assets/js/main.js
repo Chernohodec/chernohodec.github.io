@@ -175,4 +175,31 @@ document.addEventListener('DOMContentLoaded', function () {
             nameInput.classList.remove('invalid');
         }
     });
+
+
+    // modals
+
+    const overlay = document.querySelector('.overlay')
+    const instructionModal = document.querySelector('.instruction-modal')
+    const modals = document.querySelectorAll('.modal')
+    const instructionButtons = document.querySelectorAll('.instruction-button')
+    const closeModalButtons = document.querySelectorAll('.modal__close')
+
+    instructionButtons.forEach(instructionButton => {
+        instructionButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            overlay.classList.add('overlay_active')
+            instructionModal.classList.add('modal_active')
+        })
+    })
+
+    closeModalButtons.forEach(closeModalButton => {
+        closeModalButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            overlay.classList.remove('overlay_active')
+            instructionModal.classList.add('modal_active')
+            modals.forEach(modal=>modal.classList.remove('modal_active'))
+        })
+    })
+
 });
