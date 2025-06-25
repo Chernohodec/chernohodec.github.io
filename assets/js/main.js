@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
 
     const hamburger = document.querySelector('.hamburger')
     const xsNavigation = document.querySelector('.menu-wrapper')
@@ -24,115 +20,41 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 
-    const instructionsTabs = document.querySelectorAll('.instructions__tabs .tabs__tab')
-    if (instructionsTabs) {
-        instructionsTabs.forEach(instructionsTab => {
-            instructionsTab.addEventListener('click', (e) => {
-                e.preventDefault()
-                instructionsTabs.forEach(instructionsTab => instructionsTab.classList.remove('tabs__tab-active'))
-                instructionsTab.classList.add('tabs__tab-active')
-                const target = instructionsTab.getAttribute('data-target')
-                const panels = document.querySelectorAll('.instructions__panel')
-                const targetPanel = document.getElementById(target)
-                panels.forEach(panel => {
-                    panel.classList.remove('instructions__panel_active')
-                })
-                targetPanel.classList.add('instructions__panel_active')
-            })
-        })
-    }
-
-    const productsTabs = document.querySelectorAll('.products-section__tabs .tabs__tab')
-    if (productsTabs) {
-        productsTabs.forEach(instructionsTab => {
-            instructionsTab.addEventListener('click', (e) => {
-                e.preventDefault()
-                productsTabs.forEach(instructionsTab => instructionsTab.classList.remove('tabs__tab-active'))
-                instructionsTab.classList.add('tabs__tab-active')
-                const target = instructionsTab.getAttribute('data-target')
-                const panels = document.querySelectorAll('.products-panels__panel')
-                const targetPanel = document.getElementById(target)
-                panels.forEach(panel => {
-                    panel.classList.remove('products-panels__panel_active')
-                })
-                targetPanel.classList.add('products-panels__panel_active')
-            })
-        })
-    }
-
-    if (document.querySelector('.types-items-swiper') && window.innerWidth < 1200) {
-        const prizesSwiper = new Swiper('.types-items-swiper', {
+    if (document.querySelector('.tabs-swiper')) {
+        const prizesSwiper = new Swiper('.tabs-swiper', {
             // Optional parameters
-            spaceBetween: 20,
+            // spaceBetween: 20,
+            autoHeight: true,
             slidesPerView: 1,
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    navigation: {
-                        nextEl: '.types-section__arrow-next',
-                        prevEl: '.types-section__arrow-prev',
-                    },
-                },
-                1200: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                    settings: "unslick"
-                }
-            }
-
+            pagination: {
+                el: '.tabs-swiper-wrapper__dots',
+                type: 'bullets',
+            },
         });
     }
 
-    // const productTubsButtons = ['Капли', 'Ошейник', 'Спрей', 'Шампунь']
 
-    const productsSliders = document.querySelectorAll('.products-swiper')
-
-    if (productsSliders) {
-
-        productsSliders.forEach(productsSlider => {
-
-            const nextArrow = productsSlider.closest('.products-slide__main-pic-wrapper').querySelector('.products-slide__arrow-next')
-            const prevArrow = productsSlider.closest('.products-slide__main-pic-wrapper').querySelector('.products-slide__arrow-prev')
-
-            const prizesSwiper = new Swiper(productsSlider, {
-                // Optional parameters
-                spaceBetween: 20,
-                slidesPerView: 1,
-                navigation: {
-                    nextEl: nextArrow,
-                    prevEl: prevArrow
-                },
-            });
-        })
-    }
-
-    const instructionsSwipers = document.querySelectorAll('.instructions-swiper')
-    if (instructionsSwipers) {
-        instructionsSwipers.forEach(instructionsSwiper => {
-            const instructionSwiperItem = new Swiper(instructionsSwiper, {
-                // Optional parameters
-                spaceBetween: 20,
-                slidesPerView: 1,
-                breakpoints: {
-                    // when window width is >= 320px
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
+    if (document.querySelector('.video-swiper')) {
+        const prizesSwiper = new Swiper('.video-swiper', {
+            // Optional parameters
+            spaceBetween: 20,
+            slidesPerView: 4,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    pagination: {
+                        el: '.videos-wrapper__dots',
+                        type: 'bullets',
                     },
-                    1200: {
-                        slidesPerView: 3,
-                        spaceBetween: 90,
-                        settings: "unslick"
-                    }
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
                 }
-
-            });
-        })
-
+            },
+        });
     }
-
 
     const faqItems = document.querySelectorAll('.faq-item__top');
 
@@ -149,83 +71,108 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    new SimpleBar(document.getElementById('faq-scroll'), { autoHide: false, scrollbarMaxSize: 100, opacity: 1 });
+    // formValidation
+    const form = document.querySelector('.form');
+    const nameInput = form.querySelector('input[type="text"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const policyCheckbox = form.querySelector('#policyCheck');
+    const actionCheckbox = form.querySelector('#actionCheck');
+    const submitButton = form.querySelector('#submitButton');
+    const testWrapperLeft = document.querySelector('.test-wrapper__left')
 
-    const phoneInput = document.getElementById('phone');
-    const form = document.querySelector('#mainForm')
-    const nameInput = document.getElementById('name')
-    const formButton = document.querySelector('.form-button')
-    const acceptance = document.querySelector('#acceptance')
+    // Изначально делаем кнопку неактивной
+    submitButton.disabled = true;
 
+    // Функция проверки валидности всей формы
+    function validateForm() {
+        const isNameValid = nameInput.value.trim() !== '';
+        const isEmailValid = emailInput.value.trim() !== '' &&
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+        const areCheckboxesChecked = policyCheckbox.checked && actionCheckbox.checked;
 
-    const maskOptions = {
-        mask: '+{7}(000)000-00-00'
-    };
-    const mask = IMask(phoneInput, maskOptions);
-
-    const checkFormValid = () => {
-        if (nameInput.value.length > 0 && phoneInput.value.length > 0 && acceptance.checked === true) {
-            formButton.disabled = false
-        } else {
-            formButton.disabled = true
-        }
+        // Активируем/деактивируем кнопку в зависимости от валидности формы
+        submitButton.disabled = !(isNameValid && isEmailValid && areCheckboxesChecked);
     }
 
-    form.addEventListener('submit', (e) => {
-        // e.preventDefault()
-    })
+    // Добавляем обработчики событий для всех полей формы
+    nameInput.addEventListener('input', validateForm);
+    emailInput.addEventListener('input', validateForm);
+    policyCheckbox.addEventListener('change', validateForm);
+    actionCheckbox.addEventListener('change', validateForm);
 
-    nameInput.addEventListener('change', checkFormValid)
-    phoneInput.addEventListener('change', checkFormValid)
-    acceptance.addEventListener('change', checkFormValid)
+    // Обработчик отправки формы
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
 
+        // Дополнительная проверка перед отправкой
+        validateForm();
 
-    // svg animation
-    const paths = document.querySelectorAll('#shops-steps g g');
-    const totalPaths = paths.length;
-    const duration = 0.5; // Длительность анимации одного элемента (сек)
-    const delayBetween = 0.5; // Задержка между элементами (сек)
-    const totalCycleTime = (duration + delayBetween) * totalPaths;
+        if (submitButton.disabled) return;
 
-    function animatePaths() {
-        // Сначала сбрасываем все элементы в начальное состояние
-        paths.forEach(path => {
-            path.style.opacity = '0';
-            path.style.animation = 'none';
-        });
+        // Блокируем кнопку во время отправки
+        submitButton.disabled = true;
+        submitButton.textContent = 'Отправка...';
 
-        // Затем запускаем анимацию снова
-        setTimeout(() => {
-            paths.forEach((path, index) => {
-                const reverseIndex = totalPaths - 1 - index;
-                path.style.animation = `fadeIn ${duration}s ${reverseIndex * delayBetween}s forwards`;
+        try {
+            // Формируем данные для отправки
+            const formData = {
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                policyAccepted: policyCheckbox.checked,
+                actionAccepted: actionCheckbox.checked,
+                timestamp: new Date().toISOString()
+            };
+
+            // Отправляем данные на сервер
+            const response = await fetch('https://example.com/api/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+
+                body: JSON.stringify(formData)
             });
 
-            // Запланировать следующий цикл
-            // setTimeout(animatePaths, totalCycleTime * 1000 - 10000);
-        }, 10); // Небольшая задержка для сброса
-    }
+            if (!response.ok) {
+                throw new Error(`Ошибка HTTP: ${response.status}`);
+            }
 
-    const formStatus = getQueryParam('form');
-    if (formStatus === 'sent') {
-        const formBlock = document.querySelector('.form-section__content')
-        console.log(formBlock)
-        formBlock.classList.add('send')
-    }
+            const result = await response.json();
 
-    window.addEventListener('scroll', function () {
-        const targetBlock = document.querySelector('#shops');
-        const blockPosition = targetBlock.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3; // Настройка: когда блок на 2/3 экрана
+            testWrapperLeft.classList.add('test-wrapper__left_active')
 
-        if (blockPosition < screenPosition) {
-            // Код, который нужно выполнить
-            // console.log('Блок достигнут!');
-            animatePaths();
+            // Обработка успешной отправки
+            // alert('Форма успешно отправлена!');
+            form.reset(); // Очищаем форму после успешной отправки
 
-            // Опционально: удаляем обработчик после срабатывания
-            window.removeEventListener('scroll', arguments.callee);
+        } catch (error) {
+            // Обработка ошибок
+            console.error('Ошибка при отправке формы:', error);
+            // alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте ещё раз.');
+        } finally {
+            // Восстанавливаем кнопку
+            submitButton.disabled = false;
+            submitButton.textContent = 'Отправить';
+            validateForm(); // Повторная проверка формы
         }
     });
 
+    // Валидация email при потере фокуса
+    emailInput.addEventListener('blur', function () {
+        if (emailInput.value.trim() !== '' &&
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+            emailInput.classList.add('invalid');
+        } else {
+            emailInput.classList.remove('invalid');
+        }
+    });
+
+    // Валидация имени при потере фокуса
+    nameInput.addEventListener('blur', function () {
+        if (nameInput.value.trim() === '') {
+            nameInput.classList.add('invalid');
+        } else {
+            nameInput.classList.remove('invalid');
+        }
+    });
 });
