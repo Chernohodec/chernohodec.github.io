@@ -749,6 +749,7 @@ html {
     padding-left: 38px;
     cursor: pointer;
     position: relative;
+    display: block;
 }
 
 .acceptance label::before{
@@ -756,6 +757,8 @@ html {
     position: absolute;
     width: 16px;
     height: 16px;
+    left: 0;
+    top: 0;
     display: flex;
     border-radius: 2px;
     background-color: #F4F4F4;

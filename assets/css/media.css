@@ -244,6 +244,7 @@
 
     .test-wrapper{
         flex-direction: column;
+        min-height: 0;
     }
 
     .test-wrapper__left{
@@ -253,6 +254,7 @@
     .test-wrapper__right{
         padding: 15px;
         width: auto;
+        min-height: 200px;
         background-size: 140px;
     }
 
