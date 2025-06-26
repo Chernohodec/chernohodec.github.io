@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Отправляем данные на сервер
-            const response = await fetch('http://188.127.249.133:10025/api/result/', {
+            const response = await fetch('https://avgust.ilovebot.ru/api/result/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
