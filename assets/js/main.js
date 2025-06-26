@@ -194,15 +194,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const overlay = document.querySelector('.overlay')
     const instructionModal = document.querySelector('.instruction-modal')
+    const optionsModal = document.querySelector('.options-modal')
+    const videoModal = document.querySelector('.video-modal')
     const modals = document.querySelectorAll('.modal')
     const instructionButtons = document.querySelectorAll('.instruction-button')
+    const videoButtons = document.querySelectorAll('.video-button')
     const closeModalButtons = document.querySelectorAll('.modal__close')
+    const optionsButtons = document.querySelectorAll('.options-button')
 
     instructionButtons.forEach(instructionButton => {
         instructionButton.addEventListener('click', function (e) {
             e.preventDefault();
             overlay.classList.add('overlay_active')
             instructionModal.classList.add('modal_active')
+        })
+    })
+
+    videoButtons.forEach(videoButton => {
+        videoButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            overlay.classList.add('overlay_active')
+            videoModal.classList.add('modal_active')
+        })
+    })
+
+    optionsButtons.forEach(optionButton => {
+        optionButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            overlay.classList.add('overlay_active')
+            optionsModal.classList.add('modal_active')
         })
     })
 

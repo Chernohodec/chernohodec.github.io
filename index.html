@@ -38,25 +38,25 @@
                         <nav class="main-menu">
                             <ul class="main-menu__links">
                                 <li>
-                                    <a href="#" class="main-menu__link"
+                                    <a href="#tabs" class="main-menu__link"
                                         >Батрайдер®?</a
                                     >
                                 </li>
                                 <li>
-                                    <a href="#" class="main-menu__link"
+                                    <a href="#info" class="main-menu__link"
                                         >Как выиграть?</a
                                     >
                                 </li>
                                 <li>
-                                    <a href="#" class="main-menu__link"
+                                    <a href="#test" class="main-menu__link"
                                         >Викторина?</a
                                     >
                                 </li>
                                 <li>
-                                    <a href="#" class="main-menu__link">FAQ</a>
+                                    <a href="#faq" class="main-menu__link">FAQ</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="main-menu__link"
+                                    <a href="#shops" class="main-menu__link"
                                         >Где купить?</a
                                     >
                                 </li>
@@ -117,7 +117,7 @@
                     </div>
                 </div>
             </section>
-            <section class="tabs-section">
+            <section class="tabs-section" id="tabs">
                 <div class="tabs-swiper-wrapper">
                     <div class="swiper tabs-swiper">
                         <div class="swiper-wrapper">
@@ -212,7 +212,7 @@
                                                 <a
                                                     href="#"
                                                     target="_blank"
-                                                    class="tabs-tags__tag"
+                                                    class="tabs-tags__tag options-button"
                                                 >
                                                     Характеристики
                                                 </a>
@@ -225,7 +225,7 @@
                                                 <a
                                                     href="#"
                                                     target="_blank"
-                                                    class="tabs-tags__tag"
+                                                    class="tabs-tags__tag video-button"
                                                     >Видео</a
                                                 >
                                                 <a
@@ -354,7 +354,7 @@
                                                 <a
                                                     href="#"
                                                     target="_blank"
-                                                    class="tabs-tags__tag"
+                                                    class="tabs-tags__tag options-button"
                                                 >
                                                     Характеристики
                                                 </a>
@@ -367,7 +367,7 @@
                                                 <a
                                                     href="#"
                                                     target="_blank"
-                                                    class="tabs-tags__tag"
+                                                    class="tabs-tags__tag video-button"
                                                     >Видео</a
                                                 >
                                                 <a
@@ -400,7 +400,7 @@
                     <div class="tabs-swiper-wrapper__dots"></div>
                 </div>
             </section>
-            <section class="info-section">
+            <section class="info-section" id="info">
                 <div class="container">
                     <div class="steps-header">
                         <div class="steps-header__content">
@@ -483,7 +483,7 @@
                     </div>
                 </div>
             </section>
-            <section class="test-section">
+            <section class="test-section" id="test">
                 <div class="container">
                     <h2
                         class="test-section__caption caption caption_size_h2 caption_color_white"
@@ -677,7 +677,7 @@
                                 <div class="swiper-slide">
                                     <a
                                         href="#"
-                                        class="video-item"
+                                        class="video-item video-button"
                                         data-video="1"
                                     >
                                         <img
@@ -689,7 +689,7 @@
                                 <div class="swiper-slide">
                                     <a
                                         href="#"
-                                        class="video-item"
+                                        class="video-item video-button"
                                         data-video="2"
                                     >
                                         <img
@@ -701,7 +701,7 @@
                                 <div class="swiper-slide">
                                     <a
                                         href="#"
-                                        class="video-item"
+                                        class="video-item video-button"
                                         data-video="3"
                                     >
                                         <img
@@ -713,7 +713,7 @@
                                 <div class="swiper-slide">
                                     <a
                                         href="#"
-                                        class="video-item"
+                                        class="video-item video-button"
                                         data-video="4"
                                     >
                                         <img
@@ -727,7 +727,7 @@
                         <div class="videos-wrapper__dots"></div>
                     </div>
                     <h2
-                        class="caption caption_size_h2 caption_color_black faq-section__caption"
+                        class="caption caption_size_h2 caption_color_black faq-section__caption" id="faq"
                     >
                         Частые вопросы
                     </h2>
@@ -935,7 +935,19 @@
                 </div>
             </footer>
             <div class="overlay">
-                <div class="video-modal"></div>
+                <div class="video-modal modal">
+                    <a href="#" class="modal__close video-modal__close">
+                        <img src="assets/img/cross-icon.svg" alt="" />
+                    </a>
+                    <iframe
+                        src="https://vk.com/video_ext.php?oid=-46789294&id=456239342&hd=2&autoplay=1"
+                        width="325"
+                        height="646"
+                        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                        frameborder="0"
+                        allowfullscreen
+                    ></iframe>
+                </div>
                 <div class="modal instruction-modal">
                     <a href="#" class="modal__close">
                         <img
@@ -1197,6 +1209,48 @@
                             </p>
                         </div>
                     </div>
+                </div>
+                <div class="modal options-modal">
+                    <a href="#" class="modal__close">
+                        <img
+                            src="assets/img/cross-icon.svg"
+                            width="40"
+                            height="40"
+                            alt=""
+                        />
+                    </a>
+                    <h2
+                        class="caption caption_size_h2 caption_color_black instruction-modal__caption"
+                    >
+                        Характеристики
+                    </h2>
+                    <ul class="modal-options">
+                        <li>
+                            <p class="text text_color_black text_size_normal">
+                                <b>Действующее вещество: </b><br />
+                                125 г/л альфа-циперметрина + 100 г/л
+                                имидаклоприда + 50 г/л клотианидина
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text text_color_black text_size_normal">
+                                <b>Препаративная форма: </b><br />
+                                СК - суспензионный концентрат
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text text_color_black text_size_normal">
+                                <b>Производитель:</b><br />
+                                АО Фирма «Август», Россия
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text text_color_black text_size_normal">
+                                <b>Срок годности: </b><br />
+                                3 года
+                            </p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </main>

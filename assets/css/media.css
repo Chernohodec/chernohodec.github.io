@@ -276,6 +276,7 @@
 
     .faq-section__caption{
         margin-bottom: 20px;
+        scroll-margin-top: 60px;
     }
 
     .woman-banner{
@@ -355,5 +356,40 @@
 
     .tabs-swiper-wrapper__dots, .videos-wrapper__dots{
         padding: 15px 0;
+    }
+
+    .modal{
+        padding: 60px 10px 30px;
+        max-height: calc(100dvh - 100px);
+        max-width: calc(100vw - 30px);
+        overflow: auto;
+    }
+
+    .instuction-info{
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 20px;
+    }
+
+    .instuction-info__caption{
+        min-height: 0;
+    }
+
+    .instruction-modal__instruction-info:not(:last-child){
+        margin-bottom: 30px;
+    }
+
+    .modal__close{
+        right: 15px;
+        top: 15px;
+    }
+
+    .modal__close img{
+        width: 25px;
+        height: 25px;
+    }
+
+    .video-modal{
+        padding: 0;
     }
 }
