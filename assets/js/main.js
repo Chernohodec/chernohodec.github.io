@@ -114,17 +114,30 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.textContent = 'Отправка...';
 
         try {
+            // 1. Получаем токен reCAPTCHA
+            const grecaptcha = window.grecaptcha;
+            if (!grecaptcha) {
+                throw new Error('reCAPTCHA не загружена');
+            }
+
+            const token = await grecaptcha.execute('6Lf4NG4rAAAAAL4S1CAJI7bKWvQomyTzjii_-llE', { action: 'submit' });
+
+            if (!token) {
+                throw new Error('Не удалось получить токен reCAPTCHA');
+            }
+
             // Формируем данные для отправки
             const formData = {
                 name: nameInput.value.trim(),
                 email: emailInput.value.trim(),
-                policyAccepted: policyCheckbox.checked,
-                actionAccepted: actionCheckbox.checked,
-                timestamp: new Date().toISOString()
+                // policyAccepted: policyCheckbox.checked,
+                // actionAccepted: actionCheckbox.checked,
+                // timestamp: new Date().toISOString(),
+                captcha_token: token
             };
 
             // Отправляем данные на сервер
-            const response = await fetch('https://example.com/api/submit', {
+            const response = await fetch('http://188.127.249.133:10025/api/result/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -198,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             overlay.classList.remove('overlay_active')
             instructionModal.classList.add('modal_active')
-            modals.forEach(modal=>modal.classList.remove('modal_active'))
+            modals.forEach(modal => modal.classList.remove('modal_active'))
         })
     })
 
