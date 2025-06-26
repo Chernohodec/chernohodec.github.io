@@ -9,8 +9,13 @@
         <link rel="stylesheet" href="assets/css/swiper.min.css" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="assets/css/media.css" />
+        <script
+            src="https://www.google.com/recaptcha/api.js"
+            async
+            defer
+        ></script>
         <!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lf4NG4rAAAAAL4S1CAJI7bKWvQomyTzjii_-llE" async defer></script> -->
-        <script type="text/javascript" src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lf4NG4rAAAAAL4S1CAJI7bKWvQomyTzjii_-llE"></script> -->
     </head>
     <body>
         <header class="header">
@@ -493,7 +498,7 @@
                     </p>
                     <div class="test-wrapper">
                         <div class="test-wrapper__left">
-                            <div class="test-block" style="display: none;">
+                            <div class="test-block" style="display: none">
                                 <div class="test-block__top">
                                     <p
                                         class="text text_size_normal text_color_white"
@@ -558,16 +563,19 @@
                                         class="input form__input"
                                         type="text"
                                         placeholder="Имя и фамилия"
+                                        value="test"
                                     />
                                     <input
                                         class="input form__input"
                                         type="email"
                                         placeholder="E-mail"
+                                        value="test@test.ru"
                                     />
                                     <div class="acceptance form__acceptance">
                                         <input
                                             type="checkbox"
                                             id="policyCheck"
+                                            checked
                                         />
                                         <label for="policyCheck">
                                             Даю согласие на
@@ -581,22 +589,38 @@
                                         <input
                                             type="checkbox"
                                             id="actionCheck"
+                                            checked
                                         />
                                         <label for="actionCheck">
                                             Принимаю
                                             <a href="#">условия акции</a>
                                         </label>
                                     </div>
+                                    <div
+                                        class="g-recaptcha"
+                                        data-sitekey="6Lf4NG4rAAAAAL4S1CAJI7bKWvQomyTzjii_-llE"
+                                        data-callback="onRecaptchaSuccess"
+                                        data-expired-callback="onRecaptchaExpired"
+                                    ></div>
                                     <button
                                         id="submitButton"
                                         class="button form__button"
-                                    >Отправить</button>
+                                    >
+                                        Отправить
+                                    </button>
                                 </form>
                             </div>
 
                             <div class="submited-screen" id="submitedScreen">
-                                <h5 class="caption caption_size_h5 caption_color_white submited-screen__caption">Спасибо за участие!</h5>
-                                <p class="text text_size_big text_color_white"><br>31 июля мы подведём итоги <br/>и опубликуем их на этой странице</p>
+                                <h5
+                                    class="caption caption_size_h5 caption_color_white submited-screen__caption"
+                                >
+                                    Спасибо за участие!
+                                </h5>
+                                <p class="text text_size_big text_color_white">
+                                    <br />31 июля мы подведём итоги <br />и
+                                    опубликуем их на этой странице
+                                </p>
                             </div>
                         </div>
                         <div class="test-wrapper__right">
@@ -913,124 +937,263 @@
                 <div class="video-modal"></div>
                 <div class="modal instruction-modal">
                     <a href="#" class="modal__close">
-                        <img src="assets/img/cross-icon.svg" width="40" height="40" alt="">
+                        <img
+                            src="assets/img/cross-icon.svg"
+                            width="40"
+                            height="40"
+                            alt=""
+                        />
                     </a>
-                    <h2 class="caption caption_size_h2 caption_color_black instruction-modal__caption">Инструкция</h2>
-                    <h5 class="caption caption_size_h5 caption_color_red instruction-modal__sub-caption">Яблоня</h5>
-                    <div class="instuction-info instruction-modal__instruction-info">
+                    <h2
+                        class="caption caption_size_h2 caption_color_black instruction-modal__caption"
+                    >
+                        Инструкция
+                    </h2>
+                    <h5
+                        class="caption caption_size_h5 caption_color_red instruction-modal__sub-caption"
+                    >
+                        Яблоня
+                    </h5>
+                    <div
+                        class="instuction-info instruction-modal__instruction-info"
+                    >
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Вредитель </b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">Яблонный цветоед, калифорнийская щитовка, тли, коричнево-мраморный клоп*</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                Яблонный цветоед, калифорнийская щитовка, тли,
+                                коричнево-мраморный клоп*
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Способ применения</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">Опрыскивание в период вегетации</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                Опрыскивание в период вегетации
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Норма разведения</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">2 мл/10 л воды</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                2 мл/10 л воды
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Норма расхода</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">1-5 л/дерево (в зависимости от возраста и объема кроны)</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                1-5 л/дерево (в зависимости от возраста и объема
+                                кроны)
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Количество обработок   </b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">1</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                1
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Срок до сбора урожая (дни)</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">20</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                20
+                            </p>
                         </div>
                     </div>
-                    <h5 class="caption caption_size_h5 caption_color_red instruction-modal__sub-caption">Виноград</h5>
-                    <div class="instuction-info instruction-modal__instruction-info">
+                    <h5
+                        class="caption caption_size_h5 caption_color_red instruction-modal__sub-caption"
+                    >
+                        Виноград
+                    </h5>
+                    <div
+                        class="instuction-info instruction-modal__instruction-info"
+                    >
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Вредитель </b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">Гроздевая листовертка</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                Гроздевая листовертка
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Способ применения</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">Опрыскивание в период вегетации</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                Опрыскивание в период вегетации
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Норма разведения</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">2 мл/10 л воды</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                2 мл/10 л воды
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Норма расхода</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">0,5-1,0 л/куст (в зависимости от возраста и типа формировки куста)</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                0,5-1,0 л/куст (в зависимости от возраста и типа
+                                формировки куста)
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Количество обработок   </b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">1</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                1
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Срок до сбора урожая (дни)</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">20</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                20
+                            </p>
                         </div>
                     </div>
-                    <h5 class="caption caption_size_h5 caption_color_red instruction-modal__sub-caption">Виноград</h5>
-                    <div class="instuction-info instruction-modal__instruction-info">
+                    <h5
+                        class="caption caption_size_h5 caption_color_red instruction-modal__sub-caption"
+                    >
+                        Виноград
+                    </h5>
+                    <div
+                        class="instuction-info instruction-modal__instruction-info"
+                    >
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Вредитель </b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">Капустная совка, капустная и репная белянки, капустная моль, крестоцветные блошки</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                Капустная совка, капустная и репная белянки,
+                                капустная моль, крестоцветные блошки
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Способ применения</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">Опрыскивание в период вегетации</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                Опрыскивание в период вегетации
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Норма разведения</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">2 мл/3 л воды</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                2 мл/3 л воды
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Норма расхода</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">3 л/100 м2</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                3 л/100 м2
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Количество обработок   </b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">1</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                1
+                            </p>
                         </div>
                         <div class="instuction-info__column">
-                            <p class="text instuction-info__caption text_size_normal text_color_black">
+                            <p
+                                class="text instuction-info__caption text_size_normal text_color_black"
+                            >
                                 <b>Срок до сбора урожая (дни)</b>
                             </p>
-                            <p class="text instuction-info__text text_size_normal text_color_black">20</p>
+                            <p
+                                class="text instuction-info__text text_size_normal text_color_black"
+                            >
+                                20
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1039,5 +1202,6 @@
         <script src="assets/js/swiper-bundle.min.js"></script>
         <script src="assets/js/main.js"></script>
         <script src="assets/js/test.js"></script>
+        <script src="assets/js/form.js"></script>
     </body>
 </html>

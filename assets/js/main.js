@@ -71,123 +71,123 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // formValidation
-    const form = document.querySelector('.form');
-    const nameInput = form.querySelector('input[type="text"]');
-    const emailInput = form.querySelector('input[type="email"]');
-    const policyCheckbox = form.querySelector('#policyCheck');
-    const actionCheckbox = form.querySelector('#actionCheck');
-    const submitButton = form.querySelector('#submitButton');
-    const testWrapperLeft = document.querySelector('.test-wrapper__left')
+    // // formValidation
+    // const form = document.querySelector('.form');
+    // const nameInput = form.querySelector('input[type="text"]');
+    // const emailInput = form.querySelector('input[type="email"]');
+    // const policyCheckbox = form.querySelector('#policyCheck');
+    // const actionCheckbox = form.querySelector('#actionCheck');
+    // const submitButton = form.querySelector('#submitButton');
+    // const testWrapperLeft = document.querySelector('.test-wrapper__left')
 
-    // Изначально делаем кнопку неактивной
-    submitButton.disabled = true;
+    // // Изначально делаем кнопку неактивной
+    // submitButton.disabled = true;
 
-    // Функция проверки валидности всей формы
-    function validateForm() {
-        const isNameValid = nameInput.value.trim() !== '';
-        const isEmailValid = emailInput.value.trim() !== '' &&
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
-        const areCheckboxesChecked = policyCheckbox.checked && actionCheckbox.checked;
+    // // Функция проверки валидности всей формы
+    // function validateForm() {
+    //     const isNameValid = nameInput.value.trim() !== '';
+    //     const isEmailValid = emailInput.value.trim() !== '' &&
+    //         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+    //     const areCheckboxesChecked = policyCheckbox.checked && actionCheckbox.checked;
 
-        // Активируем/деактивируем кнопку в зависимости от валидности формы
-        submitButton.disabled = !(isNameValid && isEmailValid && areCheckboxesChecked);
-    }
+    //     // Активируем/деактивируем кнопку в зависимости от валидности формы
+    //     submitButton.disabled = !(isNameValid && isEmailValid && areCheckboxesChecked);
+    // }
 
-    // Добавляем обработчики событий для всех полей формы
-    nameInput.addEventListener('input', validateForm);
-    emailInput.addEventListener('input', validateForm);
-    policyCheckbox.addEventListener('change', validateForm);
-    actionCheckbox.addEventListener('change', validateForm);
+    // // Добавляем обработчики событий для всех полей формы
+    // nameInput.addEventListener('input', validateForm);
+    // emailInput.addEventListener('input', validateForm);
+    // policyCheckbox.addEventListener('change', validateForm);
+    // actionCheckbox.addEventListener('change', validateForm);
 
-    // Обработчик отправки формы
-    form.addEventListener('submit', async function (event) {
-        event.preventDefault();
+    // // Обработчик отправки формы
+    // form.addEventListener('submit', async function (event) {
+    //     event.preventDefault();
 
-        // Дополнительная проверка перед отправкой
-        validateForm();
+    //     // Дополнительная проверка перед отправкой
+    //     validateForm();
 
-        if (submitButton.disabled) return;
+    //     if (submitButton.disabled) return;
 
-        // Блокируем кнопку во время отправки
-        submitButton.disabled = true;
-        submitButton.textContent = 'Отправка...';
+    //     // Блокируем кнопку во время отправки
+    //     submitButton.disabled = true;
+    //     submitButton.textContent = 'Отправка...';
 
-        try {
-            // 1. Получаем токен reCAPTCHA
-            const grecaptcha = window.grecaptcha;
-            if (!grecaptcha) {
-                throw new Error('reCAPTCHA не загружена');
-            }
+    //     try {
+    //         // 1. Получаем токен reCAPTCHA
+    //         // const grecaptcha = window.grecaptcha;
+    //         if (!grecaptcha) {
+    //             throw new Error('reCAPTCHA не загружена');
+    //         }
 
-            const token = await grecaptcha.execute('6Lf4NG4rAAAAAL4S1CAJI7bKWvQomyTzjii_-llE', { action: 'submit' });
+    //         const token = await grecaptcha.execute('6Lf4NG4rAAAAAL4S1CAJI7bKWvQomyTzjii_-llE', { action: 'submit' });
 
-            if (!token) {
-                throw new Error('Не удалось получить токен reCAPTCHA');
-            }
+    //         if (!token) {
+    //             throw new Error('Не удалось получить токен reCAPTCHA');
+    //         }
 
-            // Формируем данные для отправки
-            const formData = {
-                name: nameInput.value.trim(),
-                email: emailInput.value.trim(),
-                // policyAccepted: policyCheckbox.checked,
-                // actionAccepted: actionCheckbox.checked,
-                // timestamp: new Date().toISOString(),
-                captcha_token: token
-            };
+    //         // Формируем данные для отправки
+    //         const formData = {
+    //             name: nameInput.value.trim(),
+    //             email: emailInput.value.trim(),
+    //             // policyAccepted: policyCheckbox.checked,
+    //             // actionAccepted: actionCheckbox.checked,
+    //             // timestamp: new Date().toISOString(),
+    //             captcha_token: token
+    //         };
 
-            // Отправляем данные на сервер
-            const response = await fetch('http://188.127.249.133:10025/api/result/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+    //         // Отправляем данные на сервер
+    //         const response = await fetch('http://188.127.249.133:10025/api/result/', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
 
-                body: JSON.stringify(formData)
-            });
+    //             body: JSON.stringify(formData)
+    //         });
 
-            if (!response.ok) {
-                throw new Error(`Ошибка HTTP: ${response.status}`);
-            }
+    //         if (!response.ok) {
+    //             throw new Error(`Ошибка HTTP: ${response.status}`);
+    //         }
 
-            const result = await response.json();
+    //         const result = await response.json();
 
-            testWrapperLeft.classList.add('test-wrapper__left_active')
+    //         testWrapperLeft.classList.add('test-wrapper__left_active')
 
-            // Обработка успешной отправки
-            // alert('Форма успешно отправлена!');
-            form.reset(); // Очищаем форму после успешной отправки
+    //         // Обработка успешной отправки
+    //         // alert('Форма успешно отправлена!');
+    //         form.reset(); // Очищаем форму после успешной отправки
 
-        } catch (error) {
-            // Обработка ошибок
-            console.error('Ошибка при отправке формы:', error);
-            // alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте ещё раз.');
-        } finally {
-            // Восстанавливаем кнопку
-            submitButton.disabled = false;
-            submitButton.textContent = 'Отправить';
-            validateForm(); // Повторная проверка формы
-        }
-    });
+    //     } catch (error) {
+    //         // Обработка ошибок
+    //         console.error('Ошибка при отправке формы:', error);
+    //         // alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте ещё раз.');
+    //     } finally {
+    //         // Восстанавливаем кнопку
+    //         submitButton.disabled = false;
+    //         submitButton.textContent = 'Отправить';
+    //         validateForm(); // Повторная проверка формы
+    //     }
+    // });
 
-    // Валидация email при потере фокуса
-    emailInput.addEventListener('blur', function () {
-        if (emailInput.value.trim() !== '' &&
-            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-            emailInput.classList.add('invalid');
-        } else {
-            emailInput.classList.remove('invalid');
-        }
-    });
+    // // Валидация email при потере фокуса
+    // emailInput.addEventListener('blur', function () {
+    //     if (emailInput.value.trim() !== '' &&
+    //         !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+    //         emailInput.classList.add('invalid');
+    //     } else {
+    //         emailInput.classList.remove('invalid');
+    //     }
+    // });
 
-    // Валидация имени при потере фокуса
-    nameInput.addEventListener('blur', function () {
-        if (nameInput.value.trim() === '') {
-            nameInput.classList.add('invalid');
-        } else {
-            nameInput.classList.remove('invalid');
-        }
-    });
+    // // Валидация имени при потере фокуса
+    // nameInput.addEventListener('blur', function () {
+    //     if (nameInput.value.trim() === '') {
+    //         nameInput.classList.add('invalid');
+    //     } else {
+    //         nameInput.classList.remove('invalid');
+    //     }
+    // });
 
 
     // modals
