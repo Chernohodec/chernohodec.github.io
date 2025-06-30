@@ -1112,7 +1112,9 @@ html {
 
 .modal{
     display: none;
+    max-height: calc(100dvh - 100px);
 }
+
 .modal_active{
     display: flex;
     flex-direction: column;
