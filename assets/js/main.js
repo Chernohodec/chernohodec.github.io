@@ -200,7 +200,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const instructionButtons = document.querySelectorAll('.instruction-button')
     const videoButtons = document.querySelectorAll('.video-button')
     const closeModalButtons = document.querySelectorAll('.modal__close')
+    const closeVideoButton = document.querySelector('.video-modal__close')
     const optionsButtons = document.querySelectorAll('.options-button')
+    const iframe = document.querySelector('iframe');
+    const player = VK.VideoPlayer(iframe);
 
     instructionButtons.forEach(instructionButton => {
         instructionButton.addEventListener('click', function (e) {
@@ -233,6 +236,10 @@ document.addEventListener('DOMContentLoaded', function () {
             instructionModal.classList.add('modal_active')
             modals.forEach(modal => modal.classList.remove('modal_active'))
         })
+    })
+
+    closeVideoButton.addEventListener('click', function(){
+        player.pause()
     })
 
 });
