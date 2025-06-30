@@ -203,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeVideoButton = document.querySelector('.video-modal__close')
     const optionsButtons = document.querySelectorAll('.options-button')
     const iframe = document.querySelector('iframe');
-    const player = VK.VideoPlayer(iframe);
 
     instructionButtons.forEach(instructionButton => {
         instructionButton.addEventListener('click', function (e) {
@@ -216,8 +215,10 @@ document.addEventListener('DOMContentLoaded', function () {
     videoButtons.forEach(videoButton => {
         videoButton.addEventListener('click', function (e) {
             e.preventDefault();
+            videoSrc = videoButton.getAttribute('data-video')
             overlay.classList.add('overlay_active')
             videoModal.classList.add('modal_active')
+            iframe.src = videoSrc
         })
     })
 
@@ -238,8 +239,9 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 
-    closeVideoButton.addEventListener('click', function(){
-        player.pause()
+    closeVideoButton.addEventListener('click', function(e){
+        console.log(iframe)
+        iframe.src = ''
     })
 
 });
