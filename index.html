@@ -584,11 +584,16 @@
 			let wrongAnsweTitle = "НЕПРАВИЛЬНАЯ ИДЕНТИФИКАЦИЯ ДИАЛОГА :("
 			let wrongAnsweText = "Небольшой в один абзац текст с сообщением о том как пользователь ошибочно идентифицировать диалог и объяснением того как диалог нужно было идентифицировать правильно и почему"
 			let workProject = window.app = new APP({
-				container: document.querySelector("body"),
-				eventListener: document.body,
+				container:document.querySelector("body"),
+				eventListener:document.body,
 				appPath: "",
 				// appPath: "/mts_defender",
 				index: "index.orbt",
+				debug: {editor: true,log:true},
+				resources:[
+					questions.map(question=>question.audio_url)
+					// "https://mtsdefenders.despbots.ru/media/audio/dialogs/speech_1.wav"
+				],
 				loadingEnds: () => {
 					loadingButton.classList.remove('loading__button_disabled')
 				},
@@ -596,8 +601,11 @@
 				userArgs: {
 					fontFamily: "MTSWide",
 					swipeCallback: (audioFile, direction) => {/*Эта функция прослушивает свайп пользователя. В параметрах получаем путь к айдио файлу, который пользоват свайпает, и направление*/
-						console.log(currentSpeechIndex)
-						console.log(currentQuestionId)
+						console.log(audioFile, direction, answers[audioFile]?.answer)
+						const isCorrect = answers[audioFile]?.answer === direction;
+						const title = isCorrect ? rightAnsweTitle : wrongAnsweTitle;
+						const text = isCorrect ? rightAnsweText : wrongAnsweText;
+						window.app.search("main_camera","swipe_controller").startFlipAnimation(title, text);
 						postUser({url: 'event', data: {
 							user_id: userData.id,
 							session_id: sessionInfo.session_id,

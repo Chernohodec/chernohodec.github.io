@@ -59,11 +59,11 @@ export default {"./components/graphics_settings.js": class GraphicsSettings {
 		
 		let newPixelRatio;
 		
-		if (avgFPS < 30 && currentPixelRatio > 1.0) {
+		if (avgFPS < 45 && currentPixelRatio > 1.0) {
 			newPixelRatio = Math.max(1.0, currentPixelRatio - this.adjustmentStep);
-		} else if (avgFPS < 30 && currentPixelRatio === 1.0) {
+		} else if (avgFPS < 45 && currentPixelRatio === 1.0) {
 			newPixelRatio = Math.max(0.7, currentPixelRatio - 0.1);
-		} else if (avgFPS > 45 && currentPixelRatio < 2.0) {
+		} else if (avgFPS > 55 && currentPixelRatio < 2.0) {
 			newPixelRatio = Math.min(2.0, currentPixelRatio + this.adjustmentStep);
 		}
 		
@@ -1229,14 +1229,6 @@ export default {"./components/graphics_settings.js": class GraphicsSettings {
 			this.isPlaying = false;
 			this.isResetting = true;
 			this.resetCylinders();
-		});
-		
-		this.audio.addEventListener('error', (e) => {
-			console.error('Ошибка загрузки аудио:', this.speechFile, e);
-		});
-		
-		this.audio.addEventListener('canplaythrough', () => {
-			console.log('Аудио загружено:', this.speechFile);
 		});
 	}
 
