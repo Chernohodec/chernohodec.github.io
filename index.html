@@ -533,6 +533,21 @@
 			let sessionInfo;
 			let questions;
 
+			// mock data
+			// let questions = [
+			// 	{question_title: "Не вор 4", question_id: 4, audio_url: "/media/audio/dialogs/speech_4.wav"},
+			// 	{question_title: "Вор 2", question_id: 7, audio_url: "/media/audio/dialogs/speech_2_ke7N5BT.wav"},
+			// 	{question_title: "Не вор 1", question_id: 1, audio_url: "/media/audio/dialogs/speech_1.wav"},
+			// 	{question_title: "Не вор 3", question_id: 3, audio_url: "/media/audio/dialogs/speech_3.wav"},
+			// 	{question_title: "Не вор 5", question_id: 5, audio_url: "/media/audio/dialogs/speech_5.wav"},
+			// 	{question_title: "Вор 3", question_id: 8, audio_url: "/media/audio/dialogs/speech_3_d4M2WMk.wav"},
+			// 	{question_title: "Не вор 2", question_id: 2, audio_url: "/media/audio/dialogs/speech_2.wav"},
+			// 	{question_title: "Вор 1", question_id: 6, audio_url: "/media/audio/dialogs/speech_1_hthga9S.wav"},
+			// 	{question_title: "Вор 4", question_id: 9, audio_url: "/media/audio/dialogs/speech_4_OgEX84s.wav"},
+			// 	{question_title: "Вор 5", question_id: 10, audio_url: "/media/audio/dialogs/speech_5_P1c9D9j.wav"}
+			// ]
+			// end mock data
+
 			try {
 					console.log(tg.initDataUnsafe.start_param)
 					const getUserData = await getUser({ url: 'users', user_id: userData.id, user_firstname: userData.first_name, user_lastname: userData.last_name, user_username: userData.username, utm_mark: typeof tg.initDataUnsafe.start_param === 'undefined' ? '' : tg.initDataUnsafe.start_param });
@@ -577,6 +592,10 @@
 
 			const allAnswers = questions.length;
 			let currentSpeechIndex = sessionInfo.on_step - 1;
+
+			// mock data
+			// let currentSpeechIndex = 1
+			// end mock data
 			let currentQuestionId = questions[currentSpeechIndex - 1]?.question_id;
 
 			let rightAnsweTitle = "ПРАВИЛЬНАЯ ИДЕНТИФИКАЦИЯ ДИАЛОГА!"
@@ -584,16 +603,11 @@
 			let wrongAnsweTitle = "НЕПРАВИЛЬНАЯ ИДЕНТИФИКАЦИЯ ДИАЛОГА :("
 			let wrongAnsweText = "Небольшой в один абзац текст с сообщением о том как пользователь ошибочно идентифицировать диалог и объяснением того как диалог нужно было идентифицировать правильно и почему"
 			let workProject = window.app = new APP({
-				container:document.querySelector("body"),
-				eventListener:document.body,
+				container: document.querySelector("body"),
+				eventListener: document.body,
 				appPath: "",
 				// appPath: "/mts_defender",
 				index: "index.orbt",
-				debug: {editor: true,log:true},
-				resources:[
-					questions.map(question=>question.audio_url)
-					// "https://mtsdefenders.despbots.ru/media/audio/dialogs/speech_1.wav"
-				],
 				loadingEnds: () => {
 					loadingButton.classList.remove('loading__button_disabled')
 				},
@@ -601,11 +615,8 @@
 				userArgs: {
 					fontFamily: "MTSWide",
 					swipeCallback: (audioFile, direction) => {/*Эта функция прослушивает свайп пользователя. В параметрах получаем путь к айдио файлу, который пользоват свайпает, и направление*/
-						console.log(audioFile, direction, answers[audioFile]?.answer)
-						const isCorrect = answers[audioFile]?.answer === direction;
-						const title = isCorrect ? rightAnsweTitle : wrongAnsweTitle;
-						const text = isCorrect ? rightAnsweText : wrongAnsweText;
-						window.app.search("main_camera","swipe_controller").startFlipAnimation(title, text);
+						console.log(currentSpeechIndex)
+						console.log(currentQuestionId)
 						postUser({url: 'event', data: {
 							user_id: userData.id,
 							session_id: sessionInfo.session_id,
