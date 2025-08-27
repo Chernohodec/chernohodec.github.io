@@ -1,23 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./logo.svg" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
-    />
-    <title>VK Mini App Boilerplate</title>
-    <script type="module" crossorigin src="./assets/index-COSGfxh_.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BNOvqaKL.css">
-    <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
-    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
-    <script nomodule crossorigin id="vite-legacy-polyfill" src="./assets/polyfills-legacy-BzcZJ8fA.js"></script>
-    <script nomodule crossorigin id="vite-legacy-entry" data-src="./assets/index-legacy-DYSqhgVc.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
-  </body>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="Permissions-Policy" content="gyroscope=*, accelerometer=*">
+		<title>MTS Defender</title>
+		<style>
+			@font-face {
+				font-family: 'MTSWide';
+				src: url('fonts/MTSWide-Medium.ttf') format('truetype');
+				font-weight: 500;
+				font-display: swap;
+			}
+			
+			/* Block standard mobile swipe behaviors */
+			* {
+				touch-action: none;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			body {
+				touch-action: none;
+				overscroll-behavior: none;
+				-webkit-overflow-scrolling: touch;
+				-webkit-touch-callout: none;
+				user-select: none;
+				-webkit-tap-highlight-color: transparent;
+				-webkit-user-drag: none;
+				-webkit-user-select: none;
+				overscroll-behavior-x: none;
+				overscroll-behavior-y: none;
+			}
+			
+			/* Prevent pull-to-refresh and navigation swipes */
+			html, body {
+				font-family:MTSWide;
+				overflow: hidden;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				-webkit-overflow-scrolling: touch;
+				overscroll-behavior: none;
+			}
+
+			/* Continue button styles */
+			.continue-button {
+				font-family:MTSWide;
+				position: fixed;
+				bottom: 40px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: rgba(255,255,255,0.9);
+				color: transparent;
+				border: none;
+				padding: 20px 80px;
+				border-radius: 50px;
+				font-size: 24px;
+				font-weight: bold;
+				cursor: pointer;
+				z-index: 1000;
+				box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+				min-width: 280px;
+				backdrop-filter: blur(10px);
+				-webkit-background-clip: text;
+				background-clip: text;
+				background-image: inherit;
+			}
+
+			/* Screen info widget */
+			.screen-info {
+				position: fixed;
+				top: 10px;
+				right: 10px;
+				background: rgba(0, 0, 0, 0.8);
+				color: white;
+				padding: 10px;
+				border-radius: 8px;
+				font-family: monospace;
+				font-size: 12px;
+				z-index: 1001;
+				backdrop-filter: blur(5px);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+			}
+
+		</style>
+		<script type="module">
+			
+			import APP from "/__engine/orbeet.min.js";
+
+			let answers = {
+				"speech/speech_1.wav":{answer:"left"},
+				"speech/speech_2.wav":{answer:"right"},
+				"speech/speech_3.wav":{answer:"right"},
+				"speech/speech_4.wav":{answer:"left"},
+				"speech/speech_5.wav":{answer:"left"},
+			}
+			let rightAnsweTitle = "ПРАВИЛЬНАЯ ИДЕНТИФИКАЦИЯ ДИАЛОГА!"
+			let rightAnsweText = "Отлично! Вы правильно определили мошенника. Этот диалог содержал признаки мошенничества и требовал отклонения вызова."
+			let wrongAnsweTitle = "НЕПРАВИЛЬНАЯ ИДЕНТИФИКАЦИЯ ДИАЛОГА :("
+			let wrongAnsweText = "Небольшой в один абзац текст с сообщением о том как пользователь ошибочно идентифицировать диалог и объяснением того как диалог нужно было идентифицировать правильно и почему"
+			let workProject = window.app = new APP({
+				container:document.querySelector("body"),
+				eventListener:document.body,
+				appPath:"/mts_defender",
+				index:"index.orbt",
+				debug: {editor: true,log:true},
+				loadingEnds:()=>{},
+				resources:[
+					"https://mtsdefenders.despbots.ru/media/audio/dialogs/speech_1.wav"
+				],
+				userArgs:{
+					fontFamily:"MTSWide",
+
+					swipeCallback: (audioFile, direction) => {/*Эта функция прослушивает свайп пользователя. В параметрах получаем путь к айдио файлу, который пользоват свайпает, и направление*/
+
+						console.log(audioFile, direction, answers[audioFile]?.answer)
+						const isCorrect = answers[audioFile]?.answer === direction;
+						const title = isCorrect ? rightAnsweTitle : wrongAnsweTitle;
+						const text = isCorrect ? rightAnsweText : wrongAnsweText;
+						window.app.search("main_camera","swipe_controller").startFlipAnimation(title, text);/*Этой функцией мы показываем ответ для пользователя, после того как он нажмет внутрненюю кнопку "Понятно" логика перейдет к следущей аудио записи.*/
+
+					},
+					gotItCallback: () => {/*Как только пользователь нажмет "Понятно", будет вызываться этот колбэк*/
+						showNextPhone();
+						console.log("got it button clicked")
+					}
+				},
+			})
+
+		</script>
+		<script>
+		let currentSpeechIndex = 0;
+			// Получаем текущий путь динамически
+			const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+			
+			const speechFiles =[
+				{audioSrc:"https://mtsdefenders.despbots.ru/media/audio/dialogs/speech_1.wav",caller:"Неизвестный абонент 1"}
+			];
+			function swipeLogo(event) {
+				event.target.style.display = "none"
+				window.app.search("main_logo", "logo_animator").swipe();
+				window.app.search("phone_manager", "phone_locator").showNewPhone(speechFiles[currentSpeechIndex].audioSrc, speechFiles[currentSpeechIndex].caller);
+				currentSpeechIndex++;
+			}
+
+			window.showNextPhone = function () {
+				if (currentSpeechIndex < speechFiles.length) {
+					window.app.search("phone_manager", "phone_locator").showNewPhone(speechFiles[currentSpeechIndex].audioSrc, speechFiles[currentSpeechIndex].caller);
+					currentSpeechIndex++;
+				}
+			}
+
+			function resetApp(event) {
+				document.querySelector("#start-button").style.display = "block"
+				if (window.app) {
+					window.app.reset();
+				}
+			}
+		</script>
+	</head>
+	<body style="width:100%;height:100%;margin:0;">
+
+		<button onclick="swipeLogo(event)" id="start-button" class="continue-button">Начать</button>
+		<button onclick="resetApp(event)" class="continue-button" style="bottom: 120px; padding: 14px 54px; font-size: 16px; min-width: 186px;">Перезагрузить</button>
+
+	</body>
 </html>

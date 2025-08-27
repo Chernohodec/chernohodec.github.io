@@ -1,0 +1,146 @@
+/* MTS Defender 2D UI Styles */
+@font-face {
+	font-family: 'MTSWide';
+	src: url('../fonts/MTSWide-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-display: swap;
+}
+/* Back UI Panel */
+.back-ui-panel {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	box-sizing: border-box;
+	display: none;
+	z-index: 1000;
+	font-family: MTSWide;
+	pointer-events: none;
+}
+
+/* Back UI Elements */
+.back-ui-title {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-family: MTSWide;
+	font-size: 2.77vh;
+	font-weight: normal;
+	line-height: 1;
+	text-align: center;
+	width: 90%;
+	opacity: 0;
+	transition: all 0.3s ease-out;
+	margin: 0;
+	padding: 0;
+	pointer-events: none;
+}
+
+.back-ui-text {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-family: MTSWide;
+	font-size: 1.49vh;
+	text-align: center;
+	line-height: 1.4;
+	width: 90%;
+	opacity: 0;
+	transition: all 0.3s ease-out;
+	margin: 0;
+	padding: 0;
+	white-space: normal;
+	pointer-events: none;
+}
+
+.back-ui-buttons {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	gap: 1.6vh;
+	width: 90%;
+	opacity: 0;
+	transition: all 0.3s ease-out;
+	pointer-events: auto;
+}
+
+/* UI Buttons */
+.ui-button {
+	position: relative;
+	padding: 2.13vh 2.13vh;
+	border: 0.21vh solid white;
+	background: transparent;
+	color: white;
+	font-family: MTSWide;
+	font-size: 1.92vh;
+	font-weight: normal;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-sizing: border-box;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4.27vh;
+}
+
+.ui-button:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	transform: scale(1.05);
+}
+
+.ui-button:active {
+	transform: scale(0.95);
+}
+
+/* Outline button (repeat button) */
+.ui-button.outline-button {
+	background: transparent;
+	border: 0.21vh solid white;
+	color: white;
+	width: 100%;
+}
+
+.ui-button.outline-button:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Filled button (next button) */
+.ui-button.filled-button {
+	background: url('../images/ui-button.png') no-repeat center center;
+	background-size: 100% 100%;
+	color: transparent;
+	width: 100%;
+	min-height: 40px;
+}
+
+
+/* Caller Display */
+.caller-display {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+	font-family: MTSWide;
+	font-size: 2.35vh;
+	font-weight: normal;
+	text-align: center;
+	text-shadow: 0 0.21vh 1.07vh rgba(255,255,255,0.3);
+	white-space: nowrap;
+	pointer-events: none;
+	display: none;
+	transition: all 0.2s ease;
+	z-index: 998;
+}
+
+/* Animation states */
+.fade-in {
+	opacity: 1 !important;
+}
+
+.slide-up {
+	transform: translate(-50%, -50%) translateY(0) !important;
+}
+
+.slide-down {
+	transform: translate(-50%, -50%) translateY(2.13vh) !important;
+}

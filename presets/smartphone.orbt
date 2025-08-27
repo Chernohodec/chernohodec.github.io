@@ -1,0 +1,216 @@
+
+glass:{
+	object3d:{
+		type:"Mesh",
+	
+		material:{
+			type:"MeshPhysicalMaterial",
+			args:{
+				color:"#fafeff",
+				emissive:"#212d30",
+				metalness:0.025,
+				roughness:1.0,
+				reflectivity:.4,
+				ior:1.381,
+				clearcoat:0,
+				clearcoatRoughness:0,
+				iridescence:.2,
+				iridescenceIOR:1.0,
+				dispersion:0.0,
+				sheen:0.0,
+				sheenRoughness:1,
+				transmission:1.0,
+				thickness:2,
+				opacity:1,				
+				side:2,
+				sheenColor:"#000000",
+				normalScale:[10,1]
+			},
+			textures:{
+				normalMap:{src:"./textures/tabet_01_nm.jpg", },	
+				roughnessMap:{src:"./textures/tabet_01_rough.png"},	
+				aoMap:{src:"./textures/tabet_01_ao.jpg"},
+				thicknessMap:{src:"./textures/tablet_01_thickness.jpg"}
+			}
+		},
+		
+	},
+},
+
+
+smartphone:{
+	preset:"glass",
+	userArgs:{rotationSpeed:.02,random:true},
+	object3d:{
+		type:"Mesh",
+		geometry:{
+			src:"./models/tablet.fbx"
+		},
+		args:{visible:false},
+		
+	},
+	components:{
+		phone_input_controller:{src:"./components/phone_input_controller.js"}
+	},
+	children:[
+		{
+			object3d:{
+				name:"play_button",
+				type:"Plane",
+				position:[0,-3.1,.1],
+				geometry:{args:{width:1,height:1}},
+				material:{
+					type:"MeshStandardMaterial",
+					args:{
+						alphaTest:.0001,
+						transparent:true,	
+					},
+					textures:{
+						map:{src:"./textures/play_button_color.png"},
+						normalMap:{src:"./textures/play_button_nm.png"},
+						aoMap:{src:"./textures/play_button_ao.png"},
+						emissiveMap:{src:"./textures/play_button_em.png"}
+					}
+				}	
+			}
+		},
+		{
+			object3d:{
+				name:"pause_button",
+				type:"Plane",
+				position:[0,-3.1,.1],
+				geometry:{args:{width:1,height:1}},
+				material:{
+					type:"MeshStandardMaterial",
+					args:{
+						alphaTest:.0001,
+						transparent:true,	
+					},
+					textures:{
+						map:{src:"./textures/pause_button_color.png"},
+						normalMap:{src:"./textures/pause_button_nm.png"},
+						aoMap:{src:"./textures/pause_button_ao.png"},
+						emissiveMap:{src:"./textures/pause_button_em.png"}
+					}
+				}	
+			}
+		},
+		{
+	
+			object3d:{
+				type:"Group",
+				name:"cylinders",
+				position:[0,0,.2],
+				visible:true
+			},
+			components:{
+				audio_visualizer:{src:"./components/audio_visualizer.js"}
+			}
+		},
+		{
+			object3d:{
+				name:"caller_name",
+				type:"Group",
+				position:[0, 3.645, 0.1],
+				visible:true
+			},
+		},
+		{
+			object3d:{
+				name:"back_ui_title_anchor",
+				type:"Group", 
+				position:[0, 3.2, 0.1],
+				visible:true
+			},
+		},
+		{
+			object3d:{
+				name:"back_ui_text_anchor",
+				type:"Group",
+				position:[0, .75, 0.1], 
+				visible:true
+			},
+		},
+		{
+			object3d:{
+				name:"back_ui_buttons_anchor",
+				type:"Group",
+				position:[0, -2.8, 0.1],
+				visible:true
+			},
+		}
+	]
+},
+main_logo:{
+	
+	preset:"glass",
+	userArgs:{rotationSpeed:.02,random:true},
+	object3d:{
+		type:"Mesh",
+		name:"main_logo",
+		geometry:{
+			src:"./models/soft_tablet.fbx"
+		},
+		position:[-0.360, 2, 1.530],
+		rotation:[0.000, -0.262, 0.000],
+		material:{
+			
+		},
+		
+	},
+	components:{
+		logo_animator:{src:"./components/logo_animator.js"}
+	},
+	children:[
+		{
+			
+			object3d:{
+				type:"Plane",
+				position:[0,0,.1],
+				rotation:[0,0,0],
+				geometry:{args:{width:4.8,height:4.8}},
+				material:{
+					type:"MeshBasicMaterial",
+					args:{
+						color:"#ffffff",
+
+						side:0,
+						alphaTest:.01,
+						transparent:true,
+					},
+					textures:{
+						
+						map:{src:"./textures/logo_color.png"},
+
+						
+					}
+				}	
+			}
+		},
+		{
+			
+			object3d:{
+				name:"background_logo",
+				type:"Plane",
+				position:[.2,-.2,-1],
+				rotation:[0,0,0],
+				args:{renderOrder:-1},
+				geometry:{args:{width:4.8,height:4.8}},
+				material:{
+					type:"MeshBasicMaterial",
+					args:{
+						color:"#ffffff",
+						side:0,
+						alphaTest:.01,
+						visible:true
+					},
+					textures:{
+						
+						map:{src:"./textures/logo_color.png",args:{colorSpace:"srgb"}},						
+					}
+				}	
+			}
+		},
+
+	]
+}
