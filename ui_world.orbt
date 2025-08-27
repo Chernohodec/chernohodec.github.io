@@ -3,8 +3,7 @@ world:{
 	
 	// Ресурсы
 	resources:[
-		"./css/ui_2d.css",
-		"./fonts/MTSWide-Medium.ttf"
+		"./css/ui_2d.css"
 	],
 	
 	// Только 2D рендерер для HTML элементов

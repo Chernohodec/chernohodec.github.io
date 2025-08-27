@@ -1,10 +1,5 @@
 /* MTS Defender 2D UI Styles */
-@font-face {
-	font-family: 'MTSWide';
-	src: url('../fonts/MTSWide-Medium.ttf') format('truetype');
-	font-weight: 500;
-	font-display: swap;
-}
+
 /* Back UI Panel */
 .back-ui-panel {
 	position: absolute;
@@ -112,6 +107,10 @@
 	color: transparent;
 	width: 100%;
 	min-height: 40px;
+}
+
+.ui-button.filled-button:hover {
+	
 }
 
 

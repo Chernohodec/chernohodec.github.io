@@ -1,5 +1,4 @@
 world:{
-	
 	name:"world3d",
 	resources:[
 		"./resources.zip",
@@ -17,6 +16,7 @@ world:{
 		performance_optimizer:{src:"./components/performance_optimizer.js"}
 	},
 	
+	// Подключаем UI мир
 	next:"./ui_world.orbt",
 	
 	renderer3d:{
@@ -25,7 +25,7 @@ world:{
 			color:"#C6D4F9",
 			antialias:false,
 			sortObjects:true,
-			maxPixelRatio:1,
+			maxPixelRatio:2,
 			//composer:true
 		},
 
