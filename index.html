@@ -1,842 +1,155 @@
-﻿<html>
-
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<meta http-equiv="Permissions-Policy" content="gyroscope=*, accelerometer=*">
-	<title>MTS Defender</title>
-	<script src="https://telegram.org/js/telegram-web-app.js?59"></script>
-	<style>
-		@font-face {
-			font-family: 'MTSWide';
-			src: url('./fonts/MTSWide-Medium.ttf') format('truetype');
-			font-weight: 500;
-			font-display: swap;
-		}
-		@font-face {
-			font-family: 'MTSText';
-			src: url('./fonts/MTSText-Medium.ttf') format('truetype');
-			font-weight: 500;
-			font-display: swap;
-		}
-
-		/* Block standard mobile swipe behaviors */
-		* {
-			touch-action: none;
-			-webkit-touch-callout: none;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
-
-		body {
-			touch-action: none;
-			overscroll-behavior: none;
-			-webkit-overflow-scrolling: touch;
-			-webkit-touch-callout: none;
-			user-select: none;
-			-webkit-tap-highlight-color: transparent;
-			-webkit-user-drag: none;
-			-webkit-user-select: none;
-			overscroll-behavior-x: none;
-			overscroll-behavior-y: none;
-		}
-
-		/* Prevent pull-to-refresh and navigation swipes */
-		html,
-		body {
-			font-family: MTSWide;
-			overflow: hidden;
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			-webkit-overflow-scrolling: touch;
-			overscroll-behavior: none;
-		}
-
-		::-webkit-scrollbar {
-			width: 0px;
-			border-radius: 160px;
-		}
-
-		::-webkit-scrollbar-track {
-			width: 0px;
-		}
-
-		/* Continue button styles */
-		.continue-button {
-			font-family: MTSWide;
-			position: fixed;
-			bottom: 40px;
-			left: 50%;
-			transform: translateX(-50%);
-			background: rgba(255, 255, 255, 0.9);
-			color: transparent;
-			border: none;
-			padding: 20px 80px;
-			border-radius: 50px;
-			font-size: 24px;
-			font-weight: bold;
-			cursor: pointer;
-			z-index: 1000;
-			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-			min-width: 280px;
-			backdrop-filter: blur(10px);
-			-webkit-background-clip: text;
-			background-clip: text;
-			background-image: inherit;
-		}
-
-		/* Screen info widget */
-		.screen-info {
-			position: fixed;
-			top: 10px;
-			right: 10px;
-			background: rgba(0, 0, 0, 0.8);
-			color: white;
-			padding: 10px;
-			border-radius: 8px;
-			font-family: monospace;
-			font-size: 12px;
-			z-index: 1001;
-			backdrop-filter: blur(5px);
-			border: 1px solid rgba(255, 255, 255, 0.2);
-		}
-
-		.loading {
-			opacity: 0;
-			pointer-events: none;
-			position: fixed;
-			z-index: 100000;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			transition: all .3s linear;
-			display: flex;
-			flex-direction: column;
-			touch-action: auto !important;
-			-webkit-touch-callout: auto !important;
-			overflow: auto;
-			padding-bottom: 16px;
-		}
-
-		.loading * {
-			touch-action: auto !important;
-			-webkit-touch-callout: auto !important;
-		}
-
-		.loading_active {
-			opacity: 1;
-			pointer-events: all;
-		}
-
-		.loading__bg {
-			position: fixed;
-			z-index: -1;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			pointer-events: none;
-			object-fit: cover;
-			object-position: center;
-		}
-
-		.loading__header-title {
-			position: absolute;
-			top: 23.5px;
-			left: 16px;
-			color: #FFF;
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 17px;
-			text-transform: uppercase;
-			line-height: 100%;
-			letter-spacing: 0%;
-		}
-
-		.loading__logo {
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
-
-		.header {
-			position: relative;
-			height: 64px;
-			margin-bottom: 25px;
-			flex-shrink: 0;
-		}
-
-		.loading__ellipse-block {
-			margin: 0 auto;
-			margin-top: auto;
-			margin-bottom: 63px;
-			position: relative;
-		}
-
-		.loading__ellipse {
-			position: relative;
-			z-index: 1;
-			animation: rotate 3s linear infinite;
-		}
-
-		.loading__bg-ellipse {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		.loading__header {
-			color: #FFF;
-			font-family: MTSWide;
-			padding-left: 16px;
-			padding-right: 16px;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 28px;
-			margin-bottom: 16px;
-			line-height: 100%;
-			letter-spacing: 0%;
-		}
-
-		.loading__list {
-			list-style: disc;
-			padding-left: 40px;
-			padding-right: 16px;
-			margin-bottom: 25px;
-		}
-
-		.loading__list-item {
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 18px;
-			line-height: 100%;
-			letter-spacing: 0%;
-			color: #FFF;
-		}
-
-		.loading__list-item:not(:last-of-type) {
-			margin-bottom: 13px;
-		}
-
-		.white-button {
-			display: block;
-			outline: none;
-			border: none;
-			background-color: #FFF;
-			width: calc(100% - 32px);
-			/* max-width: 360px; */
-			margin: 0 auto;
-			margin-top: auto;
-			border-radius: 1000px;
-			padding: 24px 9px;
-		}
-
-		.white-button:hover {
-			cursor: pointer;
-		}
-
-		.white-button__text {
-			color: #FF0032;
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 18px;
-			line-height: 100%;
-			letter-spacing: 0%;
-		}
-
-		@keyframes rotate {
-			from {
-				transform: rotate(0);
-			}
-
-			to {
-				transform: rotate(360deg);
-			}
-		}
-
-		.final {
-			opacity: 0;
-			pointer-events: none;
-			position: fixed;
-			z-index: 100000;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			transition: all .3s linear;
-			display: flex;
-			flex-direction: column;
-			touch-action: auto !important;
-			-webkit-touch-callout: auto !important;
-			overflow: auto;
-			padding-bottom: 29px;
-		}
-
-		.final * {
-			touch-action: auto !important;
-			-webkit-touch-callout: auto !important;
-		}
-
-		.final_active {
-			opacity: 1;
-			pointer-events: all;
-		}
-
-		.final__content {
-			padding-left: 16px;
-			padding-right: 16px;
-		}
-
-		.final__title {
-			color: #FFF;
-			margin-bottom: 7px;
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 28px;
-			line-height: 100%;
-			letter-spacing: 0%;
-			text-align: center;
-		}
-
-		.final__correct-count {
-			color: #FFF;
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 128px;
-			line-height: 100%;
-			letter-spacing: 0%;
-			text-align: center;
-		}
-
-		.final__all-count {
-			color: #FFF;
-			margin-bottom: 24px;
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 28px;
-			margin-top: -15px;
-			text-align: center;
-			line-height: 100%;
-			letter-spacing: 0%;
-		}
-
-		.final__subtitle {
-			margin-bottom: 45px;
-			color: #FFF;
-			font-family: MTSText;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 16px;
-			line-height: 18px;
-			letter-spacing: 0%;
-			text-align: center;
-		}
-
-		.final-button {
-			display: block;
-			outline: none;
-			border: none;
-			background-color: #FFF;
-			width: 100%;
-			max-width: 360px;
-			margin: 0 auto;
-			margin-top: auto;
-			border-radius: 1000px;
-			padding: 24px 9px;
-			margin-bottom: 50px;
-		}
-
-		.final-button:hover {
-			cursor: pointer;
-		}
-
-		.final-button__text {
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 18px;
-			line-height: 100%;
-			letter-spacing: 0%;
-			background: linear-gradient(90deg, #DA8A9B 0%, #FDA7B6 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-		}
-
-		.final__second-title {
-			color: #FFF;
-			margin-bottom: 24px;
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 28px;
-			line-height: 100%;
-			letter-spacing: 0%;
-			text-align: center;
-		}
-
-		.final__second-subtitle {
-			margin-bottom: 40px;
-			color: #FFF;
-			font-family: MTSText;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 16px;
-			line-height: 18px;
-			letter-spacing: 0%;
-			text-align: center;
-		}
-
-		.final__third-title {
-			color: #FFF;
-			margin-bottom: 24px;
-			font-family: MTSWide;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 28px;
-			line-height: 100%;
-			letter-spacing: 0%;
-			text-align: center;
-		}
-
-		.final__third-subtitle {
-			margin-bottom: 40px;
-			color: #FFF;
-			font-family: MTSText;
-			font-weight: 500;
-			font-style: Medium;
-			font-size: 16px;
-			line-height: 18px;
-			letter-spacing: 0%;
-			text-align: center;
-		}
-
-		.loading__button_disabled {
-			pointer-events: none;
-			opacity: 0;
-		}
-	</style>
-	<script>
-		async function initApp() {
-			const host = "https://mtsdefenders.despbots.ru";
-			const api_url = host + '/api'
-
-			async function getUser({ url = "", user_firstname, user_id, user_lastname, user_username, utm_mark }) {
-				let request = api_url + "/" + url + "/?user_firstname=" + user_firstname + '&' + 'user_id=' + user_id + '&' + 'user_lastname=' + user_lastname + '&user_username=' + user_username + '&utm_mark=' + utm_mark;
-
-				let response = await fetch(request, {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-					},
-				});
-				if (!response.ok) {
-					throw new Error(
-						`Неполучилось отправить POST запрос ${url}, статус ${response.status}`
-					);
-				}
-				return await response.json();
-			}
-
-			async function postUser({
-				url = "",
-				data,
-			}) {
-				let request = api_url + "/" + url + '/';
-
-				let response = await fetch(request, {
-					method: "POST",
-					mode: "cors",
-					cache: "no-cache",
-					credentials: "same-origin",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					redirect: "follow",
-					referrerPolicy: "no-referrer",
-					body: JSON.stringify(data),
-				});
-				if (!response.ok) {
-					throw new Error(
-						`Неполучилось отправить POST запрос ${url}, статус ${response.status}`
-					);
-				}
-				return await response.json();
-			}
-
-			async function postEnd({
-				url = "",
-				data,
-			}) {
-				let request = api_url + "/" + url + '/';
-
-				let response = await fetch(request, {
-					method: "POST",
-					mode: "cors",
-					cache: "no-cache",
-					credentials: "same-origin",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					redirect: "follow",
-					referrerPolicy: "no-referrer",
-					body: JSON.stringify(data),
-				});
-				if (!response.ok) {
-					throw new Error(
-						`Неполучилось отправить POST запрос ${url}, статус ${response.status}`
-					);
-				}
-				return await response.json();
-			}
-
-			async function getEvent({ url = "", user_id }) {
-				let request = api_url + "/" + url + "/?user_id=" + user_id;
-
-				let response = await fetch(request, {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-					},
-				});
-				if (!response.ok) {
-					throw new Error(
-						`Неполучилось отправить POST запрос ${url}, статус ${response.status}`
-					);
-				}
-				return await response.json();
-			}
-
-			const tg = window.Telegram.WebApp;
-			tg.disableVerticalSwipes();
-			tg.expand();
-			tg.ready();
-
-			tg.setHeaderColor('#FFF');
-			tg.setBackgroundColor('#FFF');
-			tg.setBottomBarColor('#FFF');
-
-			const userData = tg.initDataUnsafe.user
-			let sessionInfo;
-			let questions;
-
-			// mock data
-			// let questions = [
-			// 	{question_title: "Не вор 4", question_id: 4, audio_url: "/media/audio/dialogs/speech_4.wav"},
-			// 	{question_title: "Вор 2", question_id: 7, audio_url: "/media/audio/dialogs/speech_2_ke7N5BT.wav"},
-			// 	{question_title: "Не вор 1", question_id: 1, audio_url: "/media/audio/dialogs/speech_1.wav"},
-			// 	{question_title: "Не вор 3", question_id: 3, audio_url: "/media/audio/dialogs/speech_3.wav"},
-			// 	{question_title: "Не вор 5", question_id: 5, audio_url: "/media/audio/dialogs/speech_5.wav"},
-			// 	{question_title: "Вор 3", question_id: 8, audio_url: "/media/audio/dialogs/speech_3_d4M2WMk.wav"},
-			// 	{question_title: "Не вор 2", question_id: 2, audio_url: "/media/audio/dialogs/speech_2.wav"},
-			// 	{question_title: "Вор 1", question_id: 6, audio_url: "/media/audio/dialogs/speech_1_hthga9S.wav"},
-			// 	{question_title: "Вор 4", question_id: 9, audio_url: "/media/audio/dialogs/speech_4_OgEX84s.wav"},
-			// 	{question_title: "Вор 5", question_id: 10, audio_url: "/media/audio/dialogs/speech_5_P1c9D9j.wav"}
-			// ]
-			// end mock data
-
-			try {
-					console.log(tg.initDataUnsafe.start_param)
-					const getUserData = await getUser({ url: 'users', user_id: userData.id, user_firstname: userData.first_name, user_lastname: userData.last_name, user_username: userData.username, utm_mark: typeof tg.initDataUnsafe.start_param === 'undefined' ? '' : tg.initDataUnsafe.start_param });
-					sessionInfo = getUserData.data.session_info;
-					questions = sessionInfo.session_questions
-					console.log(sessionInfo)
-				}
-				catch (err) {
-					console.log(err)
-				}
-
-			console.log(questions)
-
-			// import APP from "./__engine/orbeet.min.js";
-
-			const module = await import("./__engine/orbeet.min.js")
-			const APP = module.default || module
-			const loadingPage = document.querySelector('.loading')
-			const loadingButton = loadingPage.querySelector('.loading__button')
-
-			const finalPage = document.querySelector('.final');
-			const finalRestart = finalPage.querySelector('.final__restart-btn')
-			const finalCount = finalPage.querySelector('.final__correct-count')
-			const finalAllCount = finalPage.querySelector('.final__all-count')
-			const whiteBtnSecond = finalPage.querySelector('.white-button__second')
-			const whiteBtnThird = finalPage.querySelector('.white-button__third')
-
-
-			// let answers = {
-			// 	"speech/speech_1.wav": { answer: "left" },
-			// 	"speech/speech_2.wav": { answer: "right" },
-			// 	"speech/speech_3.wav": { answer: "right" },
-			// 	"speech/speech_4.wav": { answer: "left" },
-			// 	"speech/speech_5.wav": { answer: "left" },
-			// }
-
-			// let score = 0;
-
-			loadingButton.addEventListener('click', () => {
-				loadingPage.classList.remove('loading_active')
-			})
-
-			const allAnswers = questions.length;
-			let currentSpeechIndex = sessionInfo.on_step - 1;
-
-			// mock data
-			// let currentSpeechIndex = 1
-			// end mock data
-			let currentQuestionId = questions[currentSpeechIndex - 1]?.question_id;
-
-			let rightAnsweTitle = "ПРАВИЛЬНАЯ ИДЕНТИФИКАЦИЯ ДИАЛОГА!"
-			let rightAnsweText = "Отлично! Вы правильно определили мошенника. Этот диалог содержал признаки мошенничества и требовал отклонения вызова."
-			let wrongAnsweTitle = "НЕПРАВИЛЬНАЯ ИДЕНТИФИКАЦИЯ ДИАЛОГА :("
-			let wrongAnsweText = "Небольшой в один абзац текст с сообщением о том как пользователь ошибочно идентифицировать диалог и объяснением того как диалог нужно было идентифицировать правильно и почему"
-			let workProject = window.app = new APP({
-				container: document.querySelector("body"),
-				eventListener: document.body,
-				appPath: "",
-				// appPath: "/mts_defender",
-				index: "index.orbt",
-				loadingEnds: () => {
-					loadingButton.classList.remove('loading__button_disabled')
-				},
-				// debug: { editor: true, log: true },
-				userArgs: {
-					fontFamily: "MTSWide",
-					swipeCallback: (audioFile, direction) => {/*Эта функция прослушивает свайп пользователя. В параметрах получаем путь к айдио файлу, который пользоват свайпает, и направление*/
-						console.log(currentSpeechIndex)
-						console.log(currentQuestionId)
-						postUser({url: 'event', data: {
-							user_id: userData.id,
-							session_id: sessionInfo.session_id,
-							question_id: currentQuestionId,
-							fraudster: direction === 'left' ? true : false
-						}})
-						.then((data) => {
-							console.log(data)
-							const isCorrect = data.data.answer_right;
-							const title = isCorrect ? rightAnsweTitle : wrongAnsweTitle;
-							const text = data.data.post_answer_text;
-							window.app.search("main_camera", "swipe_controller").startFlipAnimation(title, text);/*Этой функцией мы показываем ответ для пользователя, после того как он нажмет внутрненюю кнопку "Понятно" логика перейдет к следущей аудио записи.*/
-							if (currentSpeechIndex >= speechFiles.length) {
-								postEnd({url: 'end_event', data: {
-									user_id: userData.id,
-									session_id: sessionInfo.session_id,
-								}})
-								.then((data) => {
-									console.log(data)
-									finalCount.textContent = data.data.right_answers;
-									finalAllCount.textContent = `из ${data.data.total_questions}`
-								})
-								.catch(err => console.log(err))
-							}
-						})
-						.catch(err => console.log(err))
-					},
-					gotItCallback: () => {/*Как только пользователь нажмет "Понятно", будет вызываться этот колбэк*/
-						showNextPhone();
-						console.log("got it button clicked")
-					},
-					gameCompletedCallback: () => {/*Как только пользователь пройдет все записи, будет вызываться этот колбэк, в нем можно будет переходить к результатам*/
-						// window.app.pause(true);/*Остановить рендер*/
-						// console.log("game is completed")
-						// finalPage.classList.add('final_active')
-						// finalCount.textContent = score;
-						// finalAllCount.textContent = `из ${allAnswers}`
-					}
-				},
-			})
-
-			function telegramHanlder(link) {
-				if (isTelegramLinkRobust(link)) {
-					window.Telegram.WebApp.openTelegramLink(link)
-				}
-				else {
-					window.Telegram.WebApp.openLink(link)
-				}
-			}
-
-			whiteBtnSecond.addEventListener('click', () => {
-				telegramHanlder('https://t.me/mtsofficial')
-			})
-
-			whiteBtnThird.addEventListener('click', () => {
-				telegramHanlder('https://t.me/mtsofficial')
-			})
-
-
-			// Получаем текущий путь динамически
-			let speechFiles = questions.map(item => ({
-				audioSrc: host + item.audio_url,
-				caller: item.question_title
-			}));
-			console.log(speechFiles)
-			function swipeLogo(event) {
-				event.target.style.display = "none"
-				window.app.search("main_logo", "logo_animator").swipe();
-				window.app.search("phone_manager", "phone_locator").showNewPhone(speechFiles[currentSpeechIndex].audioSrc, speechFiles[currentSpeechIndex].caller);
-				currentSpeechIndex++;
-				currentQuestionId = questions[currentSpeechIndex - 1]?.question_id;
-			}
-
-			window.showNextPhone = function () {
-				if (currentSpeechIndex < speechFiles.length) {
-					window.app.search("phone_manager", "phone_locator").showNewPhone(speechFiles[currentSpeechIndex].audioSrc, speechFiles[currentSpeechIndex].caller);
-					currentSpeechIndex++;
-					currentQuestionId = questions[currentSpeechIndex - 1]?.question_id;
-				}
-				else {
-						console.log("game is completed")
-						finalPage.classList.add('final_active')
-				}
-			}
-
-			function resetApp(e) {
-				document.querySelector("#start-button").style.display = "block"
-				if (window.app) {
-				getEvent({ url: 'event', user_id: userData.id })
-					.then((data) => {
-						sessionInfo = data.data.session_info;
-
-						questions = sessionInfo.session_questions
-						console.log(questions)
-						finalPage.classList.remove('final_active')
-
-						currentSpeechIndex = data.data.session_info.on_step - 1;
-						currentQuestionId = questions[currentSpeechIndex - 1]?.question_id;
-
-						speechFiles = questions.map(item => ({
-							audioSrc: host + item.audio_url,
-							caller: item.question_title
-						}))
-
-						window.app.reset();
-					})
-					.catch(err => console.log(err))
-				}
-			}
-
-			document.querySelector('.continue-button').addEventListener('click', (e) => {
-				swipeLogo(e)
-			})
-
-			document.querySelector("#restart-button").addEventListener('click', (e) => {
-				resetApp(e)
-			})
-		}
-		
-		initApp()
-
-		/*Редактор для настроек трансформации и материалов, на проде он не нужен*/
-		// Attach editor
-		/*
-		new APP({
-			container: document.querySelector("body"),
-			appPath: "/__engine/editor",
-			debug: {editor: true,log:true},
-			userArgs: {workProject: workProject}
-		});
-		*/
-
-	</script>
-	<script>
-
-	</script>
-</head>
-
-<body style="width:100%;height:100%;margin:0;">
-
-	<div class="loading loading_active">
-		<img src="./images/bg.jpg" class="loading__bg" alt="">
-		<div class="header">
-			<p class="loading__header-title">Защитник</p>
-			<img src="./images/mts-logo.svg" class="loading__logo" alt="">
-		</div>
-		<div class="loading__ellipse-block">
-			<img src="./images/loading-ellipse.svg" class="loading__ellipse" alt="">
-			<img src="./images/loading-transparent-ellipse.svg" class="loading__bg-ellipse" alt="">
-		</div>
-		<p class="loading__header">
-			Инструкция
-		</p>
-		<ul class="loading__list">
-			<li class="loading__list-item">Инструкция</li>
-			<li class="loading__list-item">Инструкция</li>
-			<li class="loading__list-item">Инструкция</li>
-		</ul>
-		<button class="white-button loading__button loading__button_disabled">
-			<p class="white-button__text">
-				Начать
-			</p>
-		</button>
-	</div>
-	<div class="final">
-		<img src="./images/bg.jpg" class="loading__bg" alt="">
-		<div class="header">
-			<p class="loading__header-title">Защитник</p>
-			<img src="./images/mts-logo.svg" class="loading__logo" alt="">
-		</div>
-		<div class="final__content">
-			<p class="final__title">
-				Результат<br>тестирования
-			</p>
-			<p class="final__correct-count">5</p>
-			<p class="final__all-count">из 10</p>
-			<p class="final__subtitle">
-				Резюмирующий текст объемом в&nbsp;один абзац, который будет варьироваться
-				в&nbsp;зависимости от&nbsp;результата
-				прохождения тестирования
-			</p>
-			<button class="final-button final__restart-btn">
-				<p id="restart-button" class="final-button__text">
-					Попробовать ёще раз
-				</p>
-			</button>
-			<p class="final__second-title">
-				Как защититься<br>
-				от мошенников?
-			</p>
-			<p class="final__second-subtitle">
-				Текст о&nbsp;том, что такое МТС Защитник,
-				и&nbsp;как данный продукт помогает защититься от&nbsp;нежелательных звонков, спама и&nbsp;мошенников
-			</p>
-			<button style="width: 100%; max-width: 360px; margin-bottom: 50px;" class="white-button white-button__second">
-				<p class="white-button__text">
-					Подробнее
-				</p>
-			</button>
-			<p class="final__third-title">
-				Какова вероятность нарваться
-				на&nbsp;звонок мошенников?
-			</p>
-			<p class="final__third-subtitle">
-				Текст о&nbsp;том, что такое МТС Защитник,
-				и&nbsp;как данный продукт помогает защититься от&nbsp;нежелательных звонков, спама и&nbsp;мошенников
-			</p>
-			<button style="width: 100%; max-width: 360px;" class="white-button white-button__third">
-				<p class="white-button__text">
-					Подробнее
-				</p>
-			</button>
-		</div>
-	</div>
-
-
-	<!-- Swipe Button -->
-	<button id="start-button" class="continue-button">Начать</button>
-	<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-<script>eruda.init();</script>
-</body>
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <link
+            rel="preload"
+            href="/assets/loading-bg-DTRVLDl6.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/onboarding-bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/assets/onboarding-pic-DliFAjRQ.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test1bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test2bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test3bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test4bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test5bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test6g.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test7bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test8bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test9bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test10bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/assets/test1pic-VWY7QZ6G.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test2pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test3pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test4pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test5pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test6pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test7pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test8pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test9pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/test10pic.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/result-bg.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/result1.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/result2.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/result3.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/src/assets/img/test/result4.png"
+            as="image"
+        />
+        <title>Telegram Mini App</title>
+      <script type="module" crossorigin src="/assets/index-CnbmbtpM.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-DDVMpLgS.css">
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+    </body>
 </html>
