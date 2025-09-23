@@ -1230,6 +1230,10 @@
                 invulnerable: false,
             };
 
+            const FPS = 60;
+            const frameTime = 1000 / FPS;
+            let lastFrameTime = 0;
+
             const player = document.getElementById("player");
             const gameArea = document.querySelector(".game-area");
 
@@ -1424,11 +1428,17 @@
                 checkCollisions();
             }
 
-            function gameLoop() {
-                updateGame();
-                if (gameState.isPlaying) {
-                    requestAnimationFrame(gameLoop);
+            function gameLoop(currentTime) {
+                if (!gameState.isPlaying) return;
+
+                const deltaTime = currentTime - lastFrameTime;
+
+                if (deltaTime >= frameTime) {
+                    updateGame(deltaTime / 1000); // Переводим в секунды
+                    lastFrameTime = currentTime - (deltaTime % frameTime);
                 }
+
+                requestAnimationFrame(gameLoop);
             }
 
             // События
