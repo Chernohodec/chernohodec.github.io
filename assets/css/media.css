@@ -71,7 +71,7 @@
         position: relative;
         background-image: url(../img/main-banner-bottom-xs.png), url(../img/banner-bg.jpg);
         background-repeat: no-repeat;
-        background-position: 0 calc(100% - 99px), 10% 0%;
+        background-position: 0 calc(100% - 89px), 10% 0%;
         background-size: calc(100% + 1px) auto, auto 85%;
     }
 
