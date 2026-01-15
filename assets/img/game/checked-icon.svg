@@ -1,0 +1,32 @@
+<svg width="33" height="24" viewBox="0 0 33 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_66_17005)">
+<path d="M28.9658 19.9131V21.7236L3.62109 21.7236V19.9131H1.81055V19.0078H0.000976804L9.4957e-07 2.80567L1.81055 2.80567V1.81055L3.62109 1.81055L3.62109 1.42429e-06L28.9658 2.53214e-06V1.81055L30.7734 1.81055V2.80567H32.584V18.8272H30.7734V19.9131H28.9658Z" fill="#A8F000"/>
+<rect x="8.59741" y="9.95654" width="1.8103" height="1.8103" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 20.3643 9.95654)" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 23.9849 6.33618)" fill="black"/>
+<rect x="10.4077" y="11.7668" width="1.8103" height="1.8103" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 18.554 11.7668)" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 22.1746 8.14624)" fill="black"/>
+<rect x="12.218" y="13.5771" width="1.8103" height="1.8103" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 16.7437 13.5771)" fill="black"/>
+<rect x="9.50244" y="10.8618" width="1.8103" height="1.8103" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 19.4592 10.8618)" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 23.0798 7.24121)" fill="black"/>
+<rect x="11.3127" y="12.6721" width="1.8103" height="1.8103" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 17.6489 12.6721)" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 21.2695 9.05152)" fill="black"/>
+<rect x="13.123" y="14.4824" width="1.8103" height="1.8103" fill="black"/>
+<rect width="1.8103" height="1.8103" transform="matrix(-1 0 0 1 15.8386 14.4824)" fill="black"/>
+</g>
+<defs>
+<filter id="filter0_d_66_17005" x="9.4957e-07" y="1.42429e-06" width="32.584" height="23.7236" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_66_17005"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_66_17005" result="shape"/>
+</filter>
+</defs>
+</svg>
