@@ -1,70 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <link
-            rel="preload"
-            href="/src/assets/img/loading-bg.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/loading-logo.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/main-bg.jpg"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/check-pic.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/green-button.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/red-button.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/onboarding-pic.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/results-pic.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/question-content-bg.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="/src/assets/img/test-result-counter-bg.png"
-            as="image"
-        />
-         <link
-            rel="preload"
-            href="/src/assets/img/onboarding-failed-pic.png"
-            as="image"
-        />
-        <title>Telegram Mini App</title>
-      <script type="module" crossorigin src="/assets/index-Zh2SG4eL.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/index-89SLUBzx.css">
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-    </body>
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <title>Okko</title>
+    <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
+    <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
+    <script type="module" crossorigin src="./assets/index-Dz09aRqI.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BfTBLA60.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <button id="specialButton" class="mob-special-button" aria-label="Версия для слабовидящих" title="Версия для слабовидящих" role="button" tabindex="0">
+      <img src="./images/mob-eye.png" alt="Версия для слабовидящих" />
+    </button>
+    <button id="specialButtonPC" class="pc-special-button" aria-label="Версия для слабовидящих" title="Версия для слабовидящих" role="button" tabindex="0">
+      <img src="./images/eye-icon.png" alt="Версия для слабовидящих" />
+    </button>
+    <!-- <img id="specialButton" style="cursor:pointer; max-width: 300px; position: fixed; top: 0; right: 0; z-index: 10;" src="https://lidrekon.ru/images/special.png" alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" /> -->
+    <script>
+      // Проверка активного режима слабовидящих
+      // Библиотека добавляет класс "special" на HTML элемент при активации
+      function isAccessibilityModeActive() {
+        const html = document.documentElement;
+        return html.classList.contains('special');
+      }
+      
+      // Синхронизация кликов на обе кнопки для активации режима слабовидящих
+      // и контроль видимости кнопок
+      function updateButtonVisibility() {
+        let mobileButton = document.getElementById('specialButton');
+        let desktopButton = document.getElementById('specialButtonPC');
+        
+        // Если кнопки еще не найдены, ищем по классам
+        if (!mobileButton) {
+          mobileButton = document.querySelector('.mob-special-button');
+        }
+        if (!desktopButton) {
+          desktopButton = document.querySelector('.pc-special-button');
+        }
+        
+        if (!mobileButton || !desktopButton) return;
+        
+        // Если режим для слабовидящих активен - скрываем обе кнопки
+        if (isAccessibilityModeActive()) {
+          mobileButton.style.display = 'none';
+          mobileButton.style.visibility = 'hidden';
+          mobileButton.style.opacity = '0';
+          mobileButton.style.pointerEvents = 'none';
+          
+          desktopButton.style.display = 'none';
+          desktopButton.style.visibility = 'hidden';
+          desktopButton.style.opacity = '0';
+          desktopButton.style.pointerEvents = 'none';
+          return;
+        }
+        
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+          // Мобильная версия - показываем только мобильную кнопку
+          // Убеждаемся, что мобильная кнопка имеет id="specialButton"
+          if (mobileButton.id !== 'specialButton') {
+            desktopButton.id = 'specialButtonPC';
+            mobileButton.id = 'specialButton';
+          }
+          
+          mobileButton.style.display = 'flex';
+          mobileButton.style.visibility = 'visible';
+          mobileButton.style.opacity = '1';
+          mobileButton.style.pointerEvents = 'auto';
+          
+          desktopButton.style.display = 'none';
+          desktopButton.style.visibility = 'hidden';
+          desktopButton.style.opacity = '0';
+          desktopButton.style.pointerEvents = 'none';
+        } else {
+          // Десктоп версия - показываем только десктоп кнопку
+          // Убеждаемся, что десктоп кнопка имеет id="specialButton"
+          if (desktopButton.id !== 'specialButton') {
+            mobileButton.id = 'specialButtonMobile';
+            desktopButton.id = 'specialButton';
+          }
+          
+          desktopButton.style.display = 'block';
+          desktopButton.style.visibility = 'visible';
+          desktopButton.style.opacity = '1';
+          desktopButton.style.pointerEvents = 'auto';
+          
+          mobileButton.style.display = 'none';
+          mobileButton.style.visibility = 'hidden';
+          mobileButton.style.opacity = '0';
+          mobileButton.style.pointerEvents = 'none';
+        }
+      }
+      
+      // Ждем загрузки библиотеки и DOM
+      document.addEventListener('DOMContentLoaded', function() {
+        // Даем библиотеке время на инициализацию
+        setTimeout(function() {
+          // Ищем кнопки по классам, так как id могут меняться
+          let mobileButton = document.querySelector('.mob-special-button');
+          let desktopButton = document.querySelector('.pc-special-button');
+          
+          if (mobileButton && desktopButton) {
+            // Инициализация видимости
+            updateButtonVisibility();
+            
+            // Обновление при изменении размера окна
+            window.addEventListener('resize', function() {
+              updateButtonVisibility();
+            });
+            
+            // Наблюдатель за изменениями класса "special" на HTML элементе
+            const observer = new MutationObserver(function(mutations) {
+              mutations.forEach(function(mutation) {
+                // Проверяем изменения класса на HTML элементе
+                if (mutation.target === document.documentElement && 
+                    mutation.type === 'attributes' && 
+                    mutation.attributeName === 'class') {
+                  updateButtonVisibility();
+                }
+              });
+            });
+            
+            // Наблюдаем за изменениями класса на HTML элементе
+            observer.observe(document.documentElement, { 
+              attributes: true, 
+              attributeFilter: ['class']
+            });
+            
+            // Периодическая проверка (на случай, если библиотека меняет класс не через стандартные методы)
+            setInterval(function() {
+              updateButtonVisibility();
+            }, 300);
+          }
+        }, 1000); // Даем больше времени библиотеке на инициализацию
+      });
+    </script>
+    <script>
+      // Восстановление оригинального фона для блоков preserve-bg ТОЛЬКО в режиме для слабовидящих
+      function isAccessibilityModeActive() {
+        const html = document.documentElement;
+        const body = document.body;
+        return html.classList.contains('special') || 
+               html.classList.contains('uhpv-active') || 
+               html.classList.contains('uhpv-high-contrast') ||
+               body.classList.contains('uhpv-active') || 
+               body.classList.contains('uhpv-high-contrast') ||
+               html.className.includes('uhpv') ||
+               body.className.includes('uhpv');
+      }
+      
+      function restoreOriginalBackgrounds() {
+        const preserveBgElements = document.querySelectorAll('.preserve-bg');
+        preserveBgElements.forEach(element => {
+          if (isAccessibilityModeActive()) {
+            // Режим для слабовидящих активен - восстанавливаем оригинальный фон
+            const computedStyle = window.getComputedStyle(element);
+            const bgImage = element.style.backgroundImage || computedStyle.backgroundImage;
+            
+            // Если фон был изменен библиотекой, восстанавливаем оригинальный
+            if (bgImage && bgImage !== 'none' && bgImage !== '') {
+              // Сохраняем оригинальные значения только один раз
+              if (!element.dataset.originalBg) {
+                element.dataset.originalBg = bgImage;
+                element.dataset.originalBgSize = computedStyle.backgroundSize;
+                element.dataset.originalBgPosition = computedStyle.backgroundPosition;
+                element.dataset.originalBgRepeat = computedStyle.backgroundRepeat;
+              }
+              
+              // Восстанавливаем оригинальные значения
+              element.style.setProperty('background-image', element.dataset.originalBg, 'important');
+              element.style.setProperty('background-size', element.dataset.originalBgSize, 'important');
+              element.style.setProperty('background-position', element.dataset.originalBgPosition, 'important');
+              element.style.setProperty('background-repeat', element.dataset.originalBgRepeat, 'important');
+              element.style.setProperty('background-color', 'transparent', 'important');
+              element.style.setProperty('filter', 'none', 'important');
+              element.style.setProperty('-webkit-filter', 'none', 'important');
+            }
+          } else {
+            // Режим для слабовидящих НЕ активен - очищаем все inline стили
+            element.style.removeProperty('background-image');
+            element.style.removeProperty('background-size');
+            element.style.removeProperty('background-position');
+            element.style.removeProperty('background-repeat');
+            element.style.removeProperty('background-color');
+            element.style.removeProperty('filter');
+            element.style.removeProperty('-webkit-filter');
+          }
+        });
+      }
+      
+      function removeBackgrounds() {
+        const removeBgElements = document.querySelectorAll('.remove-bg-accessibility');
+        removeBgElements.forEach(element => {
+          if (isAccessibilityModeActive()) {
+            // Режим для слабовидящих активен - убираем фон
+            element.style.setProperty('background-image', 'none', 'important');
+            element.style.setProperty('background-color', 'transparent', 'important');
+            element.style.setProperty('background', 'none', 'important');
+            element.style.setProperty('background-size', 'unset', 'important');
+            element.style.setProperty('background-position', 'unset', 'important');
+            element.style.setProperty('background-repeat', 'unset', 'important');
+            element.style.setProperty('background-attachment', 'unset', 'important');
+          } else {
+            // Режим для слабовидящих НЕ активен - очищаем все inline стили
+            element.style.removeProperty('background-image');
+            element.style.removeProperty('background-color');
+            element.style.removeProperty('background');
+            element.style.removeProperty('background-size');
+            element.style.removeProperty('background-position');
+            element.style.removeProperty('background-repeat');
+            element.style.removeProperty('background-attachment');
+          }
+        });
+      }
+      
+      // Запускаем после загрузки DOM и библиотеки
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          restoreOriginalBackgrounds();
+          removeBackgrounds();
+        }, 1000);
+        // Также следим за изменениями классов на body/html
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && 
+                (mutation.attributeName === 'class' || mutation.attributeName === 'id')) {
+              setTimeout(function() {
+                restoreOriginalBackgrounds();
+                removeBackgrounds();
+              }, 100);
+            }
+          });
+        });
+        
+        observer.observe(document.body, { attributes: true, attributeFilter: ['class', 'id'] });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'id'] });
+        
+        // Периодическая проверка - работает всегда, но применяет стили только в режиме для слабовидящих
+        setInterval(function() {
+          restoreOriginalBackgrounds();
+          removeBackgrounds();
+        }, 500);
+      });
+    </script>
+  </body>
 </html>
