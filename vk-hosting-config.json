@@ -1,0 +1,9 @@
+{
+  "static_path": "Build",
+  "app_id": 54477449, 
+  "endpoints": {
+    "mobile": "index.html",
+    "mvk": "index.html",
+    "web": "index.html"
+  }
+}
